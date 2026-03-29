@@ -1,3 +1,5 @@
+![Package Mate Terminal](https://i.postimg.cc/7hyBkmmQ/Screenshot-2026-03-29-at-12-48-05.png)
+
 # Package Mate — The Ultimate macOS Dev Environment Manager
 
 `package-mate` (or simply `mate`) is an ultra-lean, tool-centric CLI designed to manage your macOS development environment with surgical precision. It's not just another package manager wrapper; it's your intelligent companion for keeping your dev tools clean, organized, and up-to-date.
@@ -46,13 +48,17 @@ sudo mv mate /usr/local/bin/mate
 ## Usage
 
 ### Launch Dashboard
+
 Simply run `mate` to enter the interactive tool selector.
+
 ```bash
 mate
 ```
 
 ### Direct Tool Access
+
 Jump straight to a specific tool's management menu.
+
 ```bash
 mate node
 mate docker
