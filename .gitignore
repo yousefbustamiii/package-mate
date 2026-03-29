@@ -1,6 +1,7 @@
 # Bundling
 bundle.py
 bundle.txt
+client/
 
 # Binaries
 bin/
