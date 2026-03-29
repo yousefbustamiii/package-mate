@@ -1,24 +1,20 @@
-# 📦 Package Mate — The Ultimate macOS Dev Environment Manager
-
-[![Go Version](https://img.shields.io/github/go-mod/go-version/yousefbustamiii/package-mate)](https://golang.org)
-
-[![macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos)
+# Package Mate — The Ultimate macOS Dev Environment Manager
 
 `package-mate` (or simply `mate`) is an ultra-lean, tool-centric CLI designed to manage your macOS development environment with surgical precision. It's not just another package manager wrapper; it's your intelligent companion for keeping your dev tools clean, organized, and up-to-date.
 
 ---
 
-## ✨ Features
+## Features
 
-- **🚀 Instant Search Dashboard**: Just run `mate` to see everything available.
-- **🛡️ Smart Detection**: Automatically detects if tools are installed via Homebrew, manually, or as unmanaged binaries.
-- **📅 Historical Context**: Tracking exactly when you installed your components.
-- **🛠️ Interactive Menu**: One-click actions for `Install`, `Uninstall`, and `Info`.
-- **💎 Premium UI**: Beautifully crafted terminal interface with vibrant colors and clear typography.
+- **Instant Search Dashboard**: Just run `mate` to see everything available.
+- **Smart Detection**: Automatically detects if tools are installed via Homebrew, manually, or as unmanaged binaries.
+- **Historical Context**: Tracking exactly when you installed your components.
+- **Interactive Menu**: One-click actions for Install, Uninstall, and Info.
+- **Premium UI**: Beautifully crafted terminal interface with vibrant colors and clear typography.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph TD
@@ -33,7 +29,7 @@ graph TD
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 # Clone the repository
@@ -47,7 +43,7 @@ sudo mv mate /usr/local/bin/mate
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Launch Dashboard
 Simply run `mate` to enter the interactive tool selector.
@@ -68,16 +64,16 @@ mate postgres
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-- `cmd/`: Command implementations (`info`, `install`, `uninstall`).
+- `cmd/`: Command implementations (info, install, uninstall).
 - `internal/components/`: The software catalog and resolution logic.
 - `internal/installer/`: Heavy lifting for Homebrew and system interaction.
 - `internal/ui/`: The secret sauce behind the beautiful terminal interface.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork it!
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -85,9 +81,8 @@ mate postgres
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Create a new Pull Request
 
-
 ---
 
 <p align="center">
-  Crafted with ❤️ for the macOS developer community.
+  Crafted for the macOS developer community.
 </p>
