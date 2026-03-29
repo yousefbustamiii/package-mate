@@ -1,0 +1,91 @@
+package components
+
+var catalogBackend = Section{
+	Name: "Backend & Runtime",
+	Items: []InstallItem{
+		{
+			Name:    "Node",
+			Desc:    "JavaScript runtime built on the V8 engine for server-side applications",
+			Formula: "node",
+			Color:   rgb(130, 220, 120),
+			Binary:  "node",
+		},
+		{
+			Name:    "Bun",
+			Desc:    "Fast JavaScript runtime and toolkit for efficient modern development",
+			Formula: "bun",
+			Color:   rgb(255, 230, 160),
+			Binary:  "bun",
+		},
+		{
+			Name:    "Deno",
+			Desc:    "Secure runtime for JavaScript and TypeScript with built-in toolchain",
+			Formula: "deno",
+			Color:   rgb(180, 180, 180),
+			Binary:  "deno",
+		},
+		{
+			Name:    "Rust",
+			Desc:    "Systems language providing memory safety and high-performance execution",
+			Special: "rustup",
+			Color:   rgb(255, 100, 50),
+			Binary:  "rustc",
+		},
+		{
+			Name:    "Python",
+			Desc:    "Versatile programming language for data science, AI, and scripting",
+			Formula: "python",
+			Color:   rgb(80, 160, 230),
+			Binary:  "python3",
+		},
+		{
+			Name:    "Java",
+			Desc:    "Object-oriented language for cross-platform enterprise development",
+			Formula: "openjdk",
+			Color:   rgb(255, 170, 50),
+			Binary:  "java",
+		},
+		{
+			Name:    "Go",
+			Desc:    "Statically typed compiled language designed for scalable services",
+			Formula: "go",
+			Color:   rgb(50, 220, 255),
+			Binary:  "go",
+		},
+		{
+			Name:    "PHP",
+			Desc:    "Server-side scripting language primarily used for modern web development",
+			Formula: "php",
+			Color:   rgb(120, 150, 230),
+			Binary:  "php",
+		},
+		{
+			Name:    "Ruby",
+			Desc:    "Dynamic language focusing on developer productivity and elegant syntax",
+			Formula: "ruby",
+			Color:   rgb(230, 50, 50),
+			Binary:  "ruby",
+		},
+		{
+			Name:   ".NET",
+			Desc:   "Cross-platform developer platform for building web, cloud, and mobile apps",
+			Cask:   "dotnet-sdk",
+			Color:  rgb(130, 80, 230),
+			Binary: "dotnet",
+		},
+		{
+			Name:    "Elixir",
+			Desc:    "Functional language for scalable and maintainable concurrent systems",
+			Formula: "elixir",
+			Color:   rgb(160, 80, 200),
+			Binary:  "elixir",
+		},
+		{
+			Name:    "Erlang",
+			Desc:    "Functional programming language used for fault-tolerant applications",
+			Formula: "erlang",
+			Color:   rgb(200, 50, 80),
+			Binary:  "erl",
+		},
+	},
+}
