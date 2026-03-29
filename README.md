@@ -1,7 +1,7 @@
 # 📦 Package Mate — The Ultimate macOS Dev Environment Manager
 
 [![Go Version](https://img.shields.io/github/go-mod/go-version/yousefbustamiii/package-mate)](https://golang.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [![macOS](https://img.shields.io/badge/platform-macOS-lightgrey.svg)](https://www.apple.com/macos)
 
 `package-mate` (or simply `mate`) is an ultra-lean, tool-centric CLI designed to manage your macOS development environment with surgical precision. It's not just another package manager wrapper; it's your intelligent companion for keeping your dev tools clean, organized, and up-to-date.
@@ -85,11 +85,6 @@ mate postgres
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Create a new Pull Request
 
----
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
