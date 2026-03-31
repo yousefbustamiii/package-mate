@@ -13,6 +13,7 @@ YELLOW="\033[33m"
 GREY="\033[37m"
 
 print_banner() {
+    echo ""
     echo -e "${GREY}  ██████╗  █████╗  ██████╗██╗  ██╗ █████╗  ██████╗ ███████╗${RESET}"
     echo -e "${GREY}  ██╔══██╗██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔════╝ ██╔════╝${RESET}"
     echo -e "${GREY}  ██████╔╝███████║██║     █████╔╝ ███████║██║  ███╗█████╗  ${RESET}"
@@ -52,8 +53,11 @@ fi
 
 # 3. Check if Already Installed
 if [ -f "/usr/local/bin/mate" ]; then
-    echo -e "  ${YELLOW}Notice:${RESET} Package Mate is already securely installed on your system."
-    echo -e "          Run ${CYAN}mate${RESET} via the CLI to start managing your environment."
+    echo -e "  ${YELLOW}Notice:${RESET}"
+    echo ""
+    echo -e "  ❯ Package Mate is already securely installed on your system."
+    echo ""
+    echo -e "  ❯ Run ${CYAN}mate${RESET} via the CLI to start managing your environment."
     echo ""
     exit 0
 fi
