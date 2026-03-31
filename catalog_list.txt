@@ -1,0 +1,2734 @@
+================================================================================
+FILE: catalog_backend.go
+PATH: ./internal/components/catalog_backend.go
+================================================================================
+
+package components
+
+var catalogBackend = Section{
+	Name: "Backend & Runtime",
+	Items: []InstallItem{
+		{
+			Name:    "Node",
+			Desc:    "JavaScript runtime built on the V8 engine for server-side applications",
+			Formula: "node",
+			Color:   rgb(130, 220, 120),
+			Binary:  "node",
+		},
+		{
+			Name:    "Bun",
+			Desc:    "Fast JavaScript runtime and toolkit for efficient modern development",
+			Formula: "bun",
+			Color:   rgb(255, 230, 160),
+			Binary:  "bun",
+		},
+		{
+			Name:    "Deno",
+			Desc:    "Secure runtime for JavaScript and TypeScript with built-in toolchain",
+			Formula: "deno",
+			Color:   rgb(180, 180, 180),
+			Binary:  "deno",
+		},
+		{
+			Name:    "Python",
+			Desc:    "Versatile programming language for data science, AI, and scripting",
+			Formula: "python",
+			Color:   rgb(80, 160, 230),
+			Binary:  "python3",
+		},
+		{
+			Name:    "Java",
+			Desc:    "Object-oriented language for cross-platform enterprise development",
+			Formula: "openjdk",
+			Color:   rgb(255, 170, 50),
+			Binary:  "java",
+		},
+		{
+			Name:    "Go",
+			Desc:    "Statically typed compiled language designed for scalable services",
+			Formula: "go",
+			Color:   rgb(50, 220, 255),
+			Binary:  "go",
+		},
+		{
+			Name:    "PHP",
+			Desc:    "Server-side scripting language primarily used for modern web development",
+			Formula: "php",
+			Color:   rgb(120, 150, 230),
+			Binary:  "php",
+		},
+		{
+			Name:    "Ruby",
+			Desc:    "Dynamic language focusing on developer productivity and elegant syntax",
+			Formula: "ruby",
+			Color:   rgb(230, 50, 50),
+			Binary:  "ruby",
+		},
+		{
+			Name:   ".NET",
+			Desc:   "Cross-platform developer platform for building web, cloud, and mobile apps",
+			Cask:   "dotnet-sdk",
+			Color:  rgb(130, 80, 230),
+			Binary: "dotnet",
+		},
+		{
+			Name:    "Elixir",
+			Desc:    "Functional language for scalable and maintainable concurrent systems",
+			Formula: "elixir",
+			Color:   rgb(160, 80, 200),
+			Binary:  "elixir",
+		},
+		{
+			Name:    "Erlang",
+			Desc:    "Functional programming language used for fault-tolerant applications",
+			Formula: "erlang",
+			Color:   rgb(200, 50, 80),
+			Binary:  "erl",
+		},
+		{
+			Name:    "Delve",
+			Desc:    "The official debugger for the Go programming language",
+			Formula: "delve",
+			Color:   rgb(50, 220, 255),
+			Binary:  "dlv",
+		},
+		{
+			Name:    "Air",
+			Desc:    "Live reload for Go apps, fast and efficient during development",
+			Formula: "air",
+			Color:   rgb(100, 220, 100),
+			Binary:  "air",
+		},
+		{
+			Name:    "golang-migrate",
+			Desc:    "Powerful database migrations CLI tool for developer workflows",
+			Formula: "golang-migrate",
+			Color:   rgb(150, 150, 255),
+			Binary:  "migrate",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_browsers.go
+PATH: ./internal/components/catalog_browsers.go
+================================================================================
+
+package components
+
+var catalogBrowsers = Section{
+	Name: "Web Browsers",
+	Items: []InstallItem{
+		{
+			Name:   "Google Chrome",
+			Desc:   "The world's most popular browser, with Google smarts and speed",
+			Cask:   "google-chrome",
+			Color:  rgb(66, 133, 244),
+			Binary: "Google Chrome",
+		},
+		{
+			Name:   "Firefox Developer Edition",
+			Desc:   "Custom-tailored for developers, with unique tools and features",
+			Cask:   "firefox-developer-edition",
+			Color:  rgb(255, 148, 0),
+			Binary: "Firefox Developer Edition",
+		},
+		{
+			Name:   "Arc",
+			Desc:   "A beautiful, more powerful internet browser for modern work",
+			Cask:   "arc",
+			Color:  rgb(120, 150, 255),
+			Binary: "Arc",
+		},
+		{
+			Name:   "Brave",
+			Desc:   "Secure, fast and private web browser with built-in ad blocker",
+			Cask:   "brave-browser",
+			Color:  rgb(251, 84, 43),
+			Binary: "Brave Browser",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_caching.go
+PATH: ./internal/components/catalog_caching.go
+================================================================================
+
+package components
+
+var catalogCaching = Section{
+	Name: "Caching & Messaging",
+	Items: []InstallItem{
+		{
+			Name:    "Redis",
+			Desc:    "In-memory key-value store and cache for performant applications",
+			Formula: "redis",
+			Color:   rgb(255, 80, 70),
+			Binary:  "redis-cli",
+		},
+		{
+			Name:    "Memcached",
+			Desc:    "Distributed memory object caching for high-scale web workloads",
+			Formula: "memcached",
+			Color:   rgb(160, 200, 100),
+			Binary:  "memcached",
+		},
+		{
+			Name:    "NATS",
+			Desc:    "Cloud-native messaging system for microservices and edge computing",
+			Formula: "nats-server",
+			Color:   rgb(150, 220, 255),
+			Binary:  "nats",
+		},
+		{
+			Name:    "Kafka",
+			Desc:    "Distributed event streaming for high-throughput data pipelines",
+			Formula: "kafka",
+			Color:   rgb(200, 200, 200),
+			Binary:  "kafka-topics",
+		},
+		{
+			Name:    "RabbitMQ",
+			Desc:    "Robust message broker supporting multiple messaging protocols",
+			Formula: "rabbitmq",
+			Color:   rgb(255, 140, 50),
+			Binary:  "rabbitmqctl",
+		},
+		{
+			Name:    "ActiveMQ",
+			Desc:    "Multi-protocol broker for enterprise-grade message queuing",
+			Formula: "activemq",
+			Color:   rgb(255, 100, 150),
+			Binary:  "activemq",
+		},
+		{
+			Name:    "ZeroMQ",
+			Desc:    "Asynchronous messaging library for distributed system development",
+			Formula: "zeromq",
+			Color:   rgb(150, 150, 150),
+			Binary:  "zmq",
+		},
+		{
+			Name:    "kcat",
+			Desc:    "Generic tool for producer and consumer operations on Kafka",
+			Formula: "kcat",
+			Color:   rgb(60, 180, 255),
+			Binary:  "kcat",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_cloud_k8s.go
+PATH: ./internal/components/catalog_cloud_k8s.go
+================================================================================
+
+package components
+
+var catalogCloudK8s = Section{
+	Name: "Cloud & Kubernetes",
+	Items: []InstallItem{
+		{
+			Name:    "Krew (K8s Plugins)",
+			Desc:    "The official plugin manager for kubectl CLI",
+			Formula: "krew",
+			Color:   rgb(52, 110, 235),
+			Binary:  "kubectl-krew",
+		},
+		{
+			Name:    "Kustomize",
+			Desc:    "Native Kubernetes configuration management tool",
+			Formula: "kustomize",
+			Color:   rgb(100, 200, 255),
+			Binary:  "kustomize",
+		},
+		{
+			Name:    "Minikube",
+			Desc:    "Local Kubernetes cluster for testing and development",
+			Formula: "minikube",
+			Color:   rgb(200, 255, 100),
+			Binary:  "minikube",
+		},
+		{
+			Name:    "LocalStack CLI",
+			Desc:    "Emulate AWS cloud services on your local machine",
+			Formula: "localstack-cli",
+			Color:   rgb(255, 160, 50),
+			Binary:  "localstack",
+		},
+		{
+			Name:    "Tfenv",
+			Desc:    "Simple Terraform version manager for switching versions",
+			Formula: "tfenv",
+			Color:   rgb(160, 110, 210),
+			Binary:  "tfenv",
+		},
+		{
+			Name:    "Terragrunt",
+			Desc:    "Thin wrapper for Terraform to keep configurations DRY",
+			Formula: "terragrunt",
+			Color:   rgb(240, 90, 130),
+			Binary:  "terragrunt",
+		},
+		{
+			Name:    "Kwid",
+			Desc:    "Kubernetes Workload ID explorer and debugger",
+			Formula: "kwid",
+			Color:   rgb(255, 220, 50),
+			Binary:  "kwid",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_coding_cli.go
+PATH: ./internal/components/catalog_coding_cli.go
+================================================================================
+
+package components
+
+var catalogCodingCLI = Section{
+	Name: "Coding CLIs & AI",
+	Items: []InstallItem{
+		{
+			Name:    "Claude Code",
+			Desc:    "Agentic coding CLI from Anthropic for terminal-based development",
+			Special: "claude",
+			Color:   rgb(230, 150, 120),
+			Binary:  "claude",
+		},
+		{
+			Name:    "Gemini CLI",
+			Desc:    "Developer interface for interacting with Google's Gemini AI models",
+			Special: "gemini",
+			Color:   rgb(100, 170, 255),
+			Binary:  "gemini",
+		},
+		{
+			Name:    "Aider",
+			Desc:    "AI-powered pair programming tool for terminal-oriented coding tasks",
+			Special: "pipx-g",
+			Formula: "aider-chat",
+			Color:   rgb(255, 150, 50),
+			Binary:  "aider",
+		},
+		{
+			Name:    "Continue CLI",
+			Desc:    "Command-line companion for the Continue AI code assistant platform",
+			Special: "npm-g",
+			Formula: "@continuedev/cli",
+			Color:   rgb(100, 220, 255),
+			Binary:  "typegen",
+		},
+		{
+			Name:    "GitHub CLI",
+			Desc:    "Official interface for interacting with GitHub repositories and PRs",
+			Formula: "gh",
+			Color:   rgb(255, 255, 255),
+			Binary:  "gh",
+		},
+		{
+			Name:    "Ollama",
+			Desc:    "Get up and running with large language models locally",
+			Formula: "ollama",
+			Color:   rgb(100, 100, 255),
+			Binary:  "ollama",
+		},
+		{
+			Name:    "Swag",
+			Desc:    "Automatically generate RESTful API documentation with Swagger 2.0 for Go",
+			Formula: "swag",
+			Color:   rgb(100, 200, 255),
+			Binary:  "swag",
+		},
+		{
+			Name:    "Mockery",
+			Desc:    "A mock code generator for Go, generating type-safe mocks",
+			Formula: "mockery",
+			Color:   rgb(200, 100, 255),
+			Binary:  "mockery",
+		},
+		{
+			Name:    "Templ",
+			Desc:    "A language for writing HTML components in Go with type safety",
+			Formula: "templ",
+			Color:   rgb(255, 140, 50),
+			Binary:  "templ",
+		},
+		{
+			Name:   "Antigravity",
+			Desc:   "Agentic coding CLI designed for rapid terminal-based development",
+			Cask:   "antigravity",
+			Color:  rgb(150, 100, 255),
+			Binary: "antigravity",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_communications.go
+PATH: ./internal/components/catalog_communications.go
+================================================================================
+
+package components
+
+var catalogCommunications = Section{
+	Name: "Communications",
+	Items: []InstallItem{
+		{
+			Name:   "Discord",
+			Desc:   "Communicate via voice, video, and text in organized communities",
+			Cask:   "discord",
+			Color:  rgb(114, 137, 218),
+			Binary: "Discord",
+		},
+		{
+			Name:   "Slack",
+			Desc:   "The digital headquarters for all your professional teamwork",
+			Cask:   "slack",
+			Color:  rgb(74, 21, 75),
+			Binary: "Slack",
+		},
+		{
+			Name:   "Telegram",
+			Desc:   "Fast, secure, and private messaging across all your devices",
+			Cask:   "telegram",
+			Color:  rgb(0, 136, 204),
+			Binary: "Telegram",
+		},
+		{
+			Name:   "Zoom",
+			Desc:   "Simplified video conferencing and messaging for all platforms",
+			Cask:   "zoom",
+			Color:  rgb(45, 140, 255),
+			Binary: "zoom.us",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_containers.go
+PATH: ./internal/components/catalog_containers.go
+================================================================================
+
+package components
+
+var catalogContainers = Section{
+	Name: "Containers & DevOps",
+	Items: []InstallItem{
+		{
+			Name:   "Docker",
+			Desc:   "Platform for building and running containerized applications",
+			Cask:   "docker",
+			Color:  rgb(80, 180, 255),
+			Binary: "docker",
+		},
+		{
+			Name:    "Docker Compose",
+			Desc:    "Tool for defining and running multi-container Docker systems",
+			Formula: "docker-compose",
+			Color:   rgb(70, 140, 255),
+			Binary:  "docker-compose",
+		},
+		{
+			Name:    "Colima",
+			Desc:    "Container runtime for macOS with minimal resource overhead",
+			Formula: "colima",
+			Color:   rgb(50, 190, 230),
+			Binary:  "colima",
+		},
+		{
+			Name:    "Kubernetes (kubectl)",
+			Desc:    "Command-line tool for controlling Kubernetes system clusters",
+			Formula: "kubernetes-cli",
+			Color:   rgb(100, 160, 255),
+			Binary:  "kubectl",
+		},
+		{
+			Name:    "k9s",
+			Desc:    "Terminal-based UI for managing Kubernetes cluster operations",
+			Formula: "k9s",
+			Color:   rgb(255, 210, 50),
+			Binary:  "k9s",
+		},
+		{
+			Name:    "Helm",
+			Desc:    "Package manager for managing Kubernetes application charts",
+			Formula: "helm",
+			Color:   rgb(50, 130, 200),
+			Binary:  "helm",
+		},
+		{
+			Name:    "Terraform",
+			Desc:    "Infrastructure as Code tool for managing cloud resources",
+			Formula: "terraform",
+			Color:   rgb(120, 80, 230),
+			Binary:  "terraform",
+		},
+		{
+			Name:    "Ansible",
+			Desc:    "Automation platform for IT configuration and management",
+			Formula: "ansible",
+			Color:   rgb(255, 100, 50),
+			Binary:  "ansible-playbook",
+		},
+		{
+			Name:    "awscli",
+			Desc:    "Universal interface for Amazon Web Services cloud infrastructure",
+			Formula: "awscli",
+			Color:   rgb(255, 170, 50),
+			Binary:  "aws",
+		},
+		{
+			Name:   "gcloud CLI",
+			Desc:   "Command-line interface for Google Cloud Platform services",
+			Cask:   "google-cloud-sdk",
+			Color:  rgb(100, 170, 255),
+			Binary: "gcloud",
+		},
+		{
+			Name:    "Azure CLI",
+			Desc:    "Command-line experience for Microsoft Azure cloud management",
+			Formula: "azure-cli",
+			Color:   rgb(50, 160, 230),
+			Binary:  "az",
+		},
+		{
+			Name:    "Lazydocker",
+			Desc:    "Simple terminal UI for docker containers, managed with ease",
+			Formula: "lazydocker",
+			Color:   rgb(100, 255, 100),
+			Binary:  "lazydocker",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_data_analytics.go
+PATH: ./internal/components/catalog_data_analytics.go
+================================================================================
+
+package components
+
+var catalogDataAnalytics = Section{
+	Name: "Data & Analytics",
+	Items: []InstallItem{
+		{
+			Name:    "DuckDB",
+			Desc:    "In-process SQL OLAP database for fast data analysis",
+			Formula: "duckdb",
+			Color:   rgb(255, 160, 50),
+			Binary:  "duckdb",
+		},
+		{
+			Name:    "VisiData",
+			Desc:    "Powerful terminal tool for exploring and editing data",
+			Formula: "visidata",
+			Color:   rgb(100, 255, 200),
+			Binary:  "vd",
+		},
+		{
+			Name:    "DVC (Data Versioning)",
+			Desc:    "Git-based data version control for ML projects",
+			Formula: "dvc",
+			Color:   rgb(160, 110, 210),
+			Binary:  "dvc",
+		},
+		{
+			Name:    "PostGIS",
+			Desc:    "Spatial database extender for PostgreSQL databases",
+			Formula: "postgis",
+			Color:   rgb(52, 110, 235),
+			Binary:  "postgis",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_databases.go
+PATH: ./internal/components/catalog_databases.go
+================================================================================
+
+package components
+
+var catalogDatabases = Section{
+	Name: "Databases",
+	Items: []InstallItem{
+		{
+			Name:    "MySQL",
+			Desc:    "Relational database using SQL for structured data storage",
+			Formula: "mysql",
+			Color:   rgb(50, 190, 230),
+			Binary:  "mysql",
+		},
+		{
+			Name:    "PostgreSQL",
+			Desc:    "Object-relational database for complex workloads and data integrity",
+			Formula: "postgresql",
+			Color:   rgb(100, 160, 220),
+			Binary:  "psql",
+		},
+		{
+			Name:    "MariaDB",
+			Desc:    "Relational database based on the original MySQL engine",
+			Formula: "mariadb",
+			Color:   rgb(230, 150, 120),
+			Binary:  "mariadb",
+		},
+		{
+			Name:    "CockroachDB",
+			Desc:    "Distributed SQL database for resilient cloud-native applications",
+			Formula: "cockroachdb/tap/cockroach",
+			Color:   rgb(105, 190, 150),
+			Binary:  "cockroach",
+		},
+		{
+			Name:    "TimescaleDB",
+			Desc:    "Relational database optimized for time-series and analytical use",
+			Formula: "timescale/tap/timescaledb",
+			Color:   rgb(120, 180, 240),
+		},
+		{
+			Name:    "MongoDB",
+			Desc:    "NoSQL document database using flexible JSON-like schemas",
+			Formula: "mongodb/brew/mongodb-community",
+			Color:   rgb(100, 220, 100),
+			Binary:  "mongod",
+		},
+		{
+			Name:    "SQLite",
+			Desc:    "Serverless relational database engine for local storage",
+			Formula: "sqlite",
+			Color:   rgb(140, 230, 255),
+			Binary:  "sqlite3",
+		},
+		{
+			Name:    "ClickHouse",
+			Desc:    "Columnar database for high-performance analytical queries",
+			Formula: "clickhouse",
+			Color:   rgb(255, 210, 50),
+			Binary:  "clickhouse",
+		},
+		{
+			Name:    "ElasticSearch",
+			Desc:    "Distributed search and analytics engine for large-scale text",
+			Formula: "elasticsearch",
+			Color:   rgb(20, 190, 180),
+			Binary:  "elasticsearch",
+		},
+		{
+			Name:    "Neo4j",
+			Desc:    "Graph database system for connected data and relationships",
+			Formula: "neo4j",
+			Color:   rgb(0, 150, 230),
+			Binary:  "neo4j",
+		},
+		{
+			Name:    "Firebase CLI",
+			Desc:    "Management tools for Firebase applications and deployments",
+			Special: "npm-g",
+			Formula: "firebase-tools",
+			Color:   rgb(255, 200, 50),
+			Binary:  "firebase",
+		},
+		{
+			Name:    "Supabase CLI",
+			Desc:    "Local development and management for the Supabase platform",
+			Formula: "supabase/tap/supabase",
+			Color:   rgb(60, 200, 130),
+			Binary:  "supabase",
+		},
+		{
+			Name:    "pgcli",
+			Desc:    "PostgreSQL CLI with autocompletion and syntax highlighting",
+			Formula: "pgcli",
+			Color:   rgb(100, 200, 255),
+			Binary:  "pgcli",
+		},
+		{
+			Name:    "sqlc",
+			Desc:    "Generate type-safe code from SQL queries in seconds",
+			Formula: "sqlc",
+			Color:   rgb(255, 140, 50),
+			Binary:  "sqlc",
+		},
+		{
+			Name:    "Atlas",
+			Desc:    "Database schema-as-code management tool for devs",
+			Formula: "ariga/tap/atlas",
+			Color:   rgb(52, 110, 235),
+			Binary:  "atlas",
+		},
+		{
+			Name:    "dbmate",
+			Desc:    "A lightweight, framework-agnostic database migration tool",
+			Formula: "dbmate",
+			Color:   rgb(100, 255, 150),
+			Binary:  "dbmate",
+		},
+		{
+			Name:    "Litestream",
+			Desc:    "Streaming replication for SQLite with simple cloud targets",
+			Formula: "litestream",
+			Color:   rgb(160, 110, 210),
+			Binary:  "litestream",
+		},
+		{
+			Name:    "pgBadger",
+			Desc:    "Fast PostgreSQL log analyzer for performance auditing and reports",
+			Formula: "pgbadger",
+			Color:   rgb(100, 150, 255),
+			Binary:  "pgbadger",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_db_gui.go
+PATH: ./internal/components/catalog_db_gui.go
+================================================================================
+
+package components
+
+var catalogDBGUI = Section{
+	Name: "DB GUI & Dev Tools",
+	Items: []InstallItem{
+		{
+			Name:   "TablePlus",
+			Desc:   "Native database management client for macOS with a clean interface",
+			Cask:   "tableplus",
+			Color:  rgb(120, 220, 255),
+			Binary: "TablePlus",
+		},
+		{
+			Name:   "DBeaver",
+			Desc:   "Universal database tool for developers supporting multiple SQL dialects",
+			Cask:   "dbeaver-community",
+			Color:  rgb(160, 190, 210),
+			Binary: "dbeaver",
+		},
+		{
+			Name:   "RedisInsight",
+			Desc:   "Visual tool for managing and interacting with Redis data structures",
+			Cask:   "redisinsight",
+			Color:  rgb(255, 100, 100),
+			Binary: "RedisInsight-v2",
+		},
+		{
+			Name:   "Postman",
+			Desc:   "API platform for designing, building, and testing RESTful services",
+			Cask:   "postman",
+			Color:  rgb(255, 150, 100),
+			Binary: "Postman",
+		},
+		{
+			Name:   "Insomnia",
+			Desc:   "Open-source application for API design and collaborative testing",
+			Cask:   "insomnia",
+			Color:  rgb(150, 100, 255),
+			Binary: "Insomnia",
+		},
+		{
+			Name:   "Lens",
+			Desc:   "Integrated development environment for Kubernetes cluster management",
+			Cask:   "lens",
+			Color:  rgb(60, 180, 255),
+			Binary: "Lens",
+		},
+		{
+			Name:   "Sequel Ace",
+			Desc:   "Lightweight MySQL and MariaDB database management tool for macOS",
+			Cask:   "sequel-ace",
+			Color:  rgb(100, 160, 255),
+			Binary: "Sequel Ace",
+		},
+		{
+			Name:    "pgweb",
+			Desc:    "A web-based database browser for PostgreSQL for simple data access",
+			Formula: "pgweb",
+			Color:   rgb(100, 200, 100),
+			Binary:  "pgweb",
+		},
+		{
+			Name:    "usql",
+			Desc:    "Universal command-line interface for SQL and NoSQL databases",
+			Formula: "usql",
+			Color:   rgb(150, 100, 255),
+			Binary:  "usql",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_design_frontend.go
+PATH: ./internal/components/catalog_design_frontend.go
+================================================================================
+
+package components
+
+var catalogDesignFrontend = Section{
+	Name: "Design & Frontend",
+	Items: []InstallItem{
+		{
+			Name:   "Font-JetBrains-Mono-NF",
+			Desc:   "JetBrains Mono Nerd Font for developers",
+			Cask:   "font-jetbrains-mono-nerd-font",
+			Color:  rgb(100, 255, 200),
+			Binary: "JetBrainsMonoNLNerdFontComplete-Regular", // Note: brew fonts don't have standard binaries to check
+		},
+		{
+			Name:   "Font-Fira-Code-NF",
+			Desc:   "Fira Code Nerd Font with custom ligatures",
+			Cask:   "font-fira-code-nerd-font",
+			Color:  rgb(200, 255, 100),
+			Binary: "FiraCodeNerdFontComplete-Regular",
+		},
+		{
+			Name:    "SVGO",
+			Desc:    "Node.js based tool for optimizing SVG vector files",
+			Formula: "svgo",
+			Color:   rgb(255, 200, 50),
+			Binary:  "svgo",
+		},
+		{
+			Name:    "Can I Use CLI",
+			Desc:    "Search caniuse.com data directly from the terminal",
+			Formula: "caniuse-cmd",
+			Color:   rgb(52, 110, 235),
+			Binary:  "caniuse",
+		},
+		{
+			Name:   "Figma",
+			Desc:   "Collaborative interface design tool for teams",
+			Cask:   "figma",
+			Color:  rgb(162, 89, 255),
+			Binary: "Figma",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_dev_essentials.go
+PATH: ./internal/components/catalog_dev_essentials.go
+================================================================================
+
+package components
+
+var catalogDevEssentials = Section{
+	Name: "Dev Essentials",
+	Items: []InstallItem{
+		{
+			Name:    "Git",
+			Desc:    "Distributed version control system for tracking source code changes",
+			Formula: "git",
+			Color:   rgb(255, 100, 80),
+			Binary:  "git",
+		},
+		{
+			Name:    "Git LFS",
+			Desc:    "Extension for managing large files within Git version control",
+			Formula: "git-lfs",
+			Color:   rgb(255, 140, 100),
+			Binary:  "git-lfs",
+		},
+		{
+			Name:    "LazyGit",
+			Desc:    "Simple terminal-based user interface for managing Git operations",
+			Formula: "lazygit",
+			Color:   rgb(100, 230, 180),
+			Binary:  "lazygit",
+		},
+		{
+			Name:    "fzf",
+			Desc:    "General-purpose command-line fuzzy finder for files and processes",
+			Formula: "fzf",
+			Color:   rgb(255, 140, 230),
+			Binary:  "fzf",
+		},
+		{
+			Name:    "ripgrep",
+			Desc:    "Fast line-oriented search tool that respects gitignore rules",
+			Formula: "ripgrep",
+			Color:   rgb(180, 230, 50),
+			Binary:  "rg",
+		},
+		{
+			Name:    "bat",
+			Desc:    "Modern cat replacement with syntax highlighting and Git integration",
+			Formula: "bat",
+			Color:   rgb(100, 230, 255),
+			Binary:  "bat",
+		},
+		{
+			Name:    "eza",
+			Desc:    "Modern replacement for the ls command with enhanced file metadata",
+			Formula: "eza",
+			Color:   rgb(180, 220, 255),
+			Binary:  "eza",
+		},
+		{
+			Name:    "zoxide",
+			Desc:    "Smarter navigation tool inspired by the cd command and autojump",
+			Formula: "zoxide",
+			Color:   rgb(255, 220, 100),
+			Binary:  "zoxide",
+		},
+		{
+			Name:    "Starship",
+			Desc:    "Minimal and customizable shell prompt for any terminal environment",
+			Formula: "starship",
+			Color:   rgb(255, 100, 255),
+			Binary:  "starship",
+		},
+		{
+			Name:    "direnv",
+			Desc:    "Shell extension to load or unload environment variables per directory",
+			Formula: "direnv",
+			Color:   rgb(255, 255, 100),
+			Binary:  "direnv",
+		},
+		{
+			Name:    "NVM",
+			Desc:    "Node Version Manager for switching between multiple Node.js environments",
+			Special: "nvm",
+			Color:   rgb(140, 200, 75),
+			Binary:  "nvm",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_dev_utils.go
+PATH: ./internal/components/catalog_dev_utils.go
+================================================================================
+
+package components
+
+var catalogDevUtils = Section{
+	Name: "Dev Utilities",
+	Items: []InstallItem{
+		{
+			Name:    "Watchman",
+			Desc:    "File watching service for triggering build actions",
+			Formula: "watchman",
+			Color:   rgb(200, 200, 255),
+			Binary:  "watchman",
+		},
+		{
+			Name:    "Mise (Runtime Manager)",
+			Desc:    "Polyglot runtime manager for dev envs",
+			Formula: "mise",
+			Color:   rgb(255, 100, 200),
+			Binary:  "mise",
+		},
+		{
+			Name:    "Lefthook (Git Hooks)",
+			Desc:    "Ultra-fast and powerful Git hooks manager",
+			Formula: "lefthook",
+			Color:   rgb(100, 255, 200),
+			Binary:  "lefthook",
+		},
+		{
+			Name:    "Act (Local GitHub Actions)",
+			Desc:    "Run your GitHub Actions workflows locally",
+			Formula: "act",
+			Color:   rgb(100, 200, 255),
+			Binary:  "act",
+		},
+		{
+			Name:    "JSON Export (jtbl)",
+			Desc:    "Utility to print JSON data as a clean terminal table",
+			Formula: "jtbl",
+			Color:   rgb(200, 255, 100),
+			Binary:  "jtbl",
+		},
+		{
+			Name:    "golangci-lint",
+			Desc:    "Fast Go linters runner with support for 100+ linters",
+			Formula: "golangci-lint",
+			Color:   rgb(100, 150, 255),
+			Binary:  "golangci-lint",
+		},
+		{
+			Name:    "GoReleaser",
+			Desc:    "Deliver Go binaries as fast and easily as possible",
+			Formula: "goreleaser",
+			Color:   rgb(200, 100, 255),
+			Binary:  "goreleaser",
+		},
+		{
+			Name:    "Biome",
+			Desc:    "Ultra-fast toolchain for web projects: lint, format, and more",
+			Formula: "biome",
+			Color:   rgb(255, 140, 50),
+			Binary:  "biome",
+		},
+		{
+			Name:    "pyenv",
+			Desc:    "Simple Python version management for developers",
+			Formula: "pyenv",
+			Color:   rgb(100, 200, 150),
+			Binary:  "pyenv",
+		},
+		{
+			Name:    "mkcert",
+			Desc:    "A simple tool for making locally-trusted development certificates",
+			Formula: "mkcert",
+			Color:   rgb(255, 200, 100),
+			Binary:  "mkcert",
+		},
+		{
+			Name:    "Task",
+			Desc:    "A task runner / build tool that aims to be simpler than Make",
+			Formula: "go-task",
+			Color:   rgb(100, 255, 200),
+			Binary:  "task",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_docs.go
+PATH: ./internal/components/catalog_docs.go
+================================================================================
+
+package components
+
+var catalogDocs = Section{
+	Name: "Docs & Static Sites",
+	Items: []InstallItem{
+		{
+			Name:    "Hugo",
+			Desc:    "Fast static site generator written in Go for building modern websites",
+			Formula: "hugo",
+			Color:   rgb(255, 80, 100),
+			Binary:  "hugo",
+		},
+		{
+			Name:    "Jekyll",
+			Desc:    "Ruby-based static site generator powering GitHub Pages and blogs",
+			Formula: "jekyll",
+			Color:   rgb(200, 80, 80),
+			Binary:  "jekyll",
+		},
+		{
+			Name:    "Eleventy",
+			Desc:    "Flexible JavaScript static site generator with zero-config defaults",
+			Special: "npm-g",
+			Formula: "@11ty/eleventy",
+			Color:   rgb(100, 100, 100),
+			Binary:  "eleventy",
+		},
+		{
+			Name:    "MkDocs",
+			Desc:    "Python-based static site generator focused on project documentation",
+			Formula: "mkdocs",
+			Color:   rgb(80, 180, 255),
+			Binary:  "mkdocs",
+		},
+		{
+			Name:    "Pandoc",
+			Desc:    "Universal document converter supporting Markdown, PDF, DOCX, and more",
+			Formula: "pandoc",
+			Color:   rgb(255, 200, 80),
+			Binary:  "pandoc",
+		},
+		{
+			Name:    "Doxygen",
+			Desc:    "Documentation generator for C++, Java, and Python source code",
+			Formula: "doxygen",
+			Color:   rgb(100, 170, 230),
+			Binary:  "doxygen",
+		},
+		{
+			Name:    "Graphviz",
+			Desc:    "Graph visualization tools for rendering diagrams from DOT language files",
+			Formula: "graphviz",
+			Color:   rgb(180, 230, 100),
+			Binary:  "dot",
+		},
+		{
+			Name:    "Spectral",
+			Desc:    "OpenAPI and AsyncAPI linter for enforcing API design style rules",
+			Special: "npm-g",
+			Formula: "@stoplight/spectral-cli",
+			Color:   rgb(255, 130, 80),
+			Binary:  "spectral",
+		},
+		{
+			Name:    "OpenAPI Generator",
+			Desc:    "Generate client SDKs, server stubs, and docs from OpenAPI specs",
+			Formula: "openapi-generator",
+			Color:   rgb(100, 220, 180),
+			Binary:  "openapi-generator",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_editors.go
+PATH: ./internal/components/catalog_editors.go
+================================================================================
+
+package components
+
+var catalogEditors = Section{
+	Name: "Editors & IDEs",
+	Items: []InstallItem{
+		{
+			Name:   "Cursor",
+			Desc:   "AI-first code editor built on VS Code for pair programming with LLMs",
+			Cask:   "cursor",
+			Color:  rgb(180, 180, 180),
+			Binary: "cursor",
+		},
+		{
+			Name:   "Zed",
+			Desc:   "High-performance multiplayer code editor built in Rust",
+			Cask:   "zed",
+			Color:  rgb(90, 170, 255),
+			Binary: "zed",
+		},
+		{
+			Name:   "Sublime Text",
+			Desc:   "Lightweight text editor with a rich plugin ecosystem and fast performance",
+			Cask:   "sublime-text",
+			Color:  rgb(255, 150, 50),
+			Binary: "subl",
+		},
+		{
+			Name:   "Android Studio",
+			Desc:   "Official IDE for Android app development based on IntelliJ IDEA",
+			Cask:   "android-studio",
+			Color:  rgb(80, 220, 140),
+			Binary: "studio",
+		},
+		{
+			Name:   "Nova",
+			Desc:   "Native macOS code editor with extensions and built-in dev server",
+			Cask:   "nova",
+			Color:  rgb(180, 80, 255),
+			Binary: "nova",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_embedded.go
+PATH: ./internal/components/catalog_embedded.go
+================================================================================
+
+package components
+
+var catalogEmbedded = Section{
+	Name: "Low-Level & Embedded",
+	Items: []InstallItem{
+		{
+			Name:    "avr-gcc",
+			Desc:    "GCC-based compiler toolchain for Atmel AVR microcontroller development",
+			Formula: "avr-gcc",
+			Color:   rgb(180, 220, 100),
+			Binary:  "avr-gcc",
+		},
+		{
+			Name:    "arm-none-eabi-gcc",
+			Desc:    "Bare-metal ARM cross-compiler for embedded firmware development",
+			Formula: "arm-none-eabi-gcc",
+			Color:   rgb(80, 180, 255),
+			Binary:  "arm-none-eabi-gcc",
+		},
+		{
+			Name:    "SDCC",
+			Desc:    "Small Device C Compiler for 8-bit microcontrollers like PIC and STM8",
+			Formula: "sdcc",
+			Color:   rgb(200, 150, 80),
+			Binary:  "sdcc",
+		},
+		{
+			Name:    "avrdude",
+			Desc:    "Software for programming Atmel AVR microcontrollers via various programmers",
+			Formula: "avrdude",
+			Color:   rgb(150, 220, 150),
+			Binary:  "avrdude",
+		},
+		{
+			Name:    "OpenOCD",
+			Desc:    "On-chip debugger for flashing and debugging embedded targets over JTAG/SWD",
+			Formula: "open-ocd",
+			Color:   rgb(100, 200, 230),
+			Binary:  "openocd",
+		},
+		{
+			Name:    "dfu-util",
+			Desc:    "Host-side utility for flashing firmware via USB DFU protocol",
+			Formula: "dfu-util",
+			Color:   rgb(230, 160, 80),
+			Binary:  "dfu-util",
+		},
+		{
+			Name:    "minicom",
+			Desc:    "Terminal emulator for serial port communication and modem control",
+			Formula: "minicom",
+			Color:   rgb(180, 180, 180),
+			Binary:  "minicom",
+		},
+		{
+			Name:    "screen",
+			Desc:    "Multiplexer with serial terminal support for connecting to embedded devices",
+			Formula: "screen",
+			Color:   rgb(140, 140, 140),
+			Binary:  "screen",
+		},
+		{
+			Name:    "picocom",
+			Desc:    "Minimal serial terminal emulator for UART debugging on embedded hardware",
+			Formula: "picocom",
+			Color:   rgb(160, 200, 255),
+			Binary:  "picocom",
+		},
+		{
+			Name:   "KiCad",
+			Desc:   "Open-source EDA suite for schematic capture and PCB layout design",
+			Cask:   "kicad",
+			Color:  rgb(50, 180, 130),
+			Binary: "kicad",
+		},
+		{
+			Name:   "Fritzing",
+			Desc:   "Electronics prototyping tool for documenting Arduino and breadboard circuits",
+			Cask:   "fritzing",
+			Color:  rgb(230, 80, 80),
+			Binary: "Fritzing",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_homebrew.go
+PATH: ./internal/components/catalog_homebrew.go
+================================================================================
+
+package components
+
+var catalogHomebrew = Section{
+	Name: "Homebrew Setup",
+	Items: []InstallItem{
+		{
+			Name:    "Homebrew",
+			Desc:    "Standard package manager for macOS and Linux",
+			Special: "brew-install",
+			Color:   rgb(255, 170, 50),
+			Binary:  "brew",
+		},
+		{
+			Name:    "Homebrew Update",
+			Desc:    "Synchronize local formula and cask metadata with upstream",
+			Special: "brew-update",
+			Color:   rgb(255, 230, 100),
+			Binary:  "brew",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_infrastructure.go
+PATH: ./internal/components/catalog_infrastructure.go
+================================================================================
+
+package components
+
+var catalogInfrastructure = Section{
+	Name: "Infrastructure & Cloud",
+	Items: []InstallItem{
+		{
+			Name:    "Vercel CLI",
+			Desc:    "Command-line tool for deploying and managing Vercel projects",
+			Formula: "vercel-cli",
+			Color:   rgb(255, 255, 255),
+			Binary:  "vercel",
+		},
+		{
+			Name:    "Netlify CLI",
+			Desc:    "Deploy and manage Netlify sites and functions from the terminal",
+			Formula: "netlify-cli",
+			Color:   rgb(50, 220, 190),
+			Binary:  "netlify",
+		},
+		{
+			Name:    "Heroku CLI",
+			Desc:    "Official interface for managing Heroku apps and deployments",
+			Formula: "heroku",
+			Color:   rgb(160, 110, 210),
+			Binary:  "heroku",
+		},
+		{
+			Name:    "Pulumi",
+			Desc:    "Infrastructure as Code platform using general-purpose programming languages",
+			Formula: "pulumi",
+			Color:   rgb(240, 90, 130),
+			Binary:  "pulumi",
+		},
+		{
+			Name:    "OpenTofu",
+			Desc:    "Open-source Terraform fork for community-driven infrastructure management",
+			Formula: "opentofu",
+			Color:   rgb(255, 220, 50),
+			Binary:  "tofu",
+		},
+		{
+			Name:    "AWS CDK",
+			Desc:    "Define cloud infrastructure using familiar programming languages on AWS",
+			Formula: "aws-cdk",
+			Color:   rgb(255, 160, 50),
+			Binary:  "cdk",
+		},
+		{
+			Name:    "DigitalOcean CLI",
+			Desc:    "Official CLI for managing DigitalOcean resources and services",
+			Formula: "doctl",
+			Color:   rgb(30, 140, 255),
+			Binary:  "doctl",
+		},
+		{
+			Name:    "Prometheus",
+			Desc:    "Open-source monitoring and alerting toolkit for cloud-native systems",
+			Formula: "prometheus",
+			Color:   rgb(230, 80, 40),
+			Binary:  "prometheus",
+		},
+		{
+			Name:    "Grafana",
+			Desc:    "Observability platform for dashboards and metrics visualization",
+			Formula: "grafana",
+			Color:   rgb(255, 140, 50),
+			Binary:  "grafana",
+		},
+		{
+			Name:    "Vault",
+			Desc:    "Secrets management tool for securely storing and accessing credentials",
+			Formula: "vault",
+			Color:   rgb(255, 220, 100),
+			Binary:  "vault",
+		},
+		{
+			Name:    "Boundary",
+			Desc:    "Identity-based access management for dynamic infrastructure",
+			Formula: "boundary",
+			Color:   rgb(100, 200, 200),
+			Binary:  "boundary",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_jetbrains.go
+PATH: ./internal/components/catalog_jetbrains.go
+================================================================================
+
+package components
+
+var catalogJetBrains = Section{
+	Name: "JetBrains Mastery",
+	Items: []InstallItem{
+		{
+			Name:   "JetBrains Toolbox",
+			Desc:   "Manage all your JetBrains IDEs and tools from a single control center",
+			Cask:   "jetbrains-toolbox",
+			Color:  rgb(0, 0, 0),
+			Binary: "JetBrains Toolbox",
+		},
+		{
+			Name:   "JetBrains Gateway",
+			Desc:   "Your gateway to remote development with any JetBrains IDE",
+			Cask:   "jetbrains-gateway",
+			Color:  rgb(0, 150, 255),
+			Binary: "JetBrains Gateway",
+		},
+		{
+			Name:   "IntelliJ IDEA Ultimate",
+			Desc:   "The leading IDE for Java and Kotlin, packed with powerful enterprise features",
+			Cask:   "intellij-idea",
+			Color:  rgb(255, 50, 100),
+			Binary: "IntelliJ IDEA",
+		},
+		{
+			Name:   "IntelliJ IDEA CE",
+			Desc:   "Free and open-source version of IntelliJ IDEA for JVM and Android development",
+			Cask:   "intellij-idea-ce",
+			Color:  rgb(255, 100, 150),
+			Binary: "IntelliJ IDEA CE",
+		},
+		{
+			Name:   "PyCharm Professional",
+			Desc:   "The expert IDE for Python development, with full web and data science support",
+			Cask:   "pycharm",
+			Color:  rgb(100, 200, 150),
+			Binary: "PyCharm",
+		},
+		{
+			Name:   "PyCharm CE",
+			Desc:   "Lightweight and free version of PyCharm for pure Python development",
+			Cask:   "pycharm-ce",
+			Color:  rgb(140, 230, 200),
+			Binary: "PyCharm CE",
+		},
+		{
+			Name:   "WebStorm",
+			Desc:   "The smartest JavaScript IDE for modern web development with any framework",
+			Cask:   "webstorm",
+			Color:  rgb(100, 210, 255),
+			Binary: "WebStorm",
+		},
+		{
+			Name:   "GoLand",
+			Desc:   "A cross-platform IDE dedicated to providing an ergonomic environment for Go",
+			Cask:   "goland",
+			Color:  rgb(50, 220, 255),
+			Binary: "GoLand",
+		},
+		{
+			Name:   "CLion",
+			Desc:   "Smart cross-platform C and C++ IDE with a focus on modern development standards",
+			Cask:   "clion",
+			Color:  rgb(100, 230, 150),
+			Binary: "CLion",
+		},
+		{
+			Name:   "Rider",
+			Desc:   "Fast and powerful cross-platform .NET IDE built on IntelliJ and ReSharper",
+			Cask:   "rider",
+			Color:  rgb(160, 110, 210),
+			Binary: "Rider",
+		},
+		{
+			Name:   "PhpStorm",
+			Desc:   "The lightning-smart PHP IDE focusing on developer productivity and deep code insight",
+			Cask:   "phpstorm",
+			Color:  rgb(120, 150, 255),
+			Binary: "PhpStorm",
+		},
+		{
+			Name:   "DataGrip",
+			Desc:   "The multi-engine database IDE that speaks many SQL dialects in one place",
+			Cask:   "datagrip",
+			Color:  rgb(255, 120, 50),
+			Binary: "DataGrip",
+		},
+		{
+			Name:   "RubyMine",
+			Desc:   "The most intelligent Ruby on Rails IDE for the modern web developer",
+			Cask:   "rubymine",
+			Color:  rgb(255, 100, 100),
+			Binary: "RubyMine",
+		},
+		{
+			Name:   "DataSpell",
+			Desc:   "Professional IDE for data science, optimizing exploratory data analysis work",
+			Cask:   "dataspell",
+			Color:  rgb(52, 110, 235),
+			Binary: "DataSpell",
+		},
+		{
+			Name:   "RustRover",
+			Desc:   "Focus on what matters: the leading IDE for professional Rust development",
+			Cask:   "rustrover",
+			Color:  rgb(255, 160, 50),
+			Binary: "RustRover",
+		},
+		{
+			Name:   "Aqua",
+			Desc:   "The IDE specifically designed for modern test automation and QA",
+			Cask:   "aqua",
+			Color:  rgb(50, 220, 200),
+			Binary: "Aqua",
+		},
+		{
+			Name:   "Writerside",
+			Desc:   "Technical documentation tool for building complex, high-quality docs",
+			Cask:   "writerside",
+			Color:  rgb(150, 200, 100),
+			Binary: "Writerside",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_languages.go
+PATH: ./internal/components/catalog_languages.go
+================================================================================
+
+package components
+
+var catalogLanguages = Section{
+	Name: "Languages & Runtimes",
+	Items: []InstallItem{
+		{
+			Name:    "Zig",
+			Desc:    "General-purpose language for systems programming with manual memory control",
+			Formula: "zig",
+			Color:   rgb(255, 165, 50),
+			Binary:  "zig",
+		},
+		{
+			Name:    "Haskell",
+			Desc:    "Purely functional language with strong static typing and lazy evaluation",
+			Formula: "ghc",
+			Color:   rgb(150, 100, 220),
+			Binary:  "ghc",
+		},
+		{
+			Name:    "OCaml",
+			Desc:    "Functional language with an expressive type system and native compiler",
+			Formula: "ocaml",
+			Color:   rgb(235, 140, 50),
+			Binary:  "ocaml",
+		},
+		{
+			Name:    "C++ (Clang)",
+			Desc:    "LLVM-based C and C++ compiler toolchain with modern language support",
+			Formula: "llvm",
+			Color:   rgb(100, 180, 255),
+			Binary:  "clang",
+		},
+		{
+			Name:    "Rustup",
+			Desc:    "Official Rust toolchain installer for managing versions and targets",
+			Formula: "rustup-init",
+			Color:   rgb(255, 90, 40),
+			Binary:  "rustup-init",
+		},
+		{
+			Name:    "Lua",
+			Desc:    "Lightweight embeddable scripting language for extensible applications",
+			Formula: "lua",
+			Color:   rgb(100, 130, 200),
+			Binary:  "lua",
+		},
+		{
+			Name:    "Perl",
+			Desc:    "Versatile scripting language for text processing and system administration",
+			Formula: "perl",
+			Color:   rgb(100, 160, 230),
+			Binary:  "perl",
+		},
+		{
+			Name:    "Dart",
+			Desc:    "Client-optimized language for fast apps on multiple platforms",
+			Formula: "dart",
+			Color:   rgb(70, 200, 240),
+			Binary:  "dart",
+		},
+		{
+			Name:    "Kotlin",
+			Desc:    "Modern JVM language for Android and multiplatform development",
+			Formula: "kotlin",
+			Color:   rgb(160, 100, 240),
+			Binary:  "kotlinc",
+		},
+		{
+			Name:    "Scala",
+			Desc:    "JVM language blending object-oriented and functional programming",
+			Formula: "scala",
+			Color:   rgb(220, 50, 50),
+			Binary:  "scala",
+		},
+		{
+			Name:    "Fortran (GCC)",
+			Desc:    "High-performance numerical language via the GCC compiler suite",
+			Formula: "gcc",
+			Color:   rgb(100, 180, 100),
+			Binary:  "gfortran",
+		},
+		{
+			Name:    "Julia",
+			Desc:    "High-performance language for scientific computing and data analysis",
+			Cask:    "julia",
+			Color:   rgb(150, 80, 220),
+			Binary:  "julia",
+		},
+		{
+			Name:    "Flutter",
+			Desc:    "UI toolkit for building natively compiled apps from a single codebase",
+			Cask:    "flutter",
+			Color:   rgb(70, 200, 255),
+			Binary:  "flutter",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_macos.go
+PATH: ./internal/components/catalog_macos.go
+================================================================================
+
+package components
+
+var catalogMacOS = Section{
+	Name: "macOS Essentials",
+	Items: []InstallItem{
+		{
+			Name:   "Raycast",
+			Desc:   "Faster and more powerful replacement for Spotlight",
+			Cask:   "raycast",
+			Color:  rgb(255, 100, 100),
+			Binary: "raycast",
+		},
+		{
+			Name:   "Rectangle",
+			Desc:   "Window management tool to snap windows into positions",
+			Cask:   "rectangle",
+			Color:  rgb(100, 200, 255),
+			Binary: "Rectangle",
+		},
+		{
+			Name:   "AltTab",
+			Desc:   "Brings back Windows-style Alt-Tab window switching",
+			Cask:   "alt-tab",
+			Color:  rgb(255, 200, 100),
+			Binary: "AltTab",
+		},
+		{
+			Name:   "Latest",
+			Desc:   "Small utility to check for software updates of your apps",
+			Cask:   "latest",
+			Color:  rgb(100, 255, 200),
+			Binary: "Latest",
+		},
+		{
+			Name:   "HiddenBar",
+			Desc:   "Menubar icon organizer to hide unused status items",
+			Cask:   "hiddenbar",
+			Color:  rgb(200, 100, 255),
+			Binary: "HiddenBar",
+		},
+		{
+			Name:   "Shottr (Screenshots)",
+			Desc:   "High-performance pixel-perfect screenshot tool",
+			Cask:   "shottr",
+			Color:  rgb(255, 100, 255),
+			Binary: "Shottr",
+		},
+		{
+			Name:   "AppCleaner",
+			Desc:   "Properly uninstalls apps and removes leftover files",
+			Cask:   "appcleaner",
+			Color:  rgb(200, 200, 200),
+			Binary: "AppCleaner",
+		},
+		{
+			Name:   "IINA (Media Player)",
+			Desc:   "Modern and feature-rich media player for macOS",
+			Cask:   "iina",
+			Color:  rgb(255, 140, 50),
+			Binary: "IINA",
+		},
+		{
+			Name:    "Xcodes CLI",
+			Desc:    "Command-line tool to install and switch between versions of Xcode",
+			Formula: "xcodes",
+			Color:   rgb(100, 200, 255),
+			Binary:  "xcodes",
+		},
+		{
+			Name:   "Syncthing",
+			Desc:   "Continuous file synchronization program that syncs files in real time",
+			Cask:   "syncthing",
+			Color:  rgb(50, 180, 255),
+			Binary: "Syncthing",
+		},
+		{
+			Name:   "Maccy",
+			Desc:   "Lightweight clipboard manager for macOS with a simple interface",
+			Cask:   "maccy",
+			Color:  rgb(255, 140, 50),
+			Binary: "Maccy",
+		},
+		{
+			Name:   "CleanShot X",
+			Desc:   "Professional screen capture & recording tool for macOS",
+			Cask:   "cleanshot",
+			Color:  rgb(150, 100, 255),
+			Binary: "CleanShot X",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_media.go
+PATH: ./internal/components/catalog_media.go
+================================================================================
+
+package components
+
+var catalogMedia = Section{
+	Name: "Media & Graphics",
+	Items: []InstallItem{
+		{
+			Name:    "FFmpeg",
+			Desc:    "Complete multimedia framework for recording, converting, and streaming",
+			Formula: "ffmpeg",
+			Color:   rgb(50, 180, 255),
+			Binary:  "ffmpeg",
+		},
+		{
+			Name:    "ImageMagick",
+			Desc:    "Powerful image manipulation suite for conversion, editing, and compositing",
+			Formula: "imagemagick",
+			Color:   rgb(255, 100, 150),
+			Binary:  "convert",
+		},
+		{
+			Name:    "ExifTool",
+			Desc:    "Read and write metadata in image, audio, and video files",
+			Formula: "exiftool",
+			Color:   rgb(200, 180, 100),
+			Binary:  "exiftool",
+		},
+		{
+			Name:    "OptiPNG",
+			Desc:    "PNG optimizer that recompresses images for smaller file sizes",
+			Formula: "optipng",
+			Color:   rgb(150, 220, 255),
+			Binary:  "optipng",
+		},
+		{
+			Name:   "Inkscape",
+			Desc:   "Professional open-source vector graphics editor for SVG files",
+			Cask:   "inkscape",
+			Color:  rgb(255, 200, 50),
+			Binary: "inkscape",
+		},
+		{
+			Name:   "GIMP",
+			Desc:   "Free and open-source raster image editor for photo and design work",
+			Cask:   "gimp",
+			Color:  rgb(100, 180, 80),
+			Binary: "gimp",
+		},
+		{
+			Name:   "Blender",
+			Desc:   "Open-source 3D creation suite for modeling, animation, and rendering",
+			Cask:   "blender",
+			Color:  rgb(255, 130, 50),
+			Binary: "blender",
+		},
+		{
+			Name:   "Spotify",
+			Desc:   "Digital music service with millions of songs and podcasts",
+			Cask:   "spotify",
+			Color:  rgb(30, 215, 96),
+			Binary: "Spotify",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_modern_cli.go
+PATH: ./internal/components/catalog_modern_cli.go
+================================================================================
+
+package components
+
+var catalogModernCLI = Section{
+	Name: "Modern CLI Replacements",
+	Items: []InstallItem{
+		{
+			Name:    "Dust (du replacement)",
+			Desc:    "More intuitive and visual replacement for du",
+			Formula: "du-dust",
+			Color:   rgb(255, 100, 200),
+			Binary:  "dust",
+		},
+		{
+			Name:    "Bottom (btm)",
+			Desc:    "Graphical process and system monitor for terminal",
+			Formula: "bottom",
+			Color:   rgb(100, 255, 200),
+			Binary:  "btm",
+		},
+		{
+			Name:    "Tldr (Simple Man)",
+			Desc:    "Simplified and community-driven man pages",
+			Formula: "tldr",
+			Color:   rgb(255, 200, 100),
+			Binary:  "tldr",
+		},
+		{
+			Name:    "TheFuck",
+			Desc:    "Tool that corrects your previous console commands",
+			Formula: "thefuck",
+			Color:   rgb(100, 200, 255),
+			Binary:  "thefuck",
+		},
+		{
+			Name:    "Rclone",
+			Desc:    "Rsync for cloud storage that supports 40+ providers",
+			Formula: "rclone",
+			Color:   rgb(52, 110, 235),
+			Binary:  "rclone",
+		},
+		{
+			Name:    "Dog (dig replacement)",
+			Desc:    "Modern and user-friendly DNS lookup tool",
+			Formula: "dog",
+			Color:   rgb(255, 100, 100),
+			Binary:  "dog",
+		},
+		{
+			Name:    "Choose (cut/awk alt)",
+			Desc:    "Faster and simpler alternative to cut/awk",
+			Formula: "choose-rust",
+			Color:   rgb(200, 100, 255),
+			Binary:  "choose",
+		},
+		{
+			Name:    "Gdu (Disk Usage)",
+			Desc:    "Extremely fast disk usage analyzer in Go",
+			Formula: "gdu",
+			Color:   rgb(100, 255, 100),
+			Binary:  "gdu",
+		},
+		{
+			Name:    "Zellij",
+			Desc:    "Terminal workspace and multiplexer with a focus on ease of use",
+			Formula: "zellij",
+			Color:   rgb(255, 140, 50),
+			Binary:  "zellij",
+		},
+		{
+			Name:    "Just",
+			Desc:    "Handy command runner for common tasks with a Make-like syntax",
+			Formula: "just",
+			Color:   rgb(230, 80, 40),
+			Binary:  "just",
+		},
+		{
+			Name:   "OrbStack",
+			Desc:   "Fast, light, and easy way to run Docker and Linux on macOS",
+			Cask:   "orbstack",
+			Color:  rgb(30, 140, 255),
+			Binary: "OrbStack",
+		},
+		{
+			Name:    "Fast Node Manager (fnm)",
+			Desc:    "Fast and simple Node.js version manager built in Rust",
+			Formula: "fnm",
+			Color:   rgb(250, 100, 50),
+			Binary:  "fnm",
+		},
+		{
+			Name:    "Sloc Cloc and Code (scc)",
+			Desc:    "Very fast code counter with complexity and COCOMO estimates",
+			Formula: "scc",
+			Color:   rgb(100, 200, 150),
+			Binary:  "scc",
+		},
+		{
+			Name:    "Watchexec",
+			Desc:    "Execute commands in response to file modifications",
+			Formula: "watchexec",
+			Color:   rgb(150, 100, 255),
+			Binary:  "watchexec",
+		},
+		{
+			Name:    "Dasel",
+			Desc:    "Query and update data structures from the terminal, any format",
+			Formula: "dasel",
+			Color:   rgb(255, 120, 50),
+			Binary:  "dasel",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_networking_tools.go
+PATH: ./internal/components/catalog_networking_tools.go
+================================================================================
+
+package components
+
+var catalogNetworking = Section{
+	Name: "Networking & API",
+	Items: []InstallItem{
+		{
+			Name:    "Doggo (DNS)",
+			Desc:    "Modern DNS client for humans with JSON output",
+			Formula: "doggo",
+			Color:   rgb(100, 200, 255),
+			Binary:  "doggo",
+		},
+		{
+			Name:    "MTR (Network Diag)",
+			Desc:    "Combining the functionality of traceroute and ping",
+			Formula: "mtr",
+			Color:   rgb(200, 100, 255),
+			Binary:  "mtr",
+		},
+		{
+			Name:    "Step CLI (Crypto/Cert)",
+			Desc:    "Certificate management and zero-trust cryptography toolkit",
+			Formula: "step",
+			Color:   rgb(255, 200, 100),
+			Binary:  "step",
+		},
+		{
+			Name:    "HTTPie",
+			Desc:    "User-friendly command-line interface for making HTTP requests",
+			Formula: "httpie",
+			Color:   rgb(30, 200, 255),
+			Binary:  "http",
+		},
+		{
+			Name:    "Cloudflared",
+			Desc:    "Cloudflare Tunnel client for secure, zero-trust network access",
+			Formula: "cloudflared",
+			Color:   rgb(255, 120, 50),
+			Binary:  "cloudflared",
+		},
+		{
+			Name:   "Termius",
+			Desc:   "Modern SSH client with cloud sync and SFTP support",
+			Cask:   "termius",
+			Color:  rgb(52, 110, 235),
+			Binary: "Termius",
+		},
+		{
+			Name:    "Stripe CLI",
+			Desc:    "Powerful and convenient CLI for managing Stripe projects",
+			Formula: "stripe/stripe-cli/stripe",
+			Color:   rgb(100, 100, 255),
+			Binary:  "stripe",
+		},
+		{
+			Name:    "Websocat",
+			Desc:    "Command-line client for WebSockets, like netcat or curl",
+			Formula: "websocat",
+			Color:   rgb(255, 140, 50),
+			Binary:  "websocat",
+		},
+		{
+			Name:   "Bruno",
+			Desc:   "Open-source IDE for API exploration and testing",
+			Cask:   "bruno",
+			Color:  rgb(255, 180, 50),
+			Binary: "Bruno",
+		},
+		{
+			Name:    "xh",
+			Desc:    "Friendly and fast tool for sending HTTP requests, CLI alternative",
+			Formula: "xh",
+			Color:   rgb(100, 255, 150),
+			Binary:  "xh",
+		},
+		{
+			Name:    "gRPCurl",
+			Desc:    "Command-line tool that lets you interact with gRPC servers",
+			Formula: "grpcurl",
+			Color:   rgb(200, 100, 255),
+			Binary:  "grpcurl",
+		},
+		{
+			Name:    "Mole",
+			Desc:    "CLI tool to create ssh tunnels easily with simple redirection",
+			Formula: "mole",
+			Color:   rgb(100, 255, 150),
+			Binary:  "mole",
+		},
+		{
+			Name:    "Trippy",
+			Desc:    "A network diagnostic tool, combining traceroute and ping",
+			Formula: "trippy",
+			Color:   rgb(255, 140, 50),
+			Binary:  "trip",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_package_managers.go
+PATH: ./internal/components/catalog_package_managers.go
+================================================================================
+
+package components
+
+var catalogPackageManagers = Section{
+	Name: "Package Managers",
+	Items: []InstallItem{
+		{
+			Name:    "npm",
+			Desc:    "Standard package manager for the JavaScript and Node.js ecosystems",
+			Special: "npm-check",
+			Color:   rgb(255, 100, 90),
+			Binary:  "npm",
+		},
+		{
+			Name:    "Yarn",
+			Desc:    "Fast and deterministic package manager for JavaScript dependencies",
+			Formula: "yarn",
+			Color:   rgb(100, 180, 220),
+			Binary:  "yarn",
+		},
+		{
+			Name:    "pnpm",
+			Desc:    "Efficient alternative to npm using hard links for storage savings",
+			Formula: "pnpm",
+			Color:   rgb(255, 180, 60),
+			Binary:  "pnpm",
+		},
+		{
+			Name:    "uv",
+			Desc:    "Extremely fast Python package installer and resolver written in Rust",
+			Formula: "uv",
+			Color:   rgb(100, 255, 200),
+			Binary:  "uv",
+		},
+		{
+			Name:    "Poetry",
+			Desc:    "Dependency management and packaging tool for Python applications",
+			Formula: "poetry",
+			Color:   rgb(100, 140, 255),
+			Binary:  "poetry",
+		},
+		{
+			Name:    "pipx",
+			Desc:    "Tool for installing and running Python applications in isolation",
+			Formula: "pipx",
+			Color:   rgb(255, 220, 120),
+			Binary:  "pipx",
+		},
+		{
+			Name:    "Composer",
+			Desc:    "Dependency manager for PHP projects and library synchronization",
+			Formula: "composer",
+			Color:   rgb(200, 150, 100),
+			Binary:  "composer",
+		},
+		{
+			Name:    "Corepack",
+			Desc:    "Zero-dependency bridge for managing Yarn and pnpm binary versions",
+			Special: "npm-g",
+			Formula: "corepack",
+			Color:   rgb(150, 150, 150),
+			Binary:  "corepack",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_productivity.go
+PATH: ./internal/components/catalog_productivity.go
+================================================================================
+
+package components
+
+var catalogProductivity = Section{
+	Name: "Knowledge & Productivity",
+	Items: []InstallItem{
+		{
+			Name:   "Notion",
+			Desc:   "Connected workspace for notes, docs, and project management",
+			Cask:   "notion",
+			Color:  rgb(255, 255, 255),
+			Binary: "Notion",
+		},
+		{
+			Name:   "Obsidian",
+			Desc:   "Powerful knowledge base for building a second brain with Markdown",
+			Cask:   "obsidian",
+			Color:  rgb(150, 100, 255),
+			Binary: "Obsidian",
+		},
+		{
+			Name:   "Linear",
+			Desc:   "Issue tracker and project tool for high-performance dev teams",
+			Cask:   "linear-linear",
+			Color:  rgb(100, 100, 255),
+			Binary: "Linear",
+		},
+		{
+			Name:   "Todoist",
+			Desc:   "Simple and powerful task management tool for individuals and teams",
+			Cask:   "todoist",
+			Color:  rgb(219, 76, 63),
+			Binary: "Todoist",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_profiling.go
+PATH: ./internal/components/catalog_profiling.go
+================================================================================
+
+package components
+
+var catalogProfiling = Section{
+	Name: "Performance & Profiling",
+	Items: []InstallItem{
+		{
+			Name:    "gperftools",
+			Desc:    "Google performance tools including heap profiler and CPU profiler",
+			Formula: "gperftools",
+			Color:   rgb(80, 200, 120),
+			Binary:  "pprof",
+		},
+		{
+			Name:    "Valgrind",
+			Desc:    "Instrumentation framework for memory error detection and profiling",
+			Formula: "valgrind",
+			Color:   rgb(100, 150, 230),
+			Binary:  "valgrind",
+		},
+		{
+			Name:    "Hyperfine",
+			Desc:    "Command-line benchmarking tool with statistical analysis and warmup runs",
+			Formula: "hyperfine",
+			Color:   rgb(255, 220, 50),
+			Binary:  "hyperfine",
+		},
+		{
+			Name:    "bpftrace",
+			Desc:    "High-level tracing language for dynamic tracing of Linux kernel and apps",
+			Formula: "bpftrace",
+			Color:   rgb(255, 100, 50),
+			Binary:  "bpftrace",
+		},
+		{
+			Name:    "k6",
+			Desc:    "Developer-friendly load testing tool for APIs and microservices",
+			Formula: "k6",
+			Color:   rgb(120, 220, 80),
+			Binary:  "k6",
+		},
+		{
+			Name:    "wrk",
+			Desc:    "Modern HTTP benchmarking tool capable of generating significant load",
+			Formula: "wrk",
+			Color:   rgb(200, 180, 80),
+			Binary:  "wrk",
+		},
+		{
+			Name:    "Locust",
+			Desc:    "Scalable Python-based load testing framework with a web UI",
+			Special: "pipx-g",
+			Formula: "locust",
+			Color:   rgb(80, 200, 180),
+			Binary:  "locust",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_reverse_eng.go
+PATH: ./internal/components/catalog_reverse_eng.go
+================================================================================
+
+package components
+
+var catalogReverseEng = Section{
+	Name: "Reverse Engineering",
+	Items: []InstallItem{
+		{
+			Name:   "Ghidra",
+			Desc:   "NSA-developed reverse engineering framework for binary analysis",
+			Cask:   "ghidra",
+			Color:  rgb(255, 80, 80),
+			Binary: "ghidra",
+		},
+		{
+			Name:    "Radare2",
+			Desc:    "Open-source framework for disassembling and analyzing binary executables",
+			Formula: "radare2",
+			Color:   rgb(230, 100, 50),
+			Binary:  "r2",
+		},
+		{
+			Name:   "Hopper Disassembler",
+			Desc:   "macOS disassembler and decompiler for inspecting 32/64-bit binaries",
+			Cask:   "hopper-disassembler",
+			Color:  rgb(200, 120, 255),
+			Binary: "hopper",
+		},
+		{
+			Name:   "Charles",
+			Desc:   "HTTP proxy and monitor for inspecting web and mobile app traffic",
+			Cask:   "charles",
+			Color:  rgb(50, 170, 230),
+			Binary: "Charles",
+		},
+		{
+			Name:    "mitmproxy",
+			Desc:    "Interactive TLS-capable intercepting proxy for HTTP traffic analysis",
+			Formula: "mitmproxy",
+			Color:   rgb(30, 220, 180),
+			Binary:  "mitmproxy",
+		},
+		{
+			Name:   "Proxyman",
+			Desc:   "Native macOS HTTP debugger for intercepting and editing network requests",
+			Cask:   "proxyman",
+			Color:  rgb(80, 160, 255),
+			Binary: "Proxyman",
+		},
+		{
+			Name:    "sqlmap",
+			Desc:    "Automated SQL injection detection and exploitation tool for penetration testing",
+			Formula: "sqlmap",
+			Color:   rgb(255, 100, 50),
+			Binary:  "sqlmap",
+		},
+		{
+			Name:    "John the Ripper",
+			Desc:    "Fast password cracker for auditing and recovering hashed credentials",
+			Formula: "john",
+			Color:   rgb(200, 50, 50),
+			Binary:  "john",
+		},
+		{
+			Name:    "Hashcat",
+			Desc:    "GPU-accelerated password recovery tool supporting hundreds of hash types",
+			Formula: "hashcat",
+			Color:   rgb(255, 50, 100),
+			Binary:  "hashcat",
+		},
+		{
+			Name:    "Sleuth Kit",
+			Desc:    "Digital forensics tools for analyzing disk images and file systems",
+			Formula: "sleuthkit",
+			Color:   rgb(150, 130, 200),
+			Binary:  "fls",
+		},
+		{
+			Name:    "Binwalk",
+			Desc:    "Firmware analysis tool for extracting and reverse engineering binary images",
+			Formula: "binwalk",
+			Color:   rgb(100, 200, 160),
+			Binary:  "binwalk",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_security.go
+PATH: ./internal/components/catalog_security.go
+================================================================================
+
+package components
+
+var catalogSecurity = Section{
+	Name: "Security & Secrets",
+	Items: []InstallItem{
+		{
+			Name:    "Age (Encryption)",
+			Desc:    "Simple, modern and secure file encryption tool",
+			Formula: "age",
+			Color:   rgb(100, 255, 100),
+			Binary:  "age",
+		},
+		{
+			Name:    "Sops",
+			Desc:    "Editor of encrypted files that supports YAML, JSON, ENV, INI and BINARY",
+			Formula: "sops",
+			Color:   rgb(100, 150, 255),
+			Binary:  "sops",
+		},
+		{
+			Name:    "Cosign",
+			Desc:    "Container Signing, Verification and Storage in an OCI registry",
+			Formula: "cosign",
+			Color:   rgb(200, 100, 255),
+			Binary:  "cosign",
+		},
+		{
+			Name:    "Bitwarden CLI",
+			Desc:    "Secure and free password manager for all of your devices",
+			Formula: "bitwarden-cli",
+			Color:   rgb(52, 110, 235),
+			Binary:  "bw",
+		},
+		{
+			Name:   "1Password CLI",
+			Desc:   "Secure password manager with a powerful command-line interface",
+			Cask:   "1password-cli",
+			Color:  rgb(50, 200, 255),
+			Binary: "op",
+		},
+		{
+			Name:   "KeepassXC",
+			Desc:   "Cross-platform community-driven port of the Windows application KeePass",
+			Cask:   "keepassxc",
+			Color:  rgb(100, 255, 150),
+			Binary: "KeePassXC",
+		},
+		{
+			Name:   "Wireshark",
+			Desc:   "Network protocol analyzer for capturing and inspecting live traffic",
+			Cask:   "wireshark",
+			Color:  rgb(50, 180, 230),
+			Binary: "wireshark",
+		},
+		{
+			Name:    "Nmap",
+			Desc:    "Powerful network scanner for discovery, auditing, and security analysis",
+			Formula: "nmap",
+			Color:   rgb(100, 220, 100),
+			Binary:  "nmap",
+		},
+		{
+			Name:   "Burp Suite",
+			Desc:   "Web security testing platform for intercepting and analyzing HTTP traffic",
+			Cask:   "burp-suite",
+			Color:  rgb(255, 110, 50),
+			Binary: "burpsuite",
+		},
+		{
+			Name:    "Snyk CLI",
+			Desc:    "Developer-first security tool for finding and fixing vulnerabilities",
+			Formula: "snyk-cli",
+			Color:   rgb(100, 210, 150),
+			Binary:  "snyk",
+		},
+		{
+			Name:    "Trivy",
+			Desc:    "Comprehensive vulnerability scanner for containers, filesystems, and repos",
+			Formula: "trivy",
+			Color:   rgb(50, 200, 220),
+			Binary:  "trivy",
+		},
+		{
+			Name:    "Gitleaks",
+			Desc:    "SAST tool for detecting hardcoded secrets and sensitive data in git repos",
+			Formula: "gitleaks",
+			Color:   rgb(255, 80, 100),
+			Binary:  "gitleaks",
+		},
+		{
+			Name:   "Ngrok",
+			Desc:   "Secure tunneling to expose local servers to the public internet",
+			Cask:   "ngrok",
+			Color:  rgb(30, 190, 255),
+			Binary: "ngrok",
+		},
+		{
+			Name:   "Tailscale",
+			Desc:   "Zero-config VPN mesh for secure private networking across devices",
+			Cask:   "tailscale",
+			Color:  rgb(90, 150, 255),
+			Binary: "tailscale",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_shell_glow.go
+PATH: ./internal/components/catalog_shell_glow.go
+================================================================================
+
+package components
+
+var catalogShellGlow = Section{
+	Name: "Terminal Glow-Up & Shell",
+	Items: []InstallItem{
+		{
+			Name:    "Tmux",
+			Desc:    "Terminal multiplexer for managing multiple shell sessions",
+			Formula: "tmux",
+			Color:   rgb(50, 200, 50),
+			Binary:  "tmux",
+		},
+		{
+			Name:    "Fastfetch",
+			Desc:    "Fast and highly customizable system information tool",
+			Formula: "fastfetch",
+			Color:   rgb(255, 200, 100),
+			Binary:  "fastfetch",
+		},
+		{
+			Name:    "Glow (Markdown UI)",
+			Desc:    "Terminal-based Markdown reader with a slick UI",
+			Formula: "glow",
+			Color:   rgb(255, 100, 255),
+			Binary:  "glow",
+		},
+		{
+			Name:    "Gum (Shell Scripts)",
+			Desc:    "Tool for creating highly interactive shell scripts",
+			Formula: "gum",
+			Color:   rgb(100, 255, 200),
+			Binary:  "gum",
+		},
+		{
+			Name:    "Oh My Zsh",
+			Desc:    "Framework for managing Zsh configuration and plugins",
+			Formula: "zsh-completions", // brew doesn't have omz directly, but zsh-completions is a good companion
+			Color:   rgb(255, 100, 100),
+			Binary:  "zsh",
+		},
+		{
+			Name:    "Zsh Autosuggestions",
+			Desc:    "Suggests commands based on your shell history",
+			Formula: "zsh-autosuggestions",
+			Color:   rgb(100, 200, 255),
+			Binary:  "zsh-autosuggestions",
+		},
+		{
+			Name:    "Zsh Syntax Highlighting",
+			Desc:    "Real-time syntax highlighting for the shell",
+			Formula: "zsh-syntax-highlighting",
+			Color:   rgb(200, 255, 100),
+			Binary:  "zsh-syntax-highlighting",
+		},
+		{
+			Name:    "Aria2 (Downloader)",
+			Desc:    "Lightweight multi-protocol download utility",
+			Formula: "aria2",
+			Color:   rgb(255, 100, 200),
+			Binary:  "aria2c",
+		},
+		{
+			Name:    "VHS",
+			Desc:    "Terminal GIF recorder that lets you write CLI demos as code",
+			Formula: "vhs",
+			Color:   rgb(255, 150, 255),
+			Binary:  "vhs",
+		},
+		{
+			Name:    "Mods",
+			Desc:    "AI-powered CLI tool that adds smart features to pipelines",
+			Formula: "mods",
+			Color:   rgb(150, 100, 255),
+			Binary:  "mods",
+		},
+		{
+			Name:    "Atuin",
+			Desc:    "Magical shell history replaced with a SQLite database",
+			Formula: "atuin",
+			Color:   rgb(100, 200, 255),
+			Binary:  "atuin",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_system_tools.go
+PATH: ./internal/components/catalog_system_tools.go
+================================================================================
+
+package components
+
+var catalogSystemTools = Section{
+	Name: "System Tools",
+	Items: []InstallItem{
+		{
+			Name:    "htop",
+			Desc:    "Interactive process viewer and system monitor for Unix-based systems",
+			Formula: "htop",
+			Color:   rgb(100, 255, 100),
+			Binary:  "htop",
+		},
+		{
+			Name:    "btop",
+			Desc:    "Resource monitor showing detailed usage and system statistics",
+			Formula: "btop",
+			Color:   rgb(50, 200, 255),
+			Binary:  "btop",
+		},
+		{
+			Name:    "NeoVim",
+			Desc:    "Highly extensible terminal-based text editor built on Vim core",
+			Formula: "neovim",
+			Color:   rgb(100, 230, 50),
+			Binary:  "nvim",
+		},
+		{
+			Name:    "Vim",
+			Desc:    "Classic terminal editor for efficient text and code manipulation",
+			Formula: "vim",
+			Color:   rgb(50, 180, 50),
+			Binary:  "vim",
+		},
+		{
+			Name:    "jq",
+			Desc:    "Command-line processor for parsing and transforming JSON data",
+			Formula: "jq",
+			Color:   rgb(127, 219, 255),
+			Binary:  "jq",
+		},
+		{
+			Name:    "yq",
+			Desc:    "Lightweight command-line processor for YAML and XML document formats",
+			Formula: "yq",
+			Color:   rgb(255, 150, 50),
+			Binary:  "yq",
+		},
+		{
+			Name:    "fd",
+			Desc:    "Simple and fast alternative to the find command for file discovery",
+			Formula: "fd",
+			Color:   rgb(255, 100, 150),
+			Binary:  "fd",
+		},
+		{
+			Name:    "ncdu",
+			Desc:    "Disk usage analyzer with an interactive ncurses-based interface",
+			Formula: "ncdu",
+			Color:   rgb(150, 150, 255),
+			Binary:  "ncdu",
+		},
+		{
+			Name:    "Tree",
+			Desc:    "Recursive directory listing program that produces a depth-indented view",
+			Formula: "tree",
+			Color:   rgb(200, 150, 255),
+			Binary:  "tree",
+		},
+		{
+			Name:    "entr",
+			Desc:    "Utility for running arbitrary commands when specific files change",
+			Formula: "entr",
+			Color:   rgb(255, 210, 50),
+			Binary:  "entr",
+		},
+		{
+			Name:    "Lnav",
+			Desc:    "The Log File Navigator, an advanced log file viewer for the terminal",
+			Formula: "lnav",
+			Color:   rgb(100, 255, 150),
+			Binary:  "lnav",
+		},
+		{
+			Name:    "Ouch",
+			Desc:    "Obvious, Unified, Confident and Helpful CLI for compression",
+			Formula: "ouch",
+			Color:   rgb(255, 120, 50),
+			Binary:  "ouch",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_terminals.go
+PATH: ./internal/components/catalog_terminals.go
+================================================================================
+
+package components
+
+var catalogTerminals = Section{
+	Name: "Terminal Emulators",
+	Items: []InstallItem{
+		{
+			Name:   "Warp",
+			Desc:   "The modern, fast, and secure terminal with built-in AI",
+			Cask:   "warp",
+			Color:  rgb(30, 215, 96),
+			Binary: "Warp",
+		},
+		{
+			Name:   "WezTerm",
+			Desc:   "GPU-accelerated terminal emulator and multiplexer in Rust",
+			Cask:   "wezterm",
+			Color:  rgb(255, 100, 100),
+			Binary: "wezterm",
+		},
+		{
+			Name:   "Alacritty",
+			Desc:   "OpenGL terminal emulator that is simple and high-performance",
+			Cask:   "alacritty",
+			Color:  rgb(255, 200, 100),
+			Binary: "Alacritty",
+		},
+		{
+			Name:   "Kitty",
+			Desc:   "GPU-based terminal emulator that is fast and feature-rich",
+			Cask:   "kitty",
+			Color:  rgb(100, 255, 200),
+			Binary: "kitty",
+		},
+		{
+			Name:   "Ghostty",
+			Desc:   "Highly performant and slick terminal emulator for developers",
+			Cask:   "ghostty",
+			Color:  rgb(200, 100, 255),
+			Binary: "ghostty",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_testing.go
+PATH: ./internal/components/catalog_testing.go
+================================================================================
+
+package components
+
+var catalogTesting = Section{
+	Name: "Testing & Utilities",
+	Items: []InstallItem{
+		{
+			Name:    "Playwright",
+			Desc:    "Fast and reliable end-to-end testing tool for modern web apps",
+			Special: "npm-g",
+			Formula: "playwright",
+			Color:   rgb(100, 220, 100),
+			Binary:  "playwright",
+		},
+		{
+			Name:    "Cypress",
+			Desc:    "Testing framework for anything that runs in a web browser environment",
+			Special: "npm-g",
+			Formula: "cypress",
+			Color:   rgb(150, 180, 200),
+			Binary:  "cypress",
+		},
+		{
+			Name:    "Vitest",
+			Desc:    "Vite-native unit test framework for high-performance testing",
+			Special: "npm-g",
+			Formula: "vitest",
+			Color:   rgb(230, 210, 50),
+			Binary:  "vitest",
+		},
+		{
+			Name:    "Pre-commit",
+			Desc:    "Framework for managing and maintaining multi-language Git hooks",
+			Formula: "pre-commit",
+			Color:   rgb(255, 150, 100),
+			Binary:  "pre-commit",
+		},
+		{
+			Name:    "tox",
+			Desc:    "Command-line tool for managing and testing Python environments",
+			Formula: "tox",
+			Color:   rgb(50, 180, 255),
+			Binary:  "tox",
+		},
+		{
+			Name:    "Ruff",
+			Desc:    "Fast Python linter and formatter designed for high-performance projects",
+			Formula: "ruff",
+			Color:   rgb(100, 230, 255),
+			Binary:  "ruff",
+		},
+		{
+			Name:    "Black",
+			Desc:    "Strict Python code formatter for maintaining consistent code style",
+			Formula: "black",
+			Color:   rgb(100, 100, 100),
+			Binary:  "black",
+		},
+		{
+			Name:    "ESLint",
+			Desc:    "Static analysis tool for identifying and fixing problems in JavaScript",
+			Special: "npm-g",
+			Formula: "eslint",
+			Color:   rgb(150, 100, 255),
+			Binary:  "eslint",
+		},
+		{
+			Name:    "Hurl",
+			Desc:    "Command line tool that runs HTTP requests defined in a simple text format",
+			Formula: "hurl",
+			Color:   rgb(255, 120, 50),
+			Binary:  "hurl",
+		},
+		{
+			Name:    "Vegeta",
+			Desc:    "Versatile HTTP load testing tool built for performance and accuracy",
+			Formula: "vegeta",
+			Color:   rgb(100, 200, 255),
+			Binary:  "vegeta",
+		},
+		{
+			Name:    "Prism",
+			Desc:    "OpenAPI mock and validator CLI for rapid API development",
+			Special: "npm-g",
+			Formula: "@stoplight/prism-cli",
+			Color:   rgb(150, 150, 255),
+			Binary:  "prism",
+		},
+	},
+}
+
+
+================================================================================
+FILE: catalog_virtualization.go
+PATH: ./internal/components/catalog_virtualization.go
+================================================================================
+
+package components
+
+var catalogVirtualization = Section{
+	Name: "Virtualization",
+	Items: []InstallItem{
+		{
+			Name:   "UTM",
+			Desc:   "Virtual machine host for macOS using Apple Hypervisor, ideal for Apple Silicon",
+			Cask:   "utm",
+			Color:  rgb(50, 180, 255),
+			Binary: "utmctl",
+		},
+		{
+			Name:   "VMware Fusion",
+			Desc:   "Professional VM platform for running Windows and Linux on macOS",
+			Cask:   "vmware-fusion",
+			Color:  rgb(100, 160, 230),
+			Binary: "vmrun",
+		},
+		{
+			Name:   "VirtualBox",
+			Desc:   "Free and open-source hypervisor for x86 virtualization on macOS",
+			Cask:   "virtualbox",
+			Color:  rgb(80, 130, 220),
+			Binary: "vboxmanage",
+		},
+		{
+			Name:   "Vagrant",
+			Desc:   "Tool for building and managing portable development virtual machine environments",
+			Cask:   "vagrant",
+			Color:  rgb(30, 180, 140),
+			Binary: "vagrant",
+		},
+		{
+			Name:    "vagrant-completion",
+			Desc:    "Shell tab completion for Vagrant commands and subcommands",
+			Formula: "vagrant-completion",
+			Color:   rgb(30, 160, 120),
+			Binary:  "vagrant",
+		},
+	},
+}
+
+

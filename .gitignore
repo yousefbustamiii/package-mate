@@ -1,7 +1,3 @@
-# Bundling
-bundle.py
-bundle.txt
-client/
 
 # Binaries
 bin/
@@ -32,4 +28,7 @@ Thumbs.db
 
 # Catalog extraction
 list_catalog.py
-catalog_list.txt
+catalog_list.txt# Bundling
+bundle.py
+bundle.txt
+
