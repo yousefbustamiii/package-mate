@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Component } from "@/components/ui/gradient-bars-background";
-import { Copy, Check } from "lucide-react";
+import { Copy, Check, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const FULL_TITLE = "Master your macOS environment";
 
@@ -44,7 +45,7 @@ export default function App() {
 
   return (
     <>
-      <link rel="icon" href="https://i.postimg.cc/MHgz7r8D/Screenshot-2026-03-31-at-21-03-35.png" />
+      <link rel="icon" href="/browser-icon.ico" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
       <style>{`
         .font-modern { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
@@ -86,6 +87,13 @@ export default function App() {
               </span>
             </div>
           </div>
+
+          <Button
+            onClick={() => window.open('https://github.com/yousefbustamiii/package-mate', '_blank')}
+            className="mt-6 bg-black hover:bg-neutral-900 text-white font-medium px-5 py-3 rounded-lg text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 border border-neutral-800"
+          >
+            Github Repository <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
         </div>
       </Component>
     </>
