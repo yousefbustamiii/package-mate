@@ -201,7 +201,7 @@ go test ./...
 - `internal/sys/` – System helpers (architecture, shell detection, protected paths, app-running checks).
 - `internal/ui/` – Terminal user interface components (colored output, spinners, interactive search, prompts).
 
-![Package Mate Search](https://i.postimg.cc/x1xn1zr9/Screenshot-2026-03-29-at-13-00-24.png)
+![Package Mate Search](https://i.postimg.cc/ZRpM07KX/Screenshot-2026-03-31-at-21-36-24.png)
 
 ## License
 
