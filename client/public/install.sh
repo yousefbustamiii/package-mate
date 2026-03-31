@@ -81,9 +81,11 @@ echo ""
 TARBALL_URL="https://github.com/yousefbustamiii/package-mate/releases/download/v1.0.0/mate-v1.0.0-darwin-arm64.tar.gz"
 
 # Try to download the release binary
-if ! curl -fsSL -o /tmp/mate.tar.gz "$TARBALL_URL" 2>/dev/null; then
+HTTP_CODE=$(curl -w "%{http_code}" -fsSL -o /tmp/mate.tar.gz "$TARBALL_URL" 2>/dev/null || echo "000")
+
+if [ "$HTTP_CODE" = "000" ] || [ "$HTTP_CODE" = "404" ]; then
     echo ""
-    echo -e "  ${RED}Error:${RESET} Failed to download the release archive."
+    echo -e "  ${RED}Error:${RESET} Failed to download the release archive (HTTP ${HTTP_CODE})."
     echo -e "         The v1.0.0 release may not be available yet."
     echo ""
     echo -e "  ${YELLOW}Alternative:${RESET} Install from source instead:"
@@ -96,11 +98,23 @@ if ! curl -fsSL -o /tmp/mate.tar.gz "$TARBALL_URL" 2>/dev/null; then
     exit 1
 fi
 
+# Verify it's actually a gzip archive
+FILE_TYPE=$(file -b /tmp/mate.tar.gz 2>/dev/null || echo "unknown")
+if [[ ! "$FILE_TYPE" =~ [Gg]zip ]]; then
+    echo ""
+    echo -e "  ${RED}Error:${RESET} Downloaded file is not a valid gzip archive."
+    echo -e "         Detected format: ${FILE_TYPE}"
+    echo -e "         The release URL may be incorrect or the file is corrupted."
+    echo ""
+    exit 1
+fi
+
 # Extract the tarball to /tmp (may contain mate binary in a subdirectory)
 tar -xzf /tmp/mate.tar.gz -C /tmp/ || {
     echo ""
     echo -e "  ${RED}Error:${RESET} Failed to extract the mate binary from the downloaded archive."
     echo -e "         The release archive may be corrupted or in the wrong format."
+    echo -e "         Detected format: ${FILE_TYPE}"
     echo ""
     exit 1
 }
