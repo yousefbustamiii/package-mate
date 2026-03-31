@@ -10,7 +10,7 @@ export default function App() {
   const [showCursor, setShowCursor] = useState(true);
   const [typingDone, setTypingDone] = useState(false);
 
-  const command = "curl -fsSL https://package-mate-e3h.pages.dev/install.sh | bash";
+  const command = "curl -fsSL https://package-mate.com/install.sh | bash";
 
   useEffect(() => {
     let i = 0;
@@ -77,7 +77,7 @@ export default function App() {
               <span className="text-sm md:text-base font-mono">
                 <span style={{ color: '#3A86FF' }}>curl </span>
                 <span style={{ color: '#3A86FF' }}>-fsSL </span>
-                <span className="text-white/70">https://package-mate-e3h.pages.dev/install.sh | bash</span>
+                <span className="text-white/70">https://package-mate.com/install.sh | bash</span>
               </span>
             </div>
           </div>
