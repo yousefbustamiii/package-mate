@@ -98,26 +98,29 @@ if [ "$HTTP_CODE" = "000" ] || [ "$HTTP_CODE" = "404" ]; then
     exit 1
 fi
 
-# Verify it's actually a gzip archive
+# Verify what we actually downloaded
 FILE_TYPE=$(file -b /tmp/mate.tar.gz 2>/dev/null || echo "unknown")
-if [[ ! "$FILE_TYPE" =~ [Gg]zip ]]; then
+
+# Case 1: It's actually a gzip archive - extract it
+if [[ "$FILE_TYPE" =~ [Gg]zip ]]; then
+    tar -xzf /tmp/mate.tar.gz -C /tmp/ || {
+        echo ""
+        echo -e "  ${RED}Error:${RESET} Failed to extract the archive."
+        echo -e "         The release archive may be corrupted."
+        echo ""
+        exit 1
+    }
+# Case 2: It's already the binary (GitHub sometimes serves raw binaries with .tar.gz extension)
+elif [[ "$FILE_TYPE" =~ "Mach-O" ]]; then
+    mv /tmp/mate.tar.gz /tmp/mate
+else
     echo ""
-    echo -e "  ${RED}Error:${RESET} Downloaded file is not a valid gzip archive."
+    echo -e "  ${RED}Error:${RESET} Downloaded file is not a valid archive or binary."
     echo -e "         Detected format: ${FILE_TYPE}"
     echo -e "         The release URL may be incorrect or the file is corrupted."
     echo ""
     exit 1
 fi
-
-# Extract the tarball to /tmp (may contain mate binary in a subdirectory)
-tar -xzf /tmp/mate.tar.gz -C /tmp/ || {
-    echo ""
-    echo -e "  ${RED}Error:${RESET} Failed to extract the mate binary from the downloaded archive."
-    echo -e "         The release archive may be corrupted or in the wrong format."
-    echo -e "         Detected format: ${FILE_TYPE}"
-    echo ""
-    exit 1
-}
 
 # Find the mate binary (could be directly in /tmp or in a subdirectory)
 if [ -f /tmp/mate ]; then
@@ -143,6 +146,7 @@ chmod +x "$MATE_BINARY"
 # Cleanup the tarball and extracted directory
 rm -f /tmp/mate.tar.gz
 rm -rf /tmp/mate-v1.0.0-darwin-arm64
+rm -rf /tmp/mate-*
 
 # 6. Request sudo with standard elegant macOS style
 echo -e "  ${GREEN}Download and extraction successful.${RESET}\n"
