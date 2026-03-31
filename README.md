@@ -15,30 +15,19 @@ The tool performs a system scan to detect existing installations, distinguishes 
 - Conflict resolution with prompts for overriding unmanaged binaries or removing dependency-linked formulae.
 - Protection against modifying macOS system protected paths (SIP).
 - Detailed version information and installation date retrieval.
-- Single command access: `mate` opens the dashboard, `mate <tool>` opens an interactive action menu.
+- Background installation system with desktop notifications.
+- Interactive search dashboard: type to filter, press Enter to open tool actions.
 
 ## Installation
 
-### Prerequisites
-
-Package Mate requires Go 1.22 or later to build from source. The binary itself has no runtime dependencies other than the tools it manages.
-
-### From Source
+Install Package Mate with a single command:
 
 ```bash
-git clone https://github.com/yousefbustamiii/package-mate.git
-cd package-mate
-go build -o mate .
-sudo cp mate /usr/local/bin/   # or any directory in your PATH
-```
-
-Alternatively, you can install using Go:
-
-```bash
-go install github.com/yousefbustamiii/package-mate@latest
+curl -fsSL https://package-mate.com/install.sh | bash
 ```
 
 ### First Run
+
 When you run `mate` for the first time, if Homebrew is not present, the tool will display a prompt to install it. Homebrew is required for most installation operations.
 
 ## Usage
@@ -49,7 +38,7 @@ When you run `mate` for the first time, if Homebrew is not present, the tool wil
 mate
 ```
 
-Opens an interactive terminal UI showing all available tools grouped by category. Status indicators show:
+Opens an interactive terminal UI showing all available tools grouped by category. Type to search and filter results in real-time. Status indicators show:
 
 - `[✓]` Installed and up to date (managed)
 - `[↻]` Installed but an update is available
@@ -60,18 +49,13 @@ Use the arrow keys or `j`/`k` to navigate results. Press `Enter` to select a too
 
 ### Direct Tool Access
 
-Opens an action menu for the specified tool directly, bypassing the search dashboard. For example:
+Select a tool from the dashboard to open its action menu with three options:
 
-```bash
-mate node
-mate redis
-mate docker
-```
+1. **Install or Update** - Installs the tool or updates if already installed
+2. **Uninstall** - Removes the tool from your system
+3. **Information & Versions** - Shows detailed version and installation info
 
-The action menu provides three options:
-1. Install or Update
-2. Uninstall
-3. Information & Versions
+Use the search dashboard to find and select tools. Type to filter results in real-time, then press `Enter` to open the action menu for any tool.
 
 ### Information
 
@@ -83,40 +67,67 @@ The action menu provides three options:
 # Open the dashboard
 mate
 
-# Install Node.js
-mate node
-# then select option 1
+# Type to search for Node.js, then press Enter to open its action menu
 
-# Check versions of PostgreSQL
-mate postgresql
-# then select option 3
+# Select option 1 to install or update
 
-# Remove an unmanaged binary
-mate redis
-# select uninstall, then choose the unmanaged version from the list
+# Search for PostgreSQL, press Enter, then select option 3 for version info
+
+# Search for redis, press Enter, select uninstall to remove an unmanaged binary
+
+# View background installations
+mate bg
+
+# Clear finished background jobs
+mate cleanup bg
 ```
 
 ## Catalog Overview
-Package Mate includes a curated catalog of over 80 developer tools organized into sections:
+
+Package Mate includes a curated catalog of **over 300 developer tools** organized into sections:
 
 - **Homebrew Setup**: Homebrew itself and update command.
-- **Databases**: MySQL, PostgreSQL, MariaDB, CockroachDB, TimescaleDB, MongoDB, SQLite, ClickHouse, ElasticSearch, Neo4j, Firebase CLI, Supabase CLI.
-- **Caching & Messaging**: Redis, Memcached, NATS, Kafka, RabbitMQ, ActiveMQ, ZeroMQ, kcat.
-- **Containers & DevOps**: Docker, Docker Compose, Colima, Kubernetes CLI, k9s, Helm, Terraform, Ansible, AWS CLI, Google Cloud SDK, Azure CLI.
-- **Backend & Runtime**: Node, Bun, Deno, Rust, Python, Java, Go, PHP, Ruby, .NET SDK, Elixir, Erlang.
-- **DB GUI & Dev Tools**: TablePlus, DBeaver, RedisInsight, Postman, Insomnia, HTTPie, Lens, Sequel Ace.
-- **Coding CLIs & AI**: Claude Code, Gemini CLI, Aider, Continue CLI, GitHub CLI.
+- **Backend & Runtime**: Node, Bun, Deno, Rust, Python, Java, Go, PHP, Ruby, .NET SDK, Elixir, Erlang, Delve, Air, golang-migrate.
+- **Languages & Runtimes**: Zig, Haskell, OCaml, C++ (Clang), Rustup, Lua, Perl, Dart, Kotlin, Scala, Fortran (GCC), Julia, Flutter.
+- **Coding CLIs & AI**: Claude Code, Gemini CLI, Aider, Continue CLI, GitHub CLI, Ollama, Swag, Mockery, Templ, Antigravity.
 - **Dev Essentials**: Git, Git LFS, LazyGit, fzf, ripgrep, bat, eza, zoxide, Starship, direnv, NVM.
 - **Package Managers**: npm, Yarn, pnpm, uv, Poetry, pipx, Composer, Corepack.
-- **Testing & Utilities**: Playwright, Cypress, Vitest, pre-commit, tox, Ruff, Black, ESLint.
-- **System Tools**: htop, btop, NeoVim, Vim, jq, yq, fd, ncdu, tree, entr.
+- **Testing & Utilities**: Playwright, Cypress, Vitest, pre-commit, tox, Ruff, Black, ESLint, Hurl, Vegeta, Prism.
+- **Editors & IDEs**: Cursor, Zed, Sublime Text, Android Studio, Nova.
+- **Performance & Profiling**: gperftools, Valgrind, Hyperfine, bpftrace, k6, wrk, Locust.
+- **Dev Utilities**: Watchman, Mise, Lefthook, Act, JSON Export (jtbl), golangci-lint, GoReleaser, Biome, pyenv, mkcert, Task.
+- **Databases**: MySQL, PostgreSQL, MariaDB, CockroachDB, TimescaleDB, MongoDB, SQLite, ClickHouse, ElasticSearch, Neo4j, Firebase CLI, Supabase CLI, pgcli, sqlc, Atlas, dbmate, Litestream, pgBadger.
+- **Caching & Messaging**: Redis, Memcached, NATS, Kafka, RabbitMQ, ActiveMQ, ZeroMQ, kcat.
+- **Containers & DevOps**: Docker, Docker Compose, Colima, Kubernetes CLI, k9s, Helm, Terraform, Ansible, AWS CLI, Google Cloud SDK, Azure CLI, Lazydocker.
+- **DB GUI & Dev Tools**: TablePlus, DBeaver, RedisInsight, Postman, Insomnia, Lens, Sequel Ace, pgweb, usql.
+- **Infrastructure & Cloud**: Vercel CLI, Netlify CLI, Heroku CLI, Pulumi, OpenTofu, AWS CDK, DigitalOcean CLI, Prometheus, Grafana, Vault, Boundary.
+- **Virtualization**: UTM, VMware Fusion, VirtualBox, Vagrant, vagrant-completion.
+- **Cloud & Kubernetes**: Krew, Kustomize, Minikube, LocalStack CLI, Tfenv, Terragrunt, Kwid.
+- **System Tools**: htop, btop, NeoVim, Vim, jq, yq, fd, ncdu, Tree, entr, Lnav, Ouch.
+- **Terminal Glow-Up & Shell**: Tmux, Fastfetch, Glow, Gum, Oh My Zsh, Zsh Autosuggestions, Zsh Syntax Highlighting, Aria2, VHS, Mods, Atuin.
+- **macOS Essentials**: Raycast, Rectangle, AltTab, Latest, HiddenBar, Shottr, AppCleaner, IINA, Xcodes CLI, Syncthing, Maccy, CleanShot X.
+- **Modern CLI Replacements**: Dust, Bottom, Tldr, TheFuck, Rclone, Dog, Choose, Gdu, Zellij, Just, OrbStack, fnm, scc, Watchexec, Dasel.
+- **Terminal Emulators**: Warp, WezTerm, Alacritty, Kitty, Ghostty.
+- **Media & Graphics**: FFmpeg, ImageMagick, ExifTool, OptiPNG, Inkscape, GIMP, Blender, Spotify.
+- **Low-Level & Embedded**: avr-gcc, arm-none-eabi-gcc, SDCC, avrdude, OpenOCD, dfu-util, minicom, screen, picocom, KiCad, Fritzing.
+- **Docs & Static Sites**: Hugo, Jekyll, Eleventy, MkDocs, Pandoc, Doxygen, Graphviz, Spectral, OpenAPI Generator.
+- **Data & Analytics**: DuckDB, VisiData, DVC, PostGIS.
+- **Web Browsers**: Google Chrome, Firefox Developer Edition, Arc, Brave.
+- **Knowledge & Productivity**: Notion, Obsidian, Linear, Todoist.
+- **Security & Secrets**: Age, Sops, Cosign, Bitwarden CLI, 1Password CLI, KeepassXC, Wireshark, Nmap, Burp Suite, Snyk CLI, Trivy, Gitleaks, Ngrok, Tailscale.
+- **Reverse Engineering**: Ghidra, Radare2, Hopper Disassembler, Charles, mitmproxy, Proxyman, sqlmap, John the Ripper, Hashcat, Sleuth Kit, Binwalk.
+- **Networking & API**: Doggo, MTR, Step CLI, HTTPie, Cloudflared, Termius, Stripe CLI, Websocat, Bruno, xh, gRPCurl, Mole, Trippy.
+- **Communications**: Discord, Slack, Telegram, Zoom.
+- **Security Network**: Additional security and networking tools.
 
 Each tool defines its primary binary name, description, and an optional Homebrew formula or cask. Special tools use custom installation logic (for example, Rust via rustup, Claude Code via npm).
 
 ## How It Works
 
 ### Detection System
+
 When you run `mate`, the tool performs a single-pass system scan:
+
 1. Scans `PATH` for binaries and resolves symlinks.
 2. Queries Homebrew for installed formulae and casks, including versioned formulae (e.g., `postgresql@16`).
 3. Checks for outdated packages using `brew outdated`.
@@ -125,7 +136,9 @@ When you run `mate`, the tool performs a single-pass system scan:
 The detection results drive the dashboard status icons and inform the interactive prompts.
 
 ### Installation Flow
+
 For a given tool, the installation process follows this logic:
+
 1. Check if the tool is already installed using the detection system.
 2. If installed and up to date, exit with a notice.
 3. If installed but outdated, prompt the user to update.
@@ -135,8 +148,20 @@ For a given tool, the installation process follows this logic:
 7. Execute the appropriate install command (`brew install`, `brew install --cask`, `npm install -g`, `pipx install`, etc.).
 8. If an override was performed, remove the old binary or Homebrew package after the new installation completes, handling permission errors and dependency conflicts with `sudo` or force removal as needed.
 
+### Background Installation System
+
+Installations run in the background as detached processes:
+
+- Jobs are persisted to `~/.package-mate/jobs/` as JSON files
+- Desktop notifications when installations complete or fail
+- Real-time status tracking with `mate bg`
+- Automatic cleanup of jobs older than 24 hours
+- Manual cleanup with `mate cleanup bg`
+
 ### Safety Protections
+
 Package Mate refuses to modify files in system protected directories:
+
 - `/System`
 - `/Library/Apple`
 - `/usr/bin`, `/usr/sbin`, `/bin`, `/sbin`
@@ -146,6 +171,7 @@ Package Mate refuses to modify files in system protected directories:
 If an unmanaged binary resides in one of these paths, the tool displays a safety alert and aborts the operation. This prevents accidental damage to macOS core components.
 
 ### Uninstall Handling
+
 Uninstallation supports removing specific versions when multiple are present. For managed versions, it uses `brew uninstall`. For unmanaged binaries, it uses `rm` with `sudo` when necessary, after confirming the path is not protected. For dependency conflicts (e.g., a formula required by others), the tool prompts the user to force uninstall or skip.
 
 ## Building from Source
@@ -165,11 +191,13 @@ go test ./...
 
 ## Project Structure
 
-- `cmd/` – Command implementations for install, uninstall, and info.
+- `cmd/` – Command implementations for install, uninstall, info, and background jobs.
+- `cmd/bg/` – Interactive background jobs viewer.
 - `internal/components/` – Static catalog of tools, sections, and resolution logic.
 - `internal/installer/` – Core installation logic, Homebrew interaction, detection, and version management.
 - `internal/installer/specials/` – Custom installers for non-Homebrew tools (npm, pipx, rustup, nvm).
 - `internal/installer/versions/` – Version detection for special tools.
+- `internal/background/` – Background job management, persistence, and notifications.
 - `internal/sys/` – System helpers (architecture, shell detection, protected paths, app-running checks).
 - `internal/ui/` – Terminal user interface components (colored output, spinners, interactive search, prompts).
 
@@ -180,4 +208,5 @@ go test ./...
 This project is licensed under the Apache License 2.0. See the `LICENSE` file for details.
 
 ## Contributing
+
 Contributions are welcome. Please open an issue or pull request on GitHub.
