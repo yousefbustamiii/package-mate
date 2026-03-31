@@ -29,3 +29,7 @@ Thumbs.db
 
 # Test coverage
 *.out
+
+# Catalog extraction
+list_catalog.py
+catalog_list.txt

@@ -1,0 +1,522 @@
+[
+  {
+    "Name": "System Tools",
+    "Items": [
+      {
+        "Name": "htop",
+        "Desc": "Interactive process viewer and system monitor for Unix-based systems",
+        "Formula": "htop",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "htop"
+      },
+      {
+        "Name": "btop",
+        "Desc": "Resource monitor showing detailed usage and system statistics",
+        "Formula": "btop",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 255)",
+        "Binary": "btop"
+      },
+      {
+        "Name": "NeoVim",
+        "Desc": "Highly extensible terminal-based text editor built on Vim core",
+        "Formula": "neovim",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 50)",
+        "Binary": "nvim"
+      },
+      {
+        "Name": "Vim",
+        "Desc": "Classic terminal editor for efficient text and code manipulation",
+        "Formula": "vim",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 50)",
+        "Binary": "vim"
+      },
+      {
+        "Name": "jq",
+        "Desc": "Command-line processor for parsing and transforming JSON data",
+        "Formula": "jq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(127, 219, 255)",
+        "Binary": "jq"
+      },
+      {
+        "Name": "yq",
+        "Desc": "Lightweight command-line processor for YAML and XML document formats",
+        "Formula": "yq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "yq"
+      },
+      {
+        "Name": "fd",
+        "Desc": "Simple and fast alternative to the find command for file discovery",
+        "Formula": "fd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "fd"
+      },
+      {
+        "Name": "ncdu",
+        "Desc": "Disk usage analyzer with an interactive ncurses-based interface",
+        "Formula": "ncdu",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "ncdu"
+      },
+      {
+        "Name": "Tree",
+        "Desc": "Recursive directory listing program that produces a depth-indented view",
+        "Formula": "tree",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 255)",
+        "Binary": "tree"
+      },
+      {
+        "Name": "entr",
+        "Desc": "Utility for running arbitrary commands when specific files change",
+        "Formula": "entr",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 210, 50)",
+        "Binary": "entr"
+      },
+      {
+        "Name": "Lnav",
+        "Desc": "The Log File Navigator, an advanced log file viewer for the terminal",
+        "Formula": "lnav",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "lnav"
+      },
+      {
+        "Name": "Ouch",
+        "Desc": "Obvious, Unified, Confident and Helpful CLI for compression",
+        "Formula": "ouch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "ouch"
+      }
+    ]
+  },
+  {
+    "Name": "Terminal Glow-Up \u0026 Shell",
+    "Items": [
+      {
+        "Name": "Tmux",
+        "Desc": "Terminal multiplexer for managing multiple shell sessions",
+        "Formula": "tmux",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 50)",
+        "Binary": "tmux"
+      },
+      {
+        "Name": "Fastfetch",
+        "Desc": "Fast and highly customizable system information tool",
+        "Formula": "fastfetch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "fastfetch"
+      },
+      {
+        "Name": "Glow (Markdown UI)",
+        "Desc": "Terminal-based Markdown reader with a slick UI",
+        "Formula": "glow",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "glow"
+      },
+      {
+        "Name": "Gum (Shell Scripts)",
+        "Desc": "Tool for creating highly interactive shell scripts",
+        "Formula": "gum",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "gum"
+      },
+      {
+        "Name": "Oh My Zsh",
+        "Desc": "Framework for managing Zsh configuration and plugins",
+        "Formula": "zsh-completions",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "zsh"
+      },
+      {
+        "Name": "Zsh Autosuggestions",
+        "Desc": "Suggests commands based on your shell history",
+        "Formula": "zsh-autosuggestions",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "zsh-autosuggestions"
+      },
+      {
+        "Name": "Zsh Syntax Highlighting",
+        "Desc": "Real-time syntax highlighting for the shell",
+        "Formula": "zsh-syntax-highlighting",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "zsh-syntax-highlighting"
+      },
+      {
+        "Name": "Aria2 (Downloader)",
+        "Desc": "Lightweight multi-protocol download utility",
+        "Formula": "aria2",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "aria2c"
+      },
+      {
+        "Name": "VHS",
+        "Desc": "Terminal GIF recorder that lets you write CLI demos as code",
+        "Formula": "vhs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 255)",
+        "Binary": "vhs"
+      },
+      {
+        "Name": "Mods",
+        "Desc": "AI-powered CLI tool that adds smart features to pipelines",
+        "Formula": "mods",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "mods"
+      },
+      {
+        "Name": "Atuin",
+        "Desc": "Magical shell history replaced with a SQLite database",
+        "Formula": "atuin",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "atuin"
+      }
+    ]
+  },
+  {
+    "Name": "macOS Essentials",
+    "Items": [
+      {
+        "Name": "Raycast",
+        "Desc": "Faster and more powerful replacement for Spotlight",
+        "Formula": "",
+        "Cask": "raycast",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "raycast"
+      },
+      {
+        "Name": "Rectangle",
+        "Desc": "Window management tool to snap windows into positions",
+        "Formula": "",
+        "Cask": "rectangle",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "Rectangle"
+      },
+      {
+        "Name": "AltTab",
+        "Desc": "Brings back Windows-style Alt-Tab window switching",
+        "Formula": "",
+        "Cask": "alt-tab",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "AltTab"
+      },
+      {
+        "Name": "Latest",
+        "Desc": "Small utility to check for software updates of your apps",
+        "Formula": "",
+        "Cask": "latest",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "Latest"
+      },
+      {
+        "Name": "HiddenBar",
+        "Desc": "Menubar icon organizer to hide unused status items",
+        "Formula": "",
+        "Cask": "hiddenbar",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "HiddenBar"
+      },
+      {
+        "Name": "Shottr (Screenshots)",
+        "Desc": "High-performance pixel-perfect screenshot tool",
+        "Formula": "",
+        "Cask": "shottr",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "Shottr"
+      },
+      {
+        "Name": "AppCleaner",
+        "Desc": "Properly uninstalls apps and removes leftover files",
+        "Formula": "",
+        "Cask": "appcleaner",
+        "Special": "",
+        "Color": "rgb(200, 200, 200)",
+        "Binary": "AppCleaner"
+      },
+      {
+        "Name": "IINA (Media Player)",
+        "Desc": "Modern and feature-rich media player for macOS",
+        "Formula": "",
+        "Cask": "iina",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "IINA"
+      },
+      {
+        "Name": "Xcodes CLI",
+        "Desc": "Command-line tool to install and switch between versions of Xcode",
+        "Formula": "xcodes",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "xcodes"
+      },
+      {
+        "Name": "Syncthing",
+        "Desc": "Continuous file synchronization program that syncs files in real time",
+        "Formula": "",
+        "Cask": "syncthing",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "Syncthing"
+      },
+      {
+        "Name": "Maccy",
+        "Desc": "Lightweight clipboard manager for macOS with a simple interface",
+        "Formula": "",
+        "Cask": "maccy",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "Maccy"
+      },
+      {
+        "Name": "CleanShot X",
+        "Desc": "Professional screen capture \u0026 recording tool for macOS",
+        "Formula": "",
+        "Cask": "cleanshot",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "CleanShot X"
+      }
+    ]
+  },
+  {
+    "Name": "Modern CLI Replacements",
+    "Items": [
+      {
+        "Name": "Dust (du replacement)",
+        "Desc": "More intuitive and visual replacement for du",
+        "Formula": "du-dust",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "dust"
+      },
+      {
+        "Name": "Bottom (btm)",
+        "Desc": "Graphical process and system monitor for terminal",
+        "Formula": "bottom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "btm"
+      },
+      {
+        "Name": "Tldr (Simple Man)",
+        "Desc": "Simplified and community-driven man pages",
+        "Formula": "tldr",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "tldr"
+      },
+      {
+        "Name": "TheFuck",
+        "Desc": "Tool that corrects your previous console commands",
+        "Formula": "thefuck",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "thefuck"
+      },
+      {
+        "Name": "Rclone",
+        "Desc": "Rsync for cloud storage that supports 40+ providers",
+        "Formula": "rclone",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "rclone"
+      },
+      {
+        "Name": "Dog (dig replacement)",
+        "Desc": "Modern and user-friendly DNS lookup tool",
+        "Formula": "dog",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "dog"
+      },
+      {
+        "Name": "Choose (cut/awk alt)",
+        "Desc": "Faster and simpler alternative to cut/awk",
+        "Formula": "choose-rust",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "choose"
+      },
+      {
+        "Name": "Gdu (Disk Usage)",
+        "Desc": "Extremely fast disk usage analyzer in Go",
+        "Formula": "gdu",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "gdu"
+      },
+      {
+        "Name": "Zellij",
+        "Desc": "Terminal workspace and multiplexer with a focus on ease of use",
+        "Formula": "zellij",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "zellij"
+      },
+      {
+        "Name": "Just",
+        "Desc": "Handy command runner for common tasks with a Make-like syntax",
+        "Formula": "just",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 80, 40)",
+        "Binary": "just"
+      },
+      {
+        "Name": "OrbStack",
+        "Desc": "Fast, light, and easy way to run Docker and Linux on macOS",
+        "Formula": "",
+        "Cask": "orbstack",
+        "Special": "",
+        "Color": "rgb(30, 140, 255)",
+        "Binary": "OrbStack"
+      },
+      {
+        "Name": "Fast Node Manager (fnm)",
+        "Desc": "Fast and simple Node.js version manager built in Rust",
+        "Formula": "fnm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(250, 100, 50)",
+        "Binary": "fnm"
+      },
+      {
+        "Name": "Sloc Cloc and Code (scc)",
+        "Desc": "Very fast code counter with complexity and COCOMO estimates",
+        "Formula": "scc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "scc"
+      },
+      {
+        "Name": "Watchexec",
+        "Desc": "Execute commands in response to file modifications",
+        "Formula": "watchexec",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "watchexec"
+      },
+      {
+        "Name": "Dasel",
+        "Desc": "Query and update data structures from the terminal, any format",
+        "Formula": "dasel",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "dasel"
+      }
+    ]
+  },
+  {
+    "Name": "Terminal Emulators",
+    "Items": [
+      {
+        "Name": "Warp",
+        "Desc": "The modern, fast, and secure terminal with built-in AI",
+        "Formula": "",
+        "Cask": "warp",
+        "Special": "",
+        "Color": "rgb(30, 215, 96)",
+        "Binary": "Warp"
+      },
+      {
+        "Name": "WezTerm",
+        "Desc": "GPU-accelerated terminal emulator and multiplexer in Rust",
+        "Formula": "",
+        "Cask": "wezterm",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "wezterm"
+      },
+      {
+        "Name": "Alacritty",
+        "Desc": "OpenGL terminal emulator that is simple and high-performance",
+        "Formula": "",
+        "Cask": "alacritty",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "Alacritty"
+      },
+      {
+        "Name": "Kitty",
+        "Desc": "GPU-based terminal emulator that is fast and feature-rich",
+        "Formula": "",
+        "Cask": "kitty",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "kitty"
+      },
+      {
+        "Name": "Ghostty",
+        "Desc": "Highly performant and slick terminal emulator for developers",
+        "Formula": "",
+        "Cask": "ghostty",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "ghostty"
+      }
+    ]
+  }
+]

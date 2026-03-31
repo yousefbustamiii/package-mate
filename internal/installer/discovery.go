@@ -24,11 +24,8 @@ func PerformSystemScan() *SystemScan {
 		BrewRoot:  sys.BrewPrefix(),
 	}
 
-	// 1. Fetch Outdated (Managed)
-	scan.Outdated, _ = AllOutdated()
-
-	// 2. Fetch Installed (Managed)
-	scan.Installed, _ = AllInstalled()
+	// Fetch all Homebrew data in one pass (Installed + Outdated)
+	scan.Installed, scan.Outdated, _ = FetchFullBrewStatus()
 
 	// 3. Scan PATH exactly once
 	pathStr := os.Getenv("PATH")

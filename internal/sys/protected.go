@@ -13,9 +13,27 @@ var protectedPrefixes = []string{
 	"/opt/apple",     // Apple optional software
 }
 
+var systemPrefixes = []string{
+	"/usr/local", // Shared system binaries (often root-owned)
+}
+
 // IsProtectedPath returns true if the given path is a vital macOS system file.
 func IsProtectedPath(path string) bool {
 	for _, p := range protectedPrefixes {
+		if strings.HasPrefix(path, p) {
+			return true
+		}
+	}
+	return false
+}
+
+// IsSystemPath returns true if the path is a system-owned location where
+// background operations might require elevations (e.g. /usr/local).
+func IsSystemPath(path string) bool {
+	if IsProtectedPath(path) {
+		return true
+	}
+	for _, p := range systemPrefixes {
 		if strings.HasPrefix(path, p) {
 			return true
 		}

@@ -1,0 +1,1088 @@
+[
+  {
+    "Name": "Homebrew Setup",
+    "Items": [
+      {
+        "Name": "Homebrew",
+        "Desc": "Standard package manager for macOS and Linux",
+        "Formula": "",
+        "Cask": "",
+        "Special": "brew-install",
+        "Color": "rgb(255, 170, 50)",
+        "Binary": "brew"
+      },
+      {
+        "Name": "Homebrew Update",
+        "Desc": "Synchronize local formula and cask metadata with upstream",
+        "Formula": "",
+        "Cask": "",
+        "Special": "brew-update",
+        "Color": "rgb(255, 230, 100)",
+        "Binary": "brew"
+      }
+    ]
+  },
+  {
+    "Name": "Backend \u0026 Runtime",
+    "Items": [
+      {
+        "Name": "Node",
+        "Desc": "JavaScript runtime built on the V8 engine for server-side applications",
+        "Formula": "node",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(130, 220, 120)",
+        "Binary": "node"
+      },
+      {
+        "Name": "Bun",
+        "Desc": "Fast JavaScript runtime and toolkit for efficient modern development",
+        "Formula": "bun",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 230, 160)",
+        "Binary": "bun"
+      },
+      {
+        "Name": "Deno",
+        "Desc": "Secure runtime for JavaScript and TypeScript with built-in toolchain",
+        "Formula": "deno",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "deno"
+      },
+      {
+        "Name": "Python",
+        "Desc": "Versatile programming language for data science, AI, and scripting",
+        "Formula": "python",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 160, 230)",
+        "Binary": "python3"
+      },
+      {
+        "Name": "Java",
+        "Desc": "Object-oriented language for cross-platform enterprise development",
+        "Formula": "openjdk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 170, 50)",
+        "Binary": "java"
+      },
+      {
+        "Name": "Go",
+        "Desc": "Statically typed compiled language designed for scalable services",
+        "Formula": "go",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "go"
+      },
+      {
+        "Name": "PHP",
+        "Desc": "Server-side scripting language primarily used for modern web development",
+        "Formula": "php",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 150, 230)",
+        "Binary": "php"
+      },
+      {
+        "Name": "Ruby",
+        "Desc": "Dynamic language focusing on developer productivity and elegant syntax",
+        "Formula": "ruby",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 50, 50)",
+        "Binary": "ruby"
+      },
+      {
+        "Name": ".NET",
+        "Desc": "Cross-platform developer platform for building web, cloud, and mobile apps",
+        "Formula": "",
+        "Cask": "dotnet-sdk",
+        "Special": "",
+        "Color": "rgb(130, 80, 230)",
+        "Binary": "dotnet"
+      },
+      {
+        "Name": "Elixir",
+        "Desc": "Functional language for scalable and maintainable concurrent systems",
+        "Formula": "elixir",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 80, 200)",
+        "Binary": "elixir"
+      },
+      {
+        "Name": "Erlang",
+        "Desc": "Functional programming language used for fault-tolerant applications",
+        "Formula": "erlang",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 50, 80)",
+        "Binary": "erl"
+      },
+      {
+        "Name": "Delve",
+        "Desc": "The official debugger for the Go programming language",
+        "Formula": "delve",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "dlv"
+      },
+      {
+        "Name": "Air",
+        "Desc": "Live reload for Go apps, fast and efficient during development",
+        "Formula": "air",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "air"
+      },
+      {
+        "Name": "golang-migrate",
+        "Desc": "Powerful database migrations CLI tool for developer workflows",
+        "Formula": "golang-migrate",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "migrate"
+      }
+    ]
+  },
+  {
+    "Name": "Languages \u0026 Runtimes",
+    "Items": [
+      {
+        "Name": "Zig",
+        "Desc": "General-purpose language for systems programming with manual memory control",
+        "Formula": "zig",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 165, 50)",
+        "Binary": "zig"
+      },
+      {
+        "Name": "Haskell",
+        "Desc": "Purely functional language with strong static typing and lazy evaluation",
+        "Formula": "ghc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 220)",
+        "Binary": "ghc"
+      },
+      {
+        "Name": "OCaml",
+        "Desc": "Functional language with an expressive type system and native compiler",
+        "Formula": "ocaml",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(235, 140, 50)",
+        "Binary": "ocaml"
+      },
+      {
+        "Name": "C++ (Clang)",
+        "Desc": "LLVM-based C and C++ compiler toolchain with modern language support",
+        "Formula": "llvm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 255)",
+        "Binary": "clang"
+      },
+      {
+        "Name": "Rustup",
+        "Desc": "Official Rust toolchain installer for managing versions and targets",
+        "Formula": "rustup-init",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 90, 40)",
+        "Binary": "rustup-init"
+      },
+      {
+        "Name": "Lua",
+        "Desc": "Lightweight embeddable scripting language for extensible applications",
+        "Formula": "lua",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 130, 200)",
+        "Binary": "lua"
+      },
+      {
+        "Name": "Perl",
+        "Desc": "Versatile scripting language for text processing and system administration",
+        "Formula": "perl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 160, 230)",
+        "Binary": "perl"
+      },
+      {
+        "Name": "Dart",
+        "Desc": "Client-optimized language for fast apps on multiple platforms",
+        "Formula": "dart",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(70, 200, 240)",
+        "Binary": "dart"
+      },
+      {
+        "Name": "Kotlin",
+        "Desc": "Modern JVM language for Android and multiplatform development",
+        "Formula": "kotlin",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 100, 240)",
+        "Binary": "kotlinc"
+      },
+      {
+        "Name": "Scala",
+        "Desc": "JVM language blending object-oriented and functional programming",
+        "Formula": "scala",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(220, 50, 50)",
+        "Binary": "scala"
+      },
+      {
+        "Name": "Fortran (GCC)",
+        "Desc": "High-performance numerical language via the GCC compiler suite",
+        "Formula": "gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 100)",
+        "Binary": "gfortran"
+      },
+      {
+        "Name": "Julia",
+        "Desc": "High-performance language for scientific computing and data analysis",
+        "Formula": "",
+        "Cask": "julia",
+        "Special": "",
+        "Color": "rgb(150, 80, 220)",
+        "Binary": "julia"
+      },
+      {
+        "Name": "Flutter",
+        "Desc": "UI toolkit for building natively compiled apps from a single codebase",
+        "Formula": "",
+        "Cask": "flutter",
+        "Special": "",
+        "Color": "rgb(70, 200, 255)",
+        "Binary": "flutter"
+      }
+    ]
+  },
+  {
+    "Name": "Coding CLIs \u0026 AI",
+    "Items": [
+      {
+        "Name": "Claude Code",
+        "Desc": "Agentic coding CLI from Anthropic for terminal-based development",
+        "Formula": "",
+        "Cask": "",
+        "Special": "claude",
+        "Color": "rgb(230, 150, 120)",
+        "Binary": "claude"
+      },
+      {
+        "Name": "Gemini CLI",
+        "Desc": "Developer interface for interacting with Google's Gemini AI models",
+        "Formula": "",
+        "Cask": "",
+        "Special": "gemini",
+        "Color": "rgb(100, 170, 255)",
+        "Binary": "gemini"
+      },
+      {
+        "Name": "Aider",
+        "Desc": "AI-powered pair programming tool for terminal-oriented coding tasks",
+        "Formula": "aider-chat",
+        "Cask": "",
+        "Special": "pipx-g",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "aider"
+      },
+      {
+        "Name": "Continue CLI",
+        "Desc": "Command-line companion for the Continue AI code assistant platform",
+        "Formula": "@continuedev/cli",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(100, 220, 255)",
+        "Binary": "typegen"
+      },
+      {
+        "Name": "GitHub CLI",
+        "Desc": "Official interface for interacting with GitHub repositories and PRs",
+        "Formula": "gh",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "gh"
+      },
+      {
+        "Name": "Ollama",
+        "Desc": "Get up and running with large language models locally",
+        "Formula": "ollama",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 100, 255)",
+        "Binary": "ollama"
+      },
+      {
+        "Name": "Swag",
+        "Desc": "Automatically generate RESTful API documentation with Swagger 2.0 for Go",
+        "Formula": "swag",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "swag"
+      },
+      {
+        "Name": "Mockery",
+        "Desc": "A mock code generator for Go, generating type-safe mocks",
+        "Formula": "mockery",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "mockery"
+      },
+      {
+        "Name": "Templ",
+        "Desc": "A language for writing HTML components in Go with type safety",
+        "Formula": "templ",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "templ"
+      },
+      {
+        "Name": "Antigravity",
+        "Desc": "Agentic coding CLI designed for rapid terminal-based development",
+        "Formula": "",
+        "Cask": "antigravity",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "antigravity"
+      }
+    ]
+  },
+  {
+    "Name": "Dev Essentials",
+    "Items": [
+      {
+        "Name": "Git",
+        "Desc": "Distributed version control system for tracking source code changes",
+        "Formula": "git",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 80)",
+        "Binary": "git"
+      },
+      {
+        "Name": "Git LFS",
+        "Desc": "Extension for managing large files within Git version control",
+        "Formula": "git-lfs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 100)",
+        "Binary": "git-lfs"
+      },
+      {
+        "Name": "LazyGit",
+        "Desc": "Simple terminal-based user interface for managing Git operations",
+        "Formula": "lazygit",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 180)",
+        "Binary": "lazygit"
+      },
+      {
+        "Name": "fzf",
+        "Desc": "General-purpose command-line fuzzy finder for files and processes",
+        "Formula": "fzf",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 230)",
+        "Binary": "fzf"
+      },
+      {
+        "Name": "ripgrep",
+        "Desc": "Fast line-oriented search tool that respects gitignore rules",
+        "Formula": "ripgrep",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 230, 50)",
+        "Binary": "rg"
+      },
+      {
+        "Name": "bat",
+        "Desc": "Modern cat replacement with syntax highlighting and Git integration",
+        "Formula": "bat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 255)",
+        "Binary": "bat"
+      },
+      {
+        "Name": "eza",
+        "Desc": "Modern replacement for the ls command with enhanced file metadata",
+        "Formula": "eza",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 220, 255)",
+        "Binary": "eza"
+      },
+      {
+        "Name": "zoxide",
+        "Desc": "Smarter navigation tool inspired by the cd command and autojump",
+        "Formula": "zoxide",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 100)",
+        "Binary": "zoxide"
+      },
+      {
+        "Name": "Starship",
+        "Desc": "Minimal and customizable shell prompt for any terminal environment",
+        "Formula": "starship",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "starship"
+      },
+      {
+        "Name": "direnv",
+        "Desc": "Shell extension to load or unload environment variables per directory",
+        "Formula": "direnv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 100)",
+        "Binary": "direnv"
+      },
+      {
+        "Name": "NVM",
+        "Desc": "Node Version Manager for switching between multiple Node.js environments",
+        "Formula": "",
+        "Cask": "",
+        "Special": "nvm",
+        "Color": "rgb(140, 200, 75)",
+        "Binary": "nvm"
+      }
+    ]
+  },
+  {
+    "Name": "Package Managers",
+    "Items": [
+      {
+        "Name": "npm",
+        "Desc": "Standard package manager for the JavaScript and Node.js ecosystems",
+        "Formula": "",
+        "Cask": "",
+        "Special": "npm-check",
+        "Color": "rgb(255, 100, 90)",
+        "Binary": "npm"
+      },
+      {
+        "Name": "Yarn",
+        "Desc": "Fast and deterministic package manager for JavaScript dependencies",
+        "Formula": "yarn",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 220)",
+        "Binary": "yarn"
+      },
+      {
+        "Name": "pnpm",
+        "Desc": "Efficient alternative to npm using hard links for storage savings",
+        "Formula": "pnpm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 180, 60)",
+        "Binary": "pnpm"
+      },
+      {
+        "Name": "uv",
+        "Desc": "Extremely fast Python package installer and resolver written in Rust",
+        "Formula": "uv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "uv"
+      },
+      {
+        "Name": "Poetry",
+        "Desc": "Dependency management and packaging tool for Python applications",
+        "Formula": "poetry",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 140, 255)",
+        "Binary": "poetry"
+      },
+      {
+        "Name": "pipx",
+        "Desc": "Tool for installing and running Python applications in isolation",
+        "Formula": "pipx",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 120)",
+        "Binary": "pipx"
+      },
+      {
+        "Name": "Composer",
+        "Desc": "Dependency manager for PHP projects and library synchronization",
+        "Formula": "composer",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 100)",
+        "Binary": "composer"
+      },
+      {
+        "Name": "Corepack",
+        "Desc": "Zero-dependency bridge for managing Yarn and pnpm binary versions",
+        "Formula": "corepack",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(150, 150, 150)",
+        "Binary": "corepack"
+      }
+    ]
+  },
+  {
+    "Name": "Testing \u0026 Utilities",
+    "Items": [
+      {
+        "Name": "Playwright",
+        "Desc": "Fast and reliable end-to-end testing tool for modern web apps",
+        "Formula": "playwright",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "playwright"
+      },
+      {
+        "Name": "Cypress",
+        "Desc": "Testing framework for anything that runs in a web browser environment",
+        "Formula": "cypress",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(150, 180, 200)",
+        "Binary": "cypress"
+      },
+      {
+        "Name": "Vitest",
+        "Desc": "Vite-native unit test framework for high-performance testing",
+        "Formula": "vitest",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(230, 210, 50)",
+        "Binary": "vitest"
+      },
+      {
+        "Name": "Pre-commit",
+        "Desc": "Framework for managing and maintaining multi-language Git hooks",
+        "Formula": "pre-commit",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 100)",
+        "Binary": "pre-commit"
+      },
+      {
+        "Name": "tox",
+        "Desc": "Command-line tool for managing and testing Python environments",
+        "Formula": "tox",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "tox"
+      },
+      {
+        "Name": "Ruff",
+        "Desc": "Fast Python linter and formatter designed for high-performance projects",
+        "Formula": "ruff",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 255)",
+        "Binary": "ruff"
+      },
+      {
+        "Name": "Black",
+        "Desc": "Strict Python code formatter for maintaining consistent code style",
+        "Formula": "black",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 100, 100)",
+        "Binary": "black"
+      },
+      {
+        "Name": "ESLint",
+        "Desc": "Static analysis tool for identifying and fixing problems in JavaScript",
+        "Formula": "eslint",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "eslint"
+      },
+      {
+        "Name": "Hurl",
+        "Desc": "Command line tool that runs HTTP requests defined in a simple text format",
+        "Formula": "hurl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "hurl"
+      },
+      {
+        "Name": "Vegeta",
+        "Desc": "Versatile HTTP load testing tool built for performance and accuracy",
+        "Formula": "vegeta",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "vegeta"
+      },
+      {
+        "Name": "Prism",
+        "Desc": "OpenAPI mock and validator CLI for rapid API development",
+        "Formula": "@stoplight/prism-cli",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "prism"
+      }
+    ]
+  },
+  {
+    "Name": "Editors \u0026 IDEs",
+    "Items": [
+      {
+        "Name": "Cursor",
+        "Desc": "AI-first code editor built on VS Code for pair programming with LLMs",
+        "Formula": "",
+        "Cask": "cursor",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "cursor"
+      },
+      {
+        "Name": "Zed",
+        "Desc": "High-performance multiplayer code editor built in Rust",
+        "Formula": "",
+        "Cask": "zed",
+        "Special": "",
+        "Color": "rgb(90, 170, 255)",
+        "Binary": "zed"
+      },
+      {
+        "Name": "Sublime Text",
+        "Desc": "Lightweight text editor with a rich plugin ecosystem and fast performance",
+        "Formula": "",
+        "Cask": "sublime-text",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "subl"
+      },
+      {
+        "Name": "Android Studio",
+        "Desc": "Official IDE for Android app development based on IntelliJ IDEA",
+        "Formula": "",
+        "Cask": "android-studio",
+        "Special": "",
+        "Color": "rgb(80, 220, 140)",
+        "Binary": "studio"
+      },
+      {
+        "Name": "Nova",
+        "Desc": "Native macOS code editor with extensions and built-in dev server",
+        "Formula": "",
+        "Cask": "nova",
+        "Special": "",
+        "Color": "rgb(180, 80, 255)",
+        "Binary": "nova"
+      }
+    ]
+  },
+  {
+    "Name": "Performance \u0026 Profiling",
+    "Items": [
+      {
+        "Name": "gperftools",
+        "Desc": "Google performance tools including heap profiler and CPU profiler",
+        "Formula": "gperftools",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 200, 120)",
+        "Binary": "pprof"
+      },
+      {
+        "Name": "Valgrind",
+        "Desc": "Instrumentation framework for memory error detection and profiling",
+        "Formula": "valgrind",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 230)",
+        "Binary": "valgrind"
+      },
+      {
+        "Name": "Hyperfine",
+        "Desc": "Command-line benchmarking tool with statistical analysis and warmup runs",
+        "Formula": "hyperfine",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 50)",
+        "Binary": "hyperfine"
+      },
+      {
+        "Name": "bpftrace",
+        "Desc": "High-level tracing language for dynamic tracing of Linux kernel and apps",
+        "Formula": "bpftrace",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "bpftrace"
+      },
+      {
+        "Name": "k6",
+        "Desc": "Developer-friendly load testing tool for APIs and microservices",
+        "Formula": "k6",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 220, 80)",
+        "Binary": "k6"
+      },
+      {
+        "Name": "wrk",
+        "Desc": "Modern HTTP benchmarking tool capable of generating significant load",
+        "Formula": "wrk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 180, 80)",
+        "Binary": "wrk"
+      },
+      {
+        "Name": "Locust",
+        "Desc": "Scalable Python-based load testing framework with a web UI",
+        "Formula": "locust",
+        "Cask": "",
+        "Special": "pipx-g",
+        "Color": "rgb(80, 200, 180)",
+        "Binary": "locust"
+      }
+    ]
+  },
+  {
+    "Name": "Dev Utilities",
+    "Items": [
+      {
+        "Name": "Watchman",
+        "Desc": "File watching service for triggering build actions",
+        "Formula": "watchman",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 200, 255)",
+        "Binary": "watchman"
+      },
+      {
+        "Name": "Mise (Runtime Manager)",
+        "Desc": "Polyglot runtime manager for dev envs",
+        "Formula": "mise",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "mise"
+      },
+      {
+        "Name": "Lefthook (Git Hooks)",
+        "Desc": "Ultra-fast and powerful Git hooks manager",
+        "Formula": "lefthook",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "lefthook"
+      },
+      {
+        "Name": "Act (Local GitHub Actions)",
+        "Desc": "Run your GitHub Actions workflows locally",
+        "Formula": "act",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "act"
+      },
+      {
+        "Name": "JSON Export (jtbl)",
+        "Desc": "Utility to print JSON data as a clean terminal table",
+        "Formula": "jtbl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "jtbl"
+      },
+      {
+        "Name": "golangci-lint",
+        "Desc": "Fast Go linters runner with support for 100+ linters",
+        "Formula": "golangci-lint",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "golangci-lint"
+      },
+      {
+        "Name": "GoReleaser",
+        "Desc": "Deliver Go binaries as fast and easily as possible",
+        "Formula": "goreleaser",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "goreleaser"
+      },
+      {
+        "Name": "Biome",
+        "Desc": "Ultra-fast toolchain for web projects: lint, format, and more",
+        "Formula": "biome",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "biome"
+      },
+      {
+        "Name": "pyenv",
+        "Desc": "Simple Python version management for developers",
+        "Formula": "pyenv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "pyenv"
+      },
+      {
+        "Name": "mkcert",
+        "Desc": "A simple tool for making locally-trusted development certificates",
+        "Formula": "mkcert",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "mkcert"
+      },
+      {
+        "Name": "Task",
+        "Desc": "A task runner / build tool that aims to be simpler than Make",
+        "Formula": "go-task",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "task"
+      }
+    ]
+  },
+  {
+    "Name": "Design \u0026 Frontend",
+    "Items": [
+      {
+        "Name": "Font-JetBrains-Mono-NF",
+        "Desc": "JetBrains Mono Nerd Font for developers",
+        "Formula": "",
+        "Cask": "font-jetbrains-mono-nerd-font",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "JetBrainsMonoNLNerdFontComplete-Regular"
+      },
+      {
+        "Name": "Font-Fira-Code-NF",
+        "Desc": "Fira Code Nerd Font with custom ligatures",
+        "Formula": "",
+        "Cask": "font-fira-code-nerd-font",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "FiraCodeNerdFontComplete-Regular"
+      },
+      {
+        "Name": "SVGO",
+        "Desc": "Node.js based tool for optimizing SVG vector files",
+        "Formula": "svgo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "svgo"
+      },
+      {
+        "Name": "Can I Use CLI",
+        "Desc": "Search caniuse.com data directly from the terminal",
+        "Formula": "caniuse-cmd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "caniuse"
+      },
+      {
+        "Name": "Figma",
+        "Desc": "Collaborative interface design tool for teams",
+        "Formula": "",
+        "Cask": "figma",
+        "Special": "",
+        "Color": "rgb(162, 89, 255)",
+        "Binary": "Figma"
+      }
+    ]
+  },
+  {
+    "Name": "JetBrains Mastery",
+    "Items": [
+      {
+        "Name": "JetBrains Toolbox",
+        "Desc": "Manage all your JetBrains IDEs and tools from a single control center",
+        "Formula": "",
+        "Cask": "jetbrains-toolbox",
+        "Special": "",
+        "Color": "rgb(0, 0, 0)",
+        "Binary": "JetBrains Toolbox"
+      },
+      {
+        "Name": "JetBrains Gateway",
+        "Desc": "Your gateway to remote development with any JetBrains IDE",
+        "Formula": "",
+        "Cask": "jetbrains-gateway",
+        "Special": "",
+        "Color": "rgb(0, 150, 255)",
+        "Binary": "JetBrains Gateway"
+      },
+      {
+        "Name": "IntelliJ IDEA Ultimate",
+        "Desc": "The leading IDE for Java and Kotlin, packed with powerful enterprise features",
+        "Formula": "",
+        "Cask": "intellij-idea",
+        "Special": "",
+        "Color": "rgb(255, 50, 100)",
+        "Binary": "IntelliJ IDEA"
+      },
+      {
+        "Name": "IntelliJ IDEA CE",
+        "Desc": "Free and open-source version of IntelliJ IDEA for JVM and Android development",
+        "Formula": "",
+        "Cask": "intellij-idea-ce",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "IntelliJ IDEA CE"
+      },
+      {
+        "Name": "PyCharm Professional",
+        "Desc": "The expert IDE for Python development, with full web and data science support",
+        "Formula": "",
+        "Cask": "pycharm",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "PyCharm"
+      },
+      {
+        "Name": "PyCharm CE",
+        "Desc": "Lightweight and free version of PyCharm for pure Python development",
+        "Formula": "",
+        "Cask": "pycharm-ce",
+        "Special": "",
+        "Color": "rgb(140, 230, 200)",
+        "Binary": "PyCharm CE"
+      },
+      {
+        "Name": "WebStorm",
+        "Desc": "The smartest JavaScript IDE for modern web development with any framework",
+        "Formula": "",
+        "Cask": "webstorm",
+        "Special": "",
+        "Color": "rgb(100, 210, 255)",
+        "Binary": "WebStorm"
+      },
+      {
+        "Name": "GoLand",
+        "Desc": "A cross-platform IDE dedicated to providing an ergonomic environment for Go",
+        "Formula": "",
+        "Cask": "goland",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "GoLand"
+      },
+      {
+        "Name": "CLion",
+        "Desc": "Smart cross-platform C and C++ IDE with a focus on modern development standards",
+        "Formula": "",
+        "Cask": "clion",
+        "Special": "",
+        "Color": "rgb(100, 230, 150)",
+        "Binary": "CLion"
+      },
+      {
+        "Name": "Rider",
+        "Desc": "Fast and powerful cross-platform .NET IDE built on IntelliJ and ReSharper",
+        "Formula": "",
+        "Cask": "rider",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "Rider"
+      },
+      {
+        "Name": "PhpStorm",
+        "Desc": "The lightning-smart PHP IDE focusing on developer productivity and deep code insight",
+        "Formula": "",
+        "Cask": "phpstorm",
+        "Special": "",
+        "Color": "rgb(120, 150, 255)",
+        "Binary": "PhpStorm"
+      },
+      {
+        "Name": "DataGrip",
+        "Desc": "The multi-engine database IDE that speaks many SQL dialects in one place",
+        "Formula": "",
+        "Cask": "datagrip",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "DataGrip"
+      },
+      {
+        "Name": "RubyMine",
+        "Desc": "The most intelligent Ruby on Rails IDE for the modern web developer",
+        "Formula": "",
+        "Cask": "rubymine",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "RubyMine"
+      },
+      {
+        "Name": "DataSpell",
+        "Desc": "Professional IDE for data science, optimizing exploratory data analysis work",
+        "Formula": "",
+        "Cask": "dataspell",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "DataSpell"
+      },
+      {
+        "Name": "RustRover",
+        "Desc": "Focus on what matters: the leading IDE for professional Rust development",
+        "Formula": "",
+        "Cask": "rustrover",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "RustRover"
+      },
+      {
+        "Name": "Aqua",
+        "Desc": "The IDE specifically designed for modern test automation and QA",
+        "Formula": "",
+        "Cask": "aqua",
+        "Special": "",
+        "Color": "rgb(50, 220, 200)",
+        "Binary": "Aqua"
+      },
+      {
+        "Name": "Writerside",
+        "Desc": "Technical documentation tool for building complex, high-quality docs",
+        "Formula": "",
+        "Cask": "writerside",
+        "Special": "",
+        "Color": "rgb(150, 200, 100)",
+        "Binary": "Writerside"
+      }
+    ]
+  }
+]

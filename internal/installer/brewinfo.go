@@ -12,10 +12,11 @@ import (
 	"github.com/yousefbustamiii/package-mate/internal/sys"
 )
 
-// brewInfo contains the subset of `brew info --json=v2` that we care about.
-type brewInfo struct {
+// BrewJSON matches the JSON from `brew info --json=v2` (for single or all installed).
+type BrewJSON struct {
 	Formulae []struct {
 		Name     string `json:"name"`
+		Outdated bool   `json:"outdated"`
 		Versions struct {
 			Stable string `json:"stable"`
 		} `json:"versions"`
@@ -23,12 +24,19 @@ type brewInfo struct {
 			Version string `json:"version"`
 			Time    int64  `json:"time"`
 		} `json:"installed"`
+		// Fields used by 'brew outdated'
+		InstalledVersions []string `json:"installed_versions"`
+		CurrentVersion    string   `json:"current_version"`
 	} `json:"formulae"`
 	Casks []struct {
 		Token            string `json:"token"`
-		Version          string `json:"version"`
-		InstalledVersion string `json:"installed_version"`
+		Version          string `json:"version"`           // latest
+		InstalledVersion string `json:"installed_version"` // installed
 		InstalledTime    int64  `json:"installed_time"`
+		Outdated         bool   `json:"outdated"`
+		// Fields used by 'brew outdated'
+		InstalledVersions string `json:"installed_versions"`
+		CurrentVersion    string `json:"current_version"`
 	} `json:"casks"`
 }
 
@@ -50,7 +58,7 @@ func GetBrewInfo(item components.InstallItem) (versions []string, date time.Time
 		return nil, time.Time{}, false
 	}
 
-	var info brewInfo
+	var info BrewJSON
 	if err := json.Unmarshal(out, &info); err != nil {
 		return nil, time.Time{}, false
 	}
@@ -90,19 +98,7 @@ func GetBrewInfo(item components.InstallItem) (versions []string, date time.Time
 	return nil, time.Time{}, false
 }
 
-// outdatedInfo matches `brew outdated --json=v2`
-type outdatedInfo struct {
-	Formulae []struct {
-		Name              string   `json:"name"`
-		InstalledVersions []string `json:"installed_versions"`
-		CurrentVersion    string   `json:"current_version"`
-	} `json:"formulae"`
-	Casks []struct {
-		Token             string `json:"token"`
-		InstalledVersions string `json:"installed_versions"`
-		CurrentVersion    string `json:"current_version"`
-	} `json:"casks"`
-}
+
 
 // OutdatedStatus contains maps for quick lookup of outdated tools.
 type OutdatedStatus struct {
@@ -116,69 +112,60 @@ type InstalledStatus struct {
 	Casks    map[string]string // cask -> version
 }
 
-// AllOutdated returns a map of all outdated formulae and casks.
-func AllOutdated() (OutdatedStatus, error) {
-	cmd := exec.Command(BrewExe(), "outdated", "--json=v2")
-	cmd.Env = append(os.Environ(), "HOMEBREW_NO_AUTO_UPDATE=1")
-	out, err := cmd.Output()
-	if err != nil {
-		return OutdatedStatus{}, err
-	}
 
-	var info outdatedInfo
-	if err := json.Unmarshal(out, &info); err != nil {
-		return OutdatedStatus{}, err
-	}
 
-	status := OutdatedStatus{
-		Formulae: make(map[string]bool),
-		Casks:    make(map[string]bool),
-	}
-	for _, f := range info.Formulae {
-		status.Formulae[f.Name] = true
-	}
-	for _, c := range info.Casks {
-		status.Casks[c.Token] = true
-	}
-	return status, nil
-}
-
-// AllInstalled returns a map of all installed formulae and casks.
-func AllInstalled() (InstalledStatus, error) {
-	status := InstalledStatus{
+// FetchFullBrewStatus retrieves installed tools and their outdated status in a single Homebrew call.
+func FetchFullBrewStatus() (InstalledStatus, OutdatedStatus, error) {
+	inst := InstalledStatus{
 		Formulae: make(map[string]string),
 		Casks:    make(map[string]string),
 	}
+	outdated := OutdatedStatus{
+		Formulae: make(map[string]bool),
+		Casks:    make(map[string]bool),
+	}
 
-	// 1. Get Formulae
-	cmdForm := exec.Command(BrewExe(), "list", "--versions")
-	cmdForm.Env = append(os.Environ(), "HOMEBREW_NO_AUTO_UPDATE=1")
-	out, err := cmdForm.Output()
-	if err == nil {
-		lines := strings.Split(strings.TrimSpace(string(out)), "\n")
-		for _, line := range lines {
-			parts := strings.SplitN(line, " ", 2)
-			if len(parts) == 2 {
-				status.Formulae[parts[0]] = parts[1]
+	cmd := exec.Command(BrewExe(), "info", "--json=v2", "--installed")
+	cmd.Env = append(os.Environ(), "HOMEBREW_NO_AUTO_UPDATE=1")
+	out, err := cmd.Output()
+	if err != nil {
+		return inst, outdated, err
+	}
+
+	var info BrewJSON
+	if err := json.Unmarshal(out, &info); err != nil {
+		return inst, outdated, err
+	}
+
+	// 1. Map Formulae
+	for _, f := range info.Formulae {
+		if len(f.Installed) > 0 {
+			// Get the version of the last (most recent) installation
+			last := f.Installed[len(f.Installed)-1]
+			inst.Formulae[f.Name] = last.Version
+			if f.Outdated {
+				outdated.Formulae[f.Name] = true
 			}
 		}
 	}
 
-	// 2. Get Casks
-	cmdCask := exec.Command(BrewExe(), "list", "--cask", "--versions")
-	cmdCask.Env = append(os.Environ(), "HOMEBREW_NO_AUTO_UPDATE=1")
-	out, err = cmdCask.Output()
-	if err == nil {
-		lines := strings.Split(strings.TrimSpace(string(out)), "\n")
-		for _, line := range lines {
-			parts := strings.SplitN(line, " ", 2)
-			if len(parts) == 2 {
-				status.Casks[parts[0]] = parts[1]
+	// 2. Map Casks
+	for _, c := range info.Casks {
+		ver := c.InstalledVersion
+		if ver == "" {
+			ver = c.Version
+		}
+
+		if ver != "" || c.InstalledVersion != "" {
+			inst.Casks[c.Token] = ver
+			// Check outdated flag or compare versions
+			if c.Outdated || (c.Version != "" && c.InstalledVersion != "" && c.Version != c.InstalledVersion) {
+				outdated.Casks[c.Token] = true
 			}
 		}
 	}
 
-	return status, nil
+	return inst, outdated, nil
 }
 
 // CheckOutdated returns (isOutdated, currentVersion, latestVersion)
@@ -201,7 +188,7 @@ func CheckOutdated(item components.InstallItem) (bool, string, string) {
 		return false, "", ""
 	}
 
-	var info outdatedInfo
+	var info BrewJSON
 	if err := json.Unmarshal(out, &info); err != nil {
 		return false, "", ""
 	}
@@ -298,7 +285,7 @@ func GetAllVersions(item components.InstallItem) ([]VersionEntry, error) {
 		cmd.Env = append(os.Environ(), "HOMEBREW_NO_AUTO_UPDATE=1")
 		out, err := cmd.Output()
 		if err == nil {
-			var info brewInfo
+			var info BrewJSON
 			if json.Unmarshal(out, &info) == nil {
 				for _, f := range info.Formulae {
 					stableVer := f.Versions.Stable

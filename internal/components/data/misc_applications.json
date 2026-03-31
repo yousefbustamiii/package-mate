@@ -1,0 +1,392 @@
+[
+  {
+    "Name": "Media \u0026 Graphics",
+    "Items": [
+      {
+        "Name": "FFmpeg",
+        "Desc": "Complete multimedia framework for recording, converting, and streaming",
+        "Formula": "ffmpeg",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "ffmpeg"
+      },
+      {
+        "Name": "ImageMagick",
+        "Desc": "Powerful image manipulation suite for conversion, editing, and compositing",
+        "Formula": "imagemagick",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "convert"
+      },
+      {
+        "Name": "ExifTool",
+        "Desc": "Read and write metadata in image, audio, and video files",
+        "Formula": "exiftool",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 180, 100)",
+        "Binary": "exiftool"
+      },
+      {
+        "Name": "OptiPNG",
+        "Desc": "PNG optimizer that recompresses images for smaller file sizes",
+        "Formula": "optipng",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 220, 255)",
+        "Binary": "optipng"
+      },
+      {
+        "Name": "Inkscape",
+        "Desc": "Professional open-source vector graphics editor for SVG files",
+        "Formula": "",
+        "Cask": "inkscape",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "inkscape"
+      },
+      {
+        "Name": "GIMP",
+        "Desc": "Free and open-source raster image editor for photo and design work",
+        "Formula": "",
+        "Cask": "gimp",
+        "Special": "",
+        "Color": "rgb(100, 180, 80)",
+        "Binary": "gimp"
+      },
+      {
+        "Name": "Blender",
+        "Desc": "Open-source 3D creation suite for modeling, animation, and rendering",
+        "Formula": "",
+        "Cask": "blender",
+        "Special": "",
+        "Color": "rgb(255, 130, 50)",
+        "Binary": "blender"
+      },
+      {
+        "Name": "Spotify",
+        "Desc": "Digital music service with millions of songs and podcasts",
+        "Formula": "",
+        "Cask": "spotify",
+        "Special": "",
+        "Color": "rgb(30, 215, 96)",
+        "Binary": "Spotify"
+      }
+    ]
+  },
+  {
+    "Name": "Low-Level \u0026 Embedded",
+    "Items": [
+      {
+        "Name": "avr-gcc",
+        "Desc": "GCC-based compiler toolchain for Atmel AVR microcontroller development",
+        "Formula": "avr-gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 220, 100)",
+        "Binary": "avr-gcc"
+      },
+      {
+        "Name": "arm-none-eabi-gcc",
+        "Desc": "Bare-metal ARM cross-compiler for embedded firmware development",
+        "Formula": "arm-none-eabi-gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 180, 255)",
+        "Binary": "arm-none-eabi-gcc"
+      },
+      {
+        "Name": "SDCC",
+        "Desc": "Small Device C Compiler for 8-bit microcontrollers like PIC and STM8",
+        "Formula": "sdcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 80)",
+        "Binary": "sdcc"
+      },
+      {
+        "Name": "avrdude",
+        "Desc": "Software for programming Atmel AVR microcontrollers via various programmers",
+        "Formula": "avrdude",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 220, 150)",
+        "Binary": "avrdude"
+      },
+      {
+        "Name": "OpenOCD",
+        "Desc": "On-chip debugger for flashing and debugging embedded targets over JTAG/SWD",
+        "Formula": "open-ocd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 230)",
+        "Binary": "openocd"
+      },
+      {
+        "Name": "dfu-util",
+        "Desc": "Host-side utility for flashing firmware via USB DFU protocol",
+        "Formula": "dfu-util",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 160, 80)",
+        "Binary": "dfu-util"
+      },
+      {
+        "Name": "minicom",
+        "Desc": "Terminal emulator for serial port communication and modem control",
+        "Formula": "minicom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "minicom"
+      },
+      {
+        "Name": "screen",
+        "Desc": "Multiplexer with serial terminal support for connecting to embedded devices",
+        "Formula": "screen",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(140, 140, 140)",
+        "Binary": "screen"
+      },
+      {
+        "Name": "picocom",
+        "Desc": "Minimal serial terminal emulator for UART debugging on embedded hardware",
+        "Formula": "picocom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 200, 255)",
+        "Binary": "picocom"
+      },
+      {
+        "Name": "KiCad",
+        "Desc": "Open-source EDA suite for schematic capture and PCB layout design",
+        "Formula": "",
+        "Cask": "kicad",
+        "Special": "",
+        "Color": "rgb(50, 180, 130)",
+        "Binary": "kicad"
+      },
+      {
+        "Name": "Fritzing",
+        "Desc": "Electronics prototyping tool for documenting Arduino and breadboard circuits",
+        "Formula": "",
+        "Cask": "fritzing",
+        "Special": "",
+        "Color": "rgb(230, 80, 80)",
+        "Binary": "Fritzing"
+      }
+    ]
+  },
+  {
+    "Name": "Docs \u0026 Static Sites",
+    "Items": [
+      {
+        "Name": "Hugo",
+        "Desc": "Fast static site generator written in Go for building modern websites",
+        "Formula": "hugo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 80, 100)",
+        "Binary": "hugo"
+      },
+      {
+        "Name": "Jekyll",
+        "Desc": "Ruby-based static site generator powering GitHub Pages and blogs",
+        "Formula": "jekyll",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 80, 80)",
+        "Binary": "jekyll"
+      },
+      {
+        "Name": "Eleventy",
+        "Desc": "Flexible JavaScript static site generator with zero-config defaults",
+        "Formula": "@11ty/eleventy",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(100, 100, 100)",
+        "Binary": "eleventy"
+      },
+      {
+        "Name": "MkDocs",
+        "Desc": "Python-based static site generator focused on project documentation",
+        "Formula": "mkdocs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 180, 255)",
+        "Binary": "mkdocs"
+      },
+      {
+        "Name": "Pandoc",
+        "Desc": "Universal document converter supporting Markdown, PDF, DOCX, and more",
+        "Formula": "pandoc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 80)",
+        "Binary": "pandoc"
+      },
+      {
+        "Name": "Doxygen",
+        "Desc": "Documentation generator for C++, Java, and Python source code",
+        "Formula": "doxygen",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 170, 230)",
+        "Binary": "doxygen"
+      },
+      {
+        "Name": "Graphviz",
+        "Desc": "Graph visualization tools for rendering diagrams from DOT language files",
+        "Formula": "graphviz",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 230, 100)",
+        "Binary": "dot"
+      },
+      {
+        "Name": "Spectral",
+        "Desc": "OpenAPI and AsyncAPI linter for enforcing API design style rules",
+        "Formula": "@stoplight/spectral-cli",
+        "Cask": "",
+        "Special": "npm-g",
+        "Color": "rgb(255, 130, 80)",
+        "Binary": "spectral"
+      },
+      {
+        "Name": "OpenAPI Generator",
+        "Desc": "Generate client SDKs, server stubs, and docs from OpenAPI specs",
+        "Formula": "openapi-generator",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 180)",
+        "Binary": "openapi-generator"
+      }
+    ]
+  },
+  {
+    "Name": "Data \u0026 Analytics",
+    "Items": [
+      {
+        "Name": "DuckDB",
+        "Desc": "In-process SQL OLAP database for fast data analysis",
+        "Formula": "duckdb",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "duckdb"
+      },
+      {
+        "Name": "VisiData",
+        "Desc": "Powerful terminal tool for exploring and editing data",
+        "Formula": "visidata",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "vd"
+      },
+      {
+        "Name": "DVC (Data Versioning)",
+        "Desc": "Git-based data version control for ML projects",
+        "Formula": "dvc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "dvc"
+      },
+      {
+        "Name": "PostGIS",
+        "Desc": "Spatial database extender for PostgreSQL databases",
+        "Formula": "postgis",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "postgis"
+      }
+    ]
+  },
+  {
+    "Name": "Web Browsers",
+    "Items": [
+      {
+        "Name": "Google Chrome",
+        "Desc": "The world's most popular browser, with Google smarts and speed",
+        "Formula": "",
+        "Cask": "google-chrome",
+        "Special": "",
+        "Color": "rgb(66, 133, 244)",
+        "Binary": "Google Chrome"
+      },
+      {
+        "Name": "Firefox Developer Edition",
+        "Desc": "Custom-tailored for developers, with unique tools and features",
+        "Formula": "",
+        "Cask": "firefox-developer-edition",
+        "Special": "",
+        "Color": "rgb(255, 148, 0)",
+        "Binary": "Firefox Developer Edition"
+      },
+      {
+        "Name": "Arc",
+        "Desc": "A beautiful, more powerful internet browser for modern work",
+        "Formula": "",
+        "Cask": "arc",
+        "Special": "",
+        "Color": "rgb(120, 150, 255)",
+        "Binary": "Arc"
+      },
+      {
+        "Name": "Brave",
+        "Desc": "Secure, fast and private web browser with built-in ad blocker",
+        "Formula": "",
+        "Cask": "brave-browser",
+        "Special": "",
+        "Color": "rgb(251, 84, 43)",
+        "Binary": "Brave Browser"
+      }
+    ]
+  },
+  {
+    "Name": "Knowledge \u0026 Productivity",
+    "Items": [
+      {
+        "Name": "Notion",
+        "Desc": "Connected workspace for notes, docs, and project management",
+        "Formula": "",
+        "Cask": "notion",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "Notion"
+      },
+      {
+        "Name": "Obsidian",
+        "Desc": "Powerful knowledge base for building a second brain with Markdown",
+        "Formula": "",
+        "Cask": "obsidian",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "Obsidian"
+      },
+      {
+        "Name": "Linear",
+        "Desc": "Issue tracker and project tool for high-performance dev teams",
+        "Formula": "",
+        "Cask": "linear-linear",
+        "Special": "",
+        "Color": "rgb(100, 100, 255)",
+        "Binary": "Linear"
+      },
+      {
+        "Name": "Todoist",
+        "Desc": "Simple and powerful task management tool for individuals and teams",
+        "Formula": "",
+        "Cask": "todoist",
+        "Special": "",
+        "Color": "rgb(219, 76, 63)",
+        "Binary": "Todoist"
+      }
+    ]
+  }
+]

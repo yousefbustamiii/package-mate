@@ -13,7 +13,7 @@ import (
 
 func Fail(format string, args ...any) {
 	stopDoing()
-	_, _ = fmt.Fprintf(os.Stderr, "  "+C(Red, "✗")+"  "+format+"\n", args...)
+	_, _ = fmt.Fprintf(os.Stderr, "  "+C(Red, "✗")+"  "+format+"\n\n", args...)
 }
 
 func Warn(format string, args ...any) {
@@ -109,8 +109,38 @@ func PromptConfirmation(action, name string) bool {
 	return false
 }
 
+// PromptInstall asks the user to confirm a fresh install, with an option to run in background.
+// Returns "INSTALL", "INSTALL/BG", or "" if declined.
+func PromptInstall(name string) string {
+	stopDoing()
+	Blank()
+	fmt.Println("  " + C(Grey, strings.Repeat("─", 60)))
+	fmt.Println("  " + C(Bold+White, "❯ INSTALL "+strings.ToUpper(name)))
+	fmt.Println("  " + C(Grey, strings.Repeat("─", 60)))
+	Blank()
+	fmt.Printf("  "+C(Bold+White, "Type ")+C(Bold+BrightCyan, "INSTALL")+C(Bold+White, " to install %s now.\n"), name)
+	Blank()
+	fmt.Printf("  " + C(Dim, "Or type ") + C(BrightCyan, "INSTALL/BG") + C(Dim, " to download it in the background.") + "\n")
+	Blank()
+	fmt.Print("  " + C(Bold+White, "❯ "))
+
+	input := readInput()
+
+	switch {
+	case strings.EqualFold(input, "INSTALL"):
+		return "INSTALL"
+	case strings.EqualFold(input, "INSTALL/BG"):
+		return "INSTALL/BG"
+	}
+
+	Blank()
+	Fail("Operation declined. No changes made.")
+	return ""
+}
+
 // PromptOverride asks the user to confirm...
-func PromptOverride(name, target, path string) string {
+// Returns "INSTALL", "INSTALL/BG", "OVERRIDE", "OVERRIDE/BG", or "" if declined.
+func PromptOverride(name, target, path string, isProtected, isSystem bool) string {
 	stopDoing()
 	Blank()
 	fmt.Println("  " + C(Yellow, strings.Repeat("─", 60)))
@@ -125,19 +155,48 @@ func PromptOverride(name, target, path string) string {
 	fmt.Printf("  "+C(Cyan, "Target ")+"  "+C(Dim, ":")+"  %s\n", target)
 
 	Blank()
-	fmt.Printf("  " + C(White, "Would you like to install the Package Mate version or fully OVERRIDE the existing one?") + "\n")
+
+	if isProtected {
+		fmt.Printf("  " + C(White, "Would you like to install the Package Mate version alongside it? ") + C(Dim, "(Protected path, cannot override)") + "\n")
+	} else {
+		fmt.Printf("  " + C(White, "Would you like to install the Package Mate version or fully OVERRIDE the existing one?") + "\n")
+	}
+
 	Blank()
-	fmt.Printf("  " + C(Bold+White, "Type ") + C(Bold+BrightCyan, "INSTALL") + C(Bold+White, " or ") + C(Bold+BrightCyan, "OVERRIDE") + C(Bold+White, " to proceed.") + "\n")
+
+	// ── Single-line Command Hints ──────────────────────────────────────────────
+	fmt.Printf("  " + C(Bold+White, "Type "))
+
+	// Install options
+	fmt.Printf(C(Bold+BrightCyan, "INSTALL") + " " + C(Dim, "or") + " " + C(BrightCyan, "INSTALL/BG") + " " + C(Dim, "to install"))
+
+	// Override options (if not protected)
+	if !isProtected {
+		fmt.Printf(" " + C(Dim, "or") + " " + C(Bold+BrightCyan, "OVERRIDE"))
+
+		// Background override (if not a system path)
+		if !isSystem {
+			fmt.Printf(" " + C(Dim, "or") + " " + C(BrightCyan, "OVERRIDE/BG"))
+		}
+
+		fmt.Printf(" " + C(Dim, "to replace the existing binary"))
+	}
+	fmt.Printf("\n")
+
 	Blank()
 	fmt.Print("  " + C(Bold+White, "❯ "))
 
 	input := readInput()
 
-	if strings.EqualFold(input, "INSTALL") {
+	switch {
+	case strings.EqualFold(input, "INSTALL"):
 		return "INSTALL"
-	}
-	if strings.EqualFold(input, "OVERRIDE") {
+	case strings.EqualFold(input, "INSTALL/BG"):
+		return "INSTALL/BG"
+	case !isProtected && strings.EqualFold(input, "OVERRIDE"):
 		return "OVERRIDE"
+	case !isProtected && !isSystem && strings.EqualFold(input, "OVERRIDE/BG"):
+		return "OVERRIDE/BG"
 	}
 
 	Blank()
@@ -146,6 +205,7 @@ func PromptOverride(name, target, path string) string {
 }
 
 // PromptDifferentBrew asks for UPDATE/OVERRIDE choice when another Brew version exists.
+// Returns "UPDATE", "UPDATE/BG", "OVERRIDE", "OVERRIDE/BG", or "" if declined.
 func PromptDifferentBrew(target, oldFormula string) string {
 	stopDoing()
 	Blank()
@@ -163,17 +223,26 @@ func PromptDifferentBrew(target, oldFormula string) string {
 	Blank()
 	fmt.Printf("  " + C(Bold+White, "Would you like to UPDATE to the Package Mate version or fully OVERRIDE the existing one?") + "\n")
 	Blank()
-	fmt.Printf("  " + C(Bold+White, "Type ") + C(Bold+BrightCyan, "UPDATE") + C(Bold+White, " or ") + C(Bold+BrightCyan, "OVERRIDE") + C(Bold+White, " to proceed.") + "\n")
+	fmt.Printf("  "+C(Bold+White, "Type ")+
+		C(Bold+BrightCyan, "UPDATE")+" "+C(Dim, "or")+
+		" "+C(BrightCyan, "UPDATE/BG")+" "+C(Dim, "to upgrade")+"\n")
+	fmt.Printf("  "+C(Bold+White, "     ")+
+		C(Bold+BrightCyan, "OVERRIDE")+" "+C(Dim, "or")+
+		" "+C(BrightCyan, "OVERRIDE/BG")+" "+C(Dim, "to replace the existing formula")+"\n")
 	Blank()
 	fmt.Print("  " + C(Bold+White, "❯ "))
 
 	input := readInput()
 
-	if strings.EqualFold(input, "UPDATE") {
+	switch {
+	case strings.EqualFold(input, "UPDATE"):
 		return "UPDATE"
-	}
-	if strings.EqualFold(input, "OVERRIDE") {
+	case strings.EqualFold(input, "UPDATE/BG"):
+		return "UPDATE/BG"
+	case strings.EqualFold(input, "OVERRIDE"):
 		return "OVERRIDE"
+	case strings.EqualFold(input, "OVERRIDE/BG"):
+		return "OVERRIDE/BG"
 	}
 
 	Blank()
@@ -239,8 +308,9 @@ func ShowAppRunning(appName string) {
 	Blank()
 }
 
-// PromptOutdated asks the user to confirm...
-func PromptOutdated(name, current, latest string) bool {
+// PromptOutdated asks the user to confirm an update.
+// Returns "UPDATE", "UPDATE/BG", or "" if declined.
+func PromptOutdated(name, current, latest string) string {
 	Blank()
 	Warn("Update Available")
 	fmt.Printf("  "+C(Bold+White, "A newer version of %s is available.\n"), name)
@@ -248,19 +318,23 @@ func PromptOutdated(name, current, latest string) bool {
 	fmt.Printf("  "+C(Dim, "Current:  ")+"%s\n", current)
 	fmt.Printf("  "+C(Dim, "Latest:   ")+"%s\n", latest)
 	Blank()
-	fmt.Printf("  " + C(Bold+White, "Would you like to update? Type ") + C(Bold+BrightCyan, "UPDATE") + " to proceed.\n")
+	fmt.Printf("  "+C(Bold+White, "Type ")+C(Bold+BrightCyan, "UPDATE")+C(Bold+White, " to update now.\n"))
+	fmt.Printf("  "+C(Dim, "Or type ")+C(BrightCyan, "UPDATE/BG")+C(Dim, " to update in the background.")+"\n")
 	Blank()
 	fmt.Print("  " + C(Bold+White, "❯ "))
 
 	input := readInput()
 
-	if strings.EqualFold(input, "UPDATE") {
-		return true
+	switch {
+	case strings.EqualFold(input, "UPDATE"):
+		return "UPDATE"
+	case strings.EqualFold(input, "UPDATE/BG"):
+		return "UPDATE/BG"
 	}
 
 	Blank()
 	Fail("Update declined. Skipping for now.")
-	return false
+	return ""
 }
 
 // PromptActionMenu shows a 1-3 selection menu for tool management.
@@ -384,4 +458,20 @@ func termWidth() int {
 		return 120
 	}
 	return w
+}
+
+// ── Background job helpers ─────────────────────────────────────────────────────
+
+// ShowBgQueued prints a confirmation that a tool has been queued for background download.
+func ShowBgQueued(name string) {
+	stopDoing()
+	Blank()
+	fmt.Println("  " + C(Grey, strings.Repeat("─", 60)))
+	fmt.Println("  " + C(Bold+BrightCyan, "❯ QUEUED FOR BACKGROUND DOWNLOAD"))
+	fmt.Println("  " + C(Grey, strings.Repeat("─", 60)))
+	Blank()
+	fmt.Printf("  "+C(Bold+White, "%s")+" is now downloading in the background.\n", name)
+	Blank()
+	fmt.Printf("  "+C(Dim, "Run ")+C(Cyan, "mate bg")+C(Dim, " to check progress or abort the download.")+"\n")
+	Blank()
 }

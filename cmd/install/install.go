@@ -10,6 +10,7 @@ import (
 
 	"github.com/yousefbustamiii/package-mate/cmd/info"
 	"github.com/yousefbustamiii/package-mate/cmd/uninstall"
+	"github.com/yousefbustamiii/package-mate/internal/background"
 	"github.com/yousefbustamiii/package-mate/internal/components"
 	"github.com/yousefbustamiii/package-mate/internal/installer"
 	"github.com/yousefbustamiii/package-mate/internal/sys"
@@ -21,10 +22,12 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 	ui.Blank()
 	ui.Doing("Analyzing %s", item.Name)
 	det := installer.IsInstalled(*item)
+
 	var isUpdate bool
 	var isOverride bool
 	var isBrewOverride bool
 	var isOldCask bool
+	var isBg bool
 	var oldBinaryPath string
 	var oldFormulaName string
 
@@ -33,26 +36,48 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		ui.AlreadyInstalled(item.Name, det.Detail)
 		return nil
 
+	case installer.DetectionNotFound:
+		res := ui.PromptInstall(item.Name)
+		if res == "" {
+			return nil
+		}
+		if res == "INSTALL/BG" {
+			isBg = true
+		}
+
 	case installer.DetectionOutdated:
 		parts := strings.Split(det.Detail, " -> ")
-		if len(parts) != 2 || !ui.PromptOutdated(item.Name, parts[0], parts[1]) {
+		if len(parts) != 2 {
+			return nil
+		}
+		res := ui.PromptOutdated(item.Name, parts[0], parts[1])
+		if res == "" {
 			return nil
 		}
 		isUpdate = true
+		if res == "UPDATE/BG" {
+			isBg = true
+		}
 
 	case installer.DetectionBinary:
 		target := item.Formula
 		if target == "" {
 			target = item.Cask
 		}
-		res := ui.PromptOverride(item.Name, target, det.BinaryPath)
+		isProtected := sys.IsProtectedPath(det.BinaryPath)
+		isSystem := sys.IsSystemPath(det.BinaryPath)
+		res := ui.PromptOverride(item.Name, target, det.BinaryPath, isProtected, isSystem)
 		if res == "" {
 			return nil
 		}
-		if res == "OVERRIDE" {
+		if res == "OVERRIDE" || res == "OVERRIDE/BG" {
 			isOverride = true
 			oldBinaryPath = det.BinaryPath
 		}
+		if strings.HasSuffix(res, "/BG") {
+			isBg = true
+		}
+
 	case installer.DetectionDifferentBrew:
 		target := item.Formula
 		if target == "" {
@@ -62,40 +87,51 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		if res == "" {
 			return nil
 		}
-		if res == "UPDATE" {
+		if res == "UPDATE" || res == "UPDATE/BG" {
 			isUpdate = true
 		}
-		if res == "OVERRIDE" {
+		if res == "OVERRIDE" || res == "OVERRIDE/BG" {
 			isOverride = true
 			isBrewOverride = true
 			isOldCask = det.IsBrewCask
 			oldFormulaName = det.BrewFormula
 		}
-	case installer.DetectionNotFound, installer.DetectionManualApp, installer.DetectionTrashedApp:
-		// DetectionNotFound proceeds to install; Manual/Trashed are handled below.
-	}
+		if strings.HasSuffix(res, "/BG") {
+			isBg = true
+		}
 
-	switch det.Status {
 	case installer.DetectionManualApp, installer.DetectionTrashedApp:
 		ui.ShowManualAppUninstall(item.Name)
 		ui.Footer()
 		return nil
-	default:
-		// All other statuses proceed to install.
 	}
 
-	verb := "Installing"
-	if isUpdate {
-		verb = "Updating"
-	}
-	ui.Header(fmt.Sprintf("%s %s", verb, item.Name))
-
-	// ❯ If it's a Cask, check if it's running before we touch it
+	// ── Safety: check running app before touching casks ─────────────────────────
 	if item.Cask != "" && sys.IsRunning(item.Name) {
 		ui.ShowAppRunning(item.Name)
 		ui.Footer()
 		return nil
 	}
+
+	// ── Background mode ─────────────────────────────────────────────────────────
+	if isBg {
+		action := bgAction(isUpdate, isOverride, isBrewOverride)
+		_, err := background.Enqueue(item.Name, action, oldBinaryPath, oldFormulaName, isOldCask)
+		if err != nil {
+			ui.Fail("Could not queue background job: %v", err)
+			ui.Footer()
+			return nil
+		}
+		ui.ShowBgQueued(item.Name)
+		return nil
+	}
+
+	// ── Foreground mode ─────────────────────────────────────────────────────────
+	verb := "Installing"
+	if isUpdate {
+		verb = "Updating"
+	}
+	ui.Header(fmt.Sprintf("%s %s", verb, item.Name))
 
 	var res installer.Result
 	if isUpdate {
@@ -103,7 +139,6 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		res = installer.Result{
 			ItemName: item.Name,
 			Status:   installer.StatusInstalled,
-			Version:  "",
 			Err:      err,
 		}
 		if err != nil {
@@ -115,8 +150,11 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 
 	switch res.Status {
 	case installer.StatusInstalled:
+		// fall through to override cleanup
 	case installer.StatusAlreadyHave:
-		// Already present — nothing to do.
+		// Already present — nothing more to do.
+		ui.Footer()
+		return nil
 	case installer.StatusFailed:
 		errMsg := "unknown error"
 		if res.Err != nil {
@@ -127,13 +165,13 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		return nil
 	}
 
+	// ── Override cleanup ────────────────────────────────────────────────────────
 	if isOverride && res.Status == installer.StatusInstalled {
 		ui.Blank()
 
 		if isBrewOverride {
 			ui.Doing("Removing old brew item: %s", oldFormulaName)
 
-			// ❯ Build an InstallItem specifically for the old formula/cask
 			oldItem := components.InstallItem{Name: oldFormulaName}
 			if isOldCask {
 				oldItem.Cask = oldFormulaName
@@ -143,7 +181,6 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 
 			err := installer.Uninstall(oldItem)
 			if err != nil {
-				// ❯ Handle Dependency Conflict
 				if strings.Contains(err.Error(), "is required by") {
 					if ui.PromptDependencyRemoval(oldFormulaName, err.Error()) {
 						ui.Doing("Force removing %s", oldFormulaName)
@@ -178,7 +215,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 				msg := strings.TrimSpace(stderr.String())
 				if strings.Contains(msg, "Permission denied") {
 					ui.Doing("Retrying with sudo")
-					ui.Blank() // ❯ Space for the sudo password prompt if it appears
+					ui.Blank()
 
 					sudoCmd := exec.Command("sudo", "rm", "-f", oldBinaryPath)
 					sudoCmd.Stdin = os.Stdin
@@ -189,7 +226,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 						ui.Fail("Sudo removal failed: %s", err)
 						ui.Hint("You may need to remove it manually: sudo rm %s", oldBinaryPath)
 					} else {
-						ui.Done("Successfully removed non managed binary")
+						ui.Done("Successfully removed unmanaged binary")
 					}
 				} else {
 					ui.Warn("Failed to remove old binary at %s", oldBinaryPath)
@@ -208,14 +245,26 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 	return nil
 }
 
+// bgAction maps install flags to a background job action string.
+func bgAction(isUpdate, isOverride, isBrewOverride bool) string {
+	if isUpdate {
+		return "update"
+	}
+	if isOverride && isBrewOverride {
+		return "brew-override"
+	}
+	if isOverride {
+		return "install-override"
+	}
+	return "install"
+}
+
 // LaunchSearch runs the interactive search UI, scanning the system once upfront.
 func LaunchSearch() {
-	// ❯ Perform a single-pass scan of the system (PATH + Brew)
 	scan := installer.PerformSystemScan()
 
 	var wg sync.WaitGroup
 
-	// Pre-allocate the groups slice to maintain the exact catalog order
 	groups := make([]ui.SectionGroup, len(components.AllSections))
 
 	for i, sec := range components.AllSections {
@@ -223,7 +272,6 @@ func LaunchSearch() {
 		groups[i].Entries = make([]ui.SectionEntry, len(sec.Items))
 
 		for j, item := range sec.Items {
-			// Pre-fill the entry data
 			groups[i].Entries[j] = ui.SectionEntry{
 				Name:   item.Name,
 				Desc:   item.Desc,
