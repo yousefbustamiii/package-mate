@@ -38,8 +38,13 @@ export default function App() {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  useEffect(() => {
+    document.title = "Package Mate | Open-Source CLI for macOS Development";
+  }, []);
+
   return (
     <>
+      <link rel="icon" href="https://i.postimg.cc/MHgz7r8D/Screenshot-2026-03-31-at-21-03-35.png" />
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
       <style>{`
         .font-modern { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
