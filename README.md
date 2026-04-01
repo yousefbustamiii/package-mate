@@ -78,6 +78,9 @@ mate
 # View background installations
 mate bg
 
+# Clean up Homebrew cache (free disk space)
+mate cleanup
+
 # Clear finished background jobs
 mate cleanup bg
 ```
@@ -157,6 +160,21 @@ Installations run in the background as detached processes:
 - Real-time status tracking with `mate bg`
 - Automatic cleanup of jobs older than 24 hours
 - Manual cleanup with `mate cleanup bg`
+
+### Homebrew Cleanup
+
+Free up disk space by removing old Homebrew formula versions and cached files:
+
+```bash
+mate cleanup
+```
+
+Choose between:
+
+- **Standard Cleanup** - Removes old versions, keeps current (safe)
+- **Deep Cleanup** - Removes ALL cached files including unused dependencies
+
+Shows disk space freed after completion.
 
 ### Safety Protections
 

@@ -8,6 +8,8 @@ import (
 	"time"
 
 	"github.com/yousefbustamiii/package-mate/internal/background"
+	"github.com/yousefbustamiii/package-mate/internal/components"
+	"github.com/yousefbustamiii/package-mate/internal/installer"
 	"github.com/yousefbustamiii/package-mate/internal/ui"
 	"golang.org/x/term"
 )
@@ -125,6 +127,46 @@ func showBgMenu(jobs []*background.Job) {
 // doAbort handles the abort confirmation flow.
 // It temporarily exits raw mode to read the typed confirmation.
 func doAbort(s *bgState, j *background.Job, oldState *term.State) {
+	// Re-check if it's already installed before allowing an abort attempt.
+	// This handles the case where the UI is stale but the job finished.
+	item, _, ok := components.Resolve(strings.ToLower(j.Name))
+	if ok {
+		scan := installer.PerformSystemScan()
+		status, _, _ := installer.ResolveStatus(scan, *item)
+
+		if status == components.StatusInstalled {
+			// Clear the menu
+			if s.totalLines > 0 {
+				fmt.Printf("\033[%dA\033[J", s.totalLines)
+			}
+			s.totalLines = 0
+
+			// Restore terminal for reading any key
+			_ = term.Restore(int(os.Stdin.Fd()), oldState)
+			fmt.Print("\033[?25h")
+
+			ui.Header("Abort Not Possible")
+			ui.Warn("It's a bit too late to abort!")
+			ui.Blank()
+			fmt.Printf("  The installation of " + ui.C(ui.BrightCyan+ui.Bold, j.Name) + " has already completed successfully.\n")
+			fmt.Printf("  Since the tool is now fully active on your system, an abort is no longer possible.\n")
+			ui.Blank()
+			fmt.Println("  " + ui.C(ui.Dim, "If you'd like to remove this tool, please use the main dashboard:"))
+			fmt.Printf("  " + ui.C(ui.Dim, "Run ") + ui.C(ui.Cyan, "mate " + strings.ToLower(j.Name)) + ui.C(ui.Dim, " and choose option ") + ui.C(ui.White, "2 (Uninstall)") + ui.C(ui.Dim, ".") + "\n")
+			ui.Blank()
+			ui.Footer()
+			fmt.Println("  " + ui.C(ui.Dim, "Press any key to return..."))
+
+			// Re-enter raw mode
+			newState, _ := term.MakeRaw(int(os.Stdin.Fd()))
+			*oldState = *newState
+			fmt.Print("\033[?25l")
+			var sink [4]byte
+			_, _ = os.Stdin.Read(sink[:])
+			return
+		}
+	}
+
 	// Clear the menu before showing confirmation.
 	if s.totalLines > 0 {
 		fmt.Printf("\033[%dA\033[J", s.totalLines)

@@ -17,8 +17,9 @@ const (
 	Cyan        = "\033[36m"
 	BrightCyan  = "\033[96m"
 	BrightPink  = "\033[95m"
-	White       = "\033[97m"
-	Grey        = "\033[37m" // medium grey — used for the banner
+	White        = "\033[97m"
+	Grey         = "\033[37m" // medium grey — used for the banner
+	Strikethrough = "\033[9m"
 )
 
 // ── TTY detection ──────────────────────────────────────────────────────────────

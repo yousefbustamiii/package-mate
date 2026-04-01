@@ -282,7 +282,7 @@ func LaunchSearch() {
 			wg.Add(1)
 			go func(i, j int, it components.InstallItem) {
 				defer wg.Done()
-				status, multiple := installer.ResolveStatus(scan, it)
+				status, multiple, _ := installer.ResolveStatus(scan, it)
 				groups[i].Entries[j].Status = status
 				groups[i].Entries[j].HasMultiple = multiple
 			}(i, j, item)

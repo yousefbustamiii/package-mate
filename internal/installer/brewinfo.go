@@ -21,8 +21,9 @@ type BrewJSON struct {
 			Stable string `json:"stable"`
 		} `json:"versions"`
 		Installed []struct {
-			Version string `json:"version"`
-			Time    int64  `json:"time"`
+			Version            string `json:"version"`
+			Time               int64  `json:"time"`
+			InstalledOnRequest bool   `json:"installed_on_request"`
 		} `json:"installed"`
 		// Fields used by 'brew outdated'
 		InstalledVersions []string `json:"installed_versions"`
@@ -108,8 +109,9 @@ type OutdatedStatus struct {
 
 // InstalledStatus contains maps of all installed tools and their versions.
 type InstalledStatus struct {
-	Formulae map[string]string // formula -> version
-	Casks    map[string]string // cask -> version
+	Formulae  map[string]string // formula -> version
+	Casks     map[string]string // cask -> version
+	Requested map[string]bool   // Name/Token -> true if installed on request (not as dependency)
 }
 
 
@@ -117,8 +119,9 @@ type InstalledStatus struct {
 // FetchFullBrewStatus retrieves installed tools and their outdated status in a single Homebrew call.
 func FetchFullBrewStatus() (InstalledStatus, OutdatedStatus, error) {
 	inst := InstalledStatus{
-		Formulae: make(map[string]string),
-		Casks:    make(map[string]string),
+		Formulae:  make(map[string]string),
+		Casks:     make(map[string]string),
+		Requested: make(map[string]bool),
 	}
 	outdated := OutdatedStatus{
 		Formulae: make(map[string]bool),
@@ -143,6 +146,9 @@ func FetchFullBrewStatus() (InstalledStatus, OutdatedStatus, error) {
 			// Get the version of the last (most recent) installation
 			last := f.Installed[len(f.Installed)-1]
 			inst.Formulae[f.Name] = last.Version
+			if last.InstalledOnRequest {
+				inst.Requested[f.Name] = true
+			}
 			if f.Outdated {
 				outdated.Formulae[f.Name] = true
 			}

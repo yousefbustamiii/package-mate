@@ -56,7 +56,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 	switch det.Status {
 	case installer.DetectionNotFound:
 		fmt.Printf("  "+ui.C(ui.Bold+ui.White, "%s")+" is not installed.\n", item.Name)
-		fmt.Printf("  To install it, run: "+ui.C(ui.Cyan, "mate %s")+"\n", strings.ToLower(item.Name))
+		fmt.Printf("  To install it, run " + ui.C(ui.Cyan, "mate") + " and select " + ui.C(ui.BrightCyan, item.Name) + " then type " + ui.C(ui.BrightCyan, "1") + "\n")
 		ui.Blank()
 	case installer.DetectionExact, installer.DetectionOutdated:
 		// Falls through to the description + installed versions block below.
@@ -68,7 +68,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		fmt.Printf("  "+ui.C(ui.Bold+ui.White, "A different Homebrew version of %s%s is present on your system.\n"), item.Name, verStr)
 		fmt.Printf("  " + ui.C(ui.Dim, det.Detail) + "\n")
 		ui.Blank()
-		fmt.Printf("  To install Package Mate version or override the already installed one: run "+ui.C(ui.Cyan, "mate %s (1)")+"\n", strings.ToLower(item.Name))
+		fmt.Printf("  To install Package Mate version or override the already installed one, run " + ui.C(ui.Cyan, "mate") + " and select " + ui.C(ui.BrightCyan, item.Name) + " then type " + ui.C(ui.BrightCyan, "1") + "\n")
 		ui.Blank()
 	case installer.DetectionBinary:
 		verStr := ""
@@ -78,7 +78,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		fmt.Printf("  "+ui.C(ui.Bold+ui.White, "An unmanaged version of %s%s is present on your system.\n"), item.Name, verStr)
 		fmt.Printf("  " + ui.C(ui.Dim, det.Detail) + "\n")
 		ui.Blank()
-		fmt.Printf("  To install Package Mate version or override the already installed one: run "+ui.C(ui.Cyan, "mate %s (1)")+"\n", strings.ToLower(item.Name))
+		fmt.Printf("  To install Package Mate version or override the already installed one, run " + ui.C(ui.Cyan, "mate") + " and select " + ui.C(ui.BrightCyan, item.Name) + " then type " + ui.C(ui.BrightCyan, "1") + "\n")
 		ui.Blank()
 	case installer.DetectionManualApp:
 		ui.Row("Description", item.Desc)
@@ -87,7 +87,7 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 		if item.Binary != "" {
 			ui.Row("Binary Name", item.Binary)
 		}
-		ui.Hint("Installed outside of Package Mate. Run " + ui.C(ui.Cyan, "mate "+strings.ToLower(item.Name)) + " to manage it.")
+		ui.Hint("Installed outside of Package Mate. Run " + ui.C(ui.Cyan, "mate") + " to manage it.")
 		ui.Footer()
 		return nil
 	case installer.DetectionTrashedApp:

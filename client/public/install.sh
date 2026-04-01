@@ -37,16 +37,20 @@ ARCH="$(uname -m)"
 
 # 1. Detect macOS
 if [ "$OS" != "Darwin" ]; then
-    echo -e "  ${RED}Error:${RESET} Package Mate Is Not Available on ${OS}"
-    echo -e "         Only pristine macOS environments are currently supported."
+    echo -e "  ${RED}Error:${RESET}"
+    echo ""
+    echo -e "  Package Mate Is Not Available on ${OS}"
+    echo -e "  Only pristine macOS environments are currently supported."
     echo ""
     exit 1
 fi
 
 # 2. Detect Apple Silicon (M-Series)
 if [ "$ARCH" != "arm64" ] && [ "$ARCH" != "aarch64" ]; then
-    echo -e "  ${RED}Error:${RESET} Package Mate is exclusively optimized for Apple Silicon (M-Series)."
-    echo -e "         Intel-based Macs are not supported natively."
+    echo -e "  ${RED}Error:${RESET}"
+    echo ""
+    echo -e "  Package Mate is exclusively optimized for Apple Silicon (M-Series)."
+    echo -e "  Intel-based Macs are not supported natively."
     echo ""
     exit 1
 fi
@@ -85,8 +89,10 @@ HTTP_CODE=$(curl -w "%{http_code}" -fsSL -o /tmp/mate.tar.gz "$TARBALL_URL" 2>/d
 
 if [ "$HTTP_CODE" = "000" ] || [ "$HTTP_CODE" = "404" ]; then
     echo ""
-    echo -e "  ${RED}Error:${RESET} Failed to download the release archive (HTTP ${HTTP_CODE})."
-    echo -e "         The v1.0.0 release may not be available yet."
+    echo -e "  ${RED}Error:${RESET}"
+    echo ""
+    echo -e "  Failed to download the release archive (HTTP ${HTTP_CODE})."
+    echo -e "  The v1.0.0 release may not be available yet."
     echo ""
     echo -e "  ${YELLOW}Alternative:${RESET} Install from source instead:"
     echo ""
@@ -104,9 +110,10 @@ FILE_TYPE=$(file -b /tmp/mate.tar.gz 2>/dev/null || echo "unknown")
 # Case 1: It's actually a gzip archive - extract it
 if [[ "$FILE_TYPE" =~ [Gg]zip ]]; then
     tar -xzf /tmp/mate.tar.gz -C /tmp/ || {
+        echo -e "  ${RED}Error:${RESET}"
         echo ""
-        echo -e "  ${RED}Error:${RESET} Failed to extract the archive."
-        echo -e "         The release archive may be corrupted."
+        echo -e "  Failed to extract the archive."
+        echo -e "  The release archive may be corrupted."
         echo ""
         exit 1
     }
@@ -115,9 +122,11 @@ elif [[ "$FILE_TYPE" =~ "Mach-O" ]]; then
     mv /tmp/mate.tar.gz /tmp/mate
 else
     echo ""
-    echo -e "  ${RED}Error:${RESET} Downloaded file is not a valid archive or binary."
-    echo -e "         Detected format: ${FILE_TYPE}"
-    echo -e "         The release URL may be incorrect or the file is corrupted."
+    echo -e "  ${RED}Error:${RESET}"
+    echo ""
+    echo -e "  Downloaded file is not a valid archive or binary."
+    echo -e "  Detected format: ${FILE_TYPE}"
+    echo -e "  The release URL may be incorrect or the file is corrupted."
     echo ""
     exit 1
 fi
@@ -134,8 +143,10 @@ fi
 
 if [ -z "$MATE_BINARY" ] || [ ! -f "$MATE_BINARY" ]; then
     echo ""
-    echo -e "  ${RED}Error:${RESET} Could not locate the mate binary in the archive."
-    echo -e "         The release structure may have changed."
+    echo -e "  ${RED}Error:${RESET}"
+    echo ""
+    echo -e "  Could not locate the mate binary in the archive."
+    echo -e "  The release structure may have changed."
     echo ""
     exit 1
 fi

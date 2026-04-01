@@ -109,6 +109,12 @@ func PromptConfirmation(action, name string) bool {
 	return false
 }
 
+// PromptInput asks the user for a string input with a custom label (e.g. Export String:).
+func PromptInput(label string) string {
+	fmt.Printf("  " + C(Bold+White, label) + " ")
+	return readInput()
+}
+
 // PromptInstall asks the user to confirm a fresh install, with an option to run in background.
 // Returns "INSTALL", "INSTALL/BG", or "" if declined.
 func PromptInstall(name string) string {

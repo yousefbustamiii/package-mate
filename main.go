@@ -5,6 +5,9 @@ import (
 	"os"
 
 	"github.com/yousefbustamiii/package-mate/cmd/bg"
+	"github.com/yousefbustamiii/package-mate/cmd/cleanup"
+	"github.com/yousefbustamiii/package-mate/cmd/consume"
+	"github.com/yousefbustamiii/package-mate/cmd/export"
 	"github.com/yousefbustamiii/package-mate/cmd/info"
 	"github.com/yousefbustamiii/package-mate/cmd/install"
 	"github.com/yousefbustamiii/package-mate/cmd/uninstall"
@@ -53,14 +56,18 @@ func main() {
 			fmt.Println(ui.C(ui.Dim, "  Usage:"))
 			fmt.Println()
 			fmt.Println(ui.C(ui.Cyan, "    mate                  ") + ui.C(ui.Dim, "— open interactive search dashboard"))
-			fmt.Println(ui.C(ui.Cyan, "    mate bg               ") + ui.C(ui.Dim, "— view and manage background downloads"))
+			fmt.Println(ui.C(ui.Cyan, "    mate cleanup          ") + ui.C(ui.Dim, "— clean up Homebrew cache (interactive)"))
 			fmt.Println(ui.C(ui.Cyan, "    mate cleanup bg       ") + ui.C(ui.Dim, "— remove all finished background jobs"))
+			fmt.Println(ui.C(ui.Cyan, "    mate export           ") + ui.C(ui.Dim, "— export installed packages as base64 string"))
+			fmt.Println(ui.C(ui.Cyan, "    mate consume          ") + ui.C(ui.Dim, "— sync packages from an export string"))
 			fmt.Println()
 			fmt.Println(ui.C(ui.Dim, "  Examples:"))
 			fmt.Println()
 			fmt.Println(ui.C(ui.Dim, "    mate                  ") + ui.C(ui.Dim, "— browse tools, type to search"))
-			fmt.Println(ui.C(ui.Dim, "    mate bg               ") + ui.C(ui.Dim, "— check installation progress"))
+			fmt.Println(ui.C(ui.Dim, "    mate cleanup          ") + ui.C(ui.Dim, "— free up disk space from old formulae"))
 			fmt.Println(ui.C(ui.Dim, "    mate cleanup bg       ") + ui.C(ui.Dim, "— clear finished jobs"))
+			fmt.Println(ui.C(ui.Dim, "    mate export           ") + ui.C(ui.Dim, "— generate portable package list"))
+			fmt.Println(ui.C(ui.Dim, "    mate consume          ") + ui.C(ui.Dim, "— install packages from another machine"))
 			fmt.Println()
 			return nil
 		},
@@ -79,7 +86,10 @@ func main() {
 	// mate cleanup bg — removes all finished background jobs.
 	cleanupCmd := &cobra.Command{
 		Use:   "cleanup",
-		Short: "Clean up completed jobs and temporary files",
+		Short: "Clean up Homebrew cache and old formula versions",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return cleanup.Run()
+		},
 	}
 
 	cleanupBgCmd := &cobra.Command{
@@ -96,6 +106,24 @@ func main() {
 
 	cleanupCmd.AddCommand(cleanupBgCmd)
 
+	// mate export — export installed packages as base64 encoded JSON array.
+	exportCmd := &cobra.Command{
+		Use:   "export",
+		Short: "Export installed Homebrew packages as a portable base64 string",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return export.Run()
+		},
+	}
+
+	// mate consume — consume an export string and install missing tools in background.
+	consumeCmd := &cobra.Command{
+		Use:   "consume",
+		Short: "Sync your machine using an export string from another Mac",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return consume.Run()
+		},
+	}
+
 	// mate _bg-exec <jobID> — hidden command used internally by background jobs.
 	bgExecCmd := &cobra.Command{
 		Use:    "_bg-exec",
@@ -110,6 +138,8 @@ func main() {
 
 	root.AddCommand(bgCmd)
 	root.AddCommand(cleanupCmd)
+	root.AddCommand(exportCmd)
+	root.AddCommand(consumeCmd)
 	root.AddCommand(bgExecCmd)
 
 	if err := root.Execute(); err != nil {
