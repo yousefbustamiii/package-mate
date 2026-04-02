@@ -32,6 +32,8 @@ print_banner() {
 
 print_banner
 
+VERSION="v1.0.1"
+
 OS="$(uname -s)"
 ARCH="$(uname -m)"
 
@@ -80,9 +82,9 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 # 5. Download and Extract the Binary
-echo -e "  ${DIM}Fetching Package Mate v1.0.0...${RESET}"
+echo -e "  ${DIM}Fetching Package Mate ${VERSION}...${RESET}"
 echo ""
-TARBALL_URL="https://github.com/yousefbustamiii/package-mate/releases/download/v1.0.0/mate-v1.0.0-darwin-arm64.tar.gz"
+TARBALL_URL="https://github.com/yousefbustamiii/package-mate/releases/download/${VERSION}/mate-${VERSION}-darwin-arm64.tar.gz"
 
 # Try to download the release binary
 HTTP_CODE=$(curl -w "%{http_code}" -fsSL -o /tmp/mate.tar.gz "$TARBALL_URL" 2>/dev/null || echo "000")
@@ -92,7 +94,7 @@ if [ "$HTTP_CODE" = "000" ] || [ "$HTTP_CODE" = "404" ]; then
     echo -e "  ${RED}Error:${RESET}"
     echo ""
     echo -e "  Failed to download the release archive (HTTP ${HTTP_CODE})."
-    echo -e "  The v1.0.0 release may not be available yet."
+    echo -e "  The ${VERSION} release may not be available yet."
     echo ""
     echo -e "  ${YELLOW}Alternative:${RESET} Install from source instead:"
     echo ""
@@ -134,8 +136,8 @@ fi
 # Find the mate binary (could be directly in /tmp or in a subdirectory)
 if [ -f /tmp/mate ]; then
     MATE_BINARY="/tmp/mate"
-elif [ -f /tmp/mate-v1.0.0-darwin-arm64/mate ]; then
-    MATE_BINARY="/tmp/mate-v1.0.0-darwin-arm64/mate"
+elif [ -f "/tmp/mate-${VERSION}-darwin-arm64/mate" ]; then
+    MATE_BINARY="/tmp/mate-${VERSION}-darwin-arm64/mate"
 else
     # Try to find any 'mate' binary in the extracted contents
     MATE_BINARY=$(find /tmp -name "mate" -type f -perm /111 2>/dev/null | head -1)
@@ -156,7 +158,7 @@ chmod +x "$MATE_BINARY"
 
 # Cleanup the tarball and extracted directory
 rm -f /tmp/mate.tar.gz
-rm -rf /tmp/mate-v1.0.0-darwin-arm64
+rm -rf "/tmp/mate-${VERSION}-darwin-arm64"
 rm -rf /tmp/mate-*
 
 # 6. Request sudo with standard elegant macOS style
