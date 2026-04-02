@@ -19,6 +19,12 @@ import (
 
 // Run executes the installation or update logic for a resolved item.
 func Run(item *components.InstallItem, sec *components.Section) error {
+	// ── Conflict Check: Prevents manual override of background tasks ────────────
+	if running := background.GetRunningJob(item.Name); running != nil {
+		showBgConflict(item.Name)
+		return nil
+	}
+
 	ui.Blank()
 	ui.Doing("Analyzing %s", item.Name)
 	det := installer.IsInstalled(*item)
@@ -243,6 +249,23 @@ func Run(item *components.InstallItem, sec *components.Section) error {
 
 	ui.Footer()
 	return nil
+}
+
+func showBgConflict(name string) {
+	ui.Blank()
+	fmt.Println(ui.C(ui.Yellow, "  "+strings.Repeat("─", 60)))
+	fmt.Println("  " + ui.C(ui.Bold+ui.Yellow, "❯ BACKGROUND TASK ACTIVE"))
+	fmt.Println(ui.C(ui.Yellow, "  "+strings.Repeat("─", 60)))
+	ui.Blank()
+	fmt.Printf("  " + ui.C(ui.Bold+ui.White, "The tool ") + ui.C(ui.BrightCyan, name) + ui.C(ui.Bold+ui.White, " is already being processed.") + "\n")
+	ui.Blank()
+	fmt.Println("  A background installation or update is currently in progress")
+	fmt.Println("  for this tool. To avoid system conflicts, please wait for")
+	fmt.Println("  it to finish or check its status in the dashboard:")
+	ui.Blank()
+	fmt.Println("  " + ui.C(ui.Dim, "Run ") + ui.C(ui.Cyan, "mate bg") + ui.C(ui.Dim, " to monitor progress."))
+	ui.Blank()
+	ui.Footer()
 }
 
 // bgAction maps install flags to a background job action string.

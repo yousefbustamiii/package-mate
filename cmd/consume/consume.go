@@ -21,25 +21,29 @@ func Run() error {
 
 	encoded := ui.PromptInput("Export String:")
 	if encoded == "" {
-		ui.Fail("No string provided. Aborting.")
+		ui.Blank()
+		ui.Fail("No string provided. Aborting sync.")
 		return nil
 	}
 
 	// 1. Decode & Parse
 	decoded, err := base64.StdEncoding.DecodeString(strings.TrimSpace(encoded))
 	if err != nil {
-		ui.Fail("Invalid export string (base64 decode failed).")
+		ui.Blank()
+		ui.Fail("Invalid export string (the format doesn't look quite right).")
 		return nil
 	}
 
 	var names []string
 	if err := json.Unmarshal(decoded, &names); err != nil {
-		ui.Fail("Invalid export string (JSON parse failed).")
+		ui.Blank()
+		ui.Fail("Invalid export string (the package list appears to be corrupted).")
 		return nil
 	}
 
 	if len(names) == 0 {
-		ui.Fail("Export string contains no packages.")
+		ui.Blank()
+		ui.Fail("This export string doesn't contain any packages to install.")
 		return nil
 	}
 
@@ -74,24 +78,30 @@ func Run() error {
 		status, _, _ := installer.ResolveStatus(scan, *item)
 		t := task{item: item}
 
-		switch status {
-		case components.StatusInstalled:
-			// Already installed and up to date
+		// Priority check: Is it already being handled in the background?
+		if running := background.GetRunningJob(item.Name); running != nil {
 			t.action = "skip"
-			t.display = ui.C(ui.Dim+ui.Strikethrough, item.Name) + " " + ui.C(ui.Dim, "---- (already installed)")
-		
-		case components.StatusOutdated:
-			t.action = "update"
-			t.display = ui.C(ui.Bold+ui.White, item.Name) + " " + ui.C(ui.Yellow, "[exists, will update only]")
-		
-		case components.StatusUnmanaged:
-			// App exists but not managed by brew
-			t.action = "skip"
-			t.display = ui.C(ui.Dim+ui.Strikethrough, item.Name) + " " + ui.C(ui.Dim, "---- (manual app exists, skipping)")
-		
-		case components.StatusNotInstalled:
-			t.action = "install"
-			t.display = ui.C(ui.Bold+ui.White, item.Name)
+			t.display = ui.C(ui.Dim+ui.Strikethrough, item.Name) + " " + ui.C(ui.Dim, "---- (installing in background)")
+		} else {
+			switch status {
+			case components.StatusInstalled:
+				// Already installed and up to date
+				t.action = "skip"
+				t.display = ui.C(ui.Dim+ui.Strikethrough, item.Name) + " " + ui.C(ui.Dim, "---- (already installed)")
+			
+			case components.StatusOutdated:
+				t.action = "update"
+				t.display = ui.C(ui.Bold+ui.White, item.Name) + " " + ui.C(ui.Yellow, "[exists, will update only]")
+			
+			case components.StatusUnmanaged:
+				// App exists but not managed by brew
+				t.action = "skip"
+				t.display = ui.C(ui.Dim+ui.Strikethrough, item.Name) + " " + ui.C(ui.Dim, "---- (manual app exists, skipping)")
+			
+			case components.StatusNotInstalled:
+				t.action = "install"
+				t.display = ui.C(ui.Bold+ui.White, item.Name)
+			}
 		}
 
 		tasks = append(tasks, t)

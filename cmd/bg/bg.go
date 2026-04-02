@@ -127,46 +127,6 @@ func showBgMenu(jobs []*background.Job) {
 // doAbort handles the abort confirmation flow.
 // It temporarily exits raw mode to read the typed confirmation.
 func doAbort(s *bgState, j *background.Job, oldState *term.State) {
-	// Re-check if it's already installed before allowing an abort attempt.
-	// This handles the case where the UI is stale but the job finished.
-	item, _, ok := components.Resolve(strings.ToLower(j.Name))
-	if ok {
-		scan := installer.PerformSystemScan()
-		status, _, _ := installer.ResolveStatus(scan, *item)
-
-		if status == components.StatusInstalled {
-			// Clear the menu
-			if s.totalLines > 0 {
-				fmt.Printf("\033[%dA\033[J", s.totalLines)
-			}
-			s.totalLines = 0
-
-			// Restore terminal for reading any key
-			_ = term.Restore(int(os.Stdin.Fd()), oldState)
-			fmt.Print("\033[?25h")
-
-			ui.Header("Abort Not Possible")
-			ui.Warn("It's a bit too late to abort!")
-			ui.Blank()
-			fmt.Printf("  The installation of " + ui.C(ui.BrightCyan+ui.Bold, j.Name) + " has already completed successfully.\n")
-			fmt.Printf("  Since the tool is now fully active on your system, an abort is no longer possible.\n")
-			ui.Blank()
-			fmt.Println("  " + ui.C(ui.Dim, "If you'd like to remove this tool, please use the main dashboard:"))
-			fmt.Printf("  " + ui.C(ui.Dim, "Run ") + ui.C(ui.Cyan, "mate " + strings.ToLower(j.Name)) + ui.C(ui.Dim, " and choose option ") + ui.C(ui.White, "2 (Uninstall)") + ui.C(ui.Dim, ".") + "\n")
-			ui.Blank()
-			ui.Footer()
-			fmt.Println("  " + ui.C(ui.Dim, "Press any key to return..."))
-
-			// Re-enter raw mode
-			newState, _ := term.MakeRaw(int(os.Stdin.Fd()))
-			*oldState = *newState
-			fmt.Print("\033[?25l")
-			var sink [4]byte
-			_, _ = os.Stdin.Read(sink[:])
-			return
-		}
-	}
-
 	// Clear the menu before showing confirmation.
 	if s.totalLines > 0 {
 		fmt.Printf("\033[%dA\033[J", s.totalLines)
@@ -183,12 +143,12 @@ func doAbort(s *bgState, j *background.Job, oldState *term.State) {
 	fmt.Println("  " + ui.C(ui.Bold+ui.Yellow, "❯ ABORT BACKGROUND DOWNLOAD"))
 	fmt.Println("  " + ui.C(ui.Yellow, strings.Repeat("─", 60)))
 	ui.Blank()
-	fmt.Printf("  "+ui.C(ui.Bold+ui.White, "This will abort the background download of ")+
-		ui.C(ui.BrightCyan, j.Name)+".\n")
+	fmt.Printf("  " + ui.C(ui.Bold+ui.White, "This will abort the background download of ") +
+		ui.C(ui.BrightCyan, j.Name) + ".\n")
 	ui.Blank()
-	fmt.Printf("  "+ui.C(ui.Bold+ui.White, "Type ")+
-		ui.C(ui.Bold+ui.BrightCyan, "ABORT")+
-		ui.C(ui.Bold+ui.White, " to confirm.")+"\n")
+	fmt.Printf("  " + ui.C(ui.Bold+ui.White, "Type ") +
+		ui.C(ui.Bold+ui.BrightCyan, "ABORT") +
+		ui.C(ui.Bold+ui.White, " to confirm.") + "\n")
 	ui.Blank()
 	fmt.Print("  " + ui.C(ui.Bold+ui.White, "❯ "))
 
@@ -197,11 +157,46 @@ func doAbort(s *bgState, j *background.Job, oldState *term.State) {
 	input := strings.TrimSpace(scanner.Text())
 
 	if strings.EqualFold(input, "ABORT") {
-		if err := j.Abort(); err != nil {
-			ui.Fail("Could not abort: %v", err)
+		item, _, ok := components.Resolve(strings.ToLower(j.Name))
+		if ok {
+			scan := installer.PerformSystemScan()
+			status, _, _ := installer.ResolveStatus(scan, *item)
+
+			if status == components.StatusInstalled {
+				ui.Blank()
+				ui.Header("Abort Not Possible")
+				ui.Warn("It's a bit too late to abort!")
+				ui.Blank()
+				fmt.Printf("  The installation of " + ui.C(ui.BrightCyan+ui.Bold, j.Name) + " has already completed successfully.\n")
+				fmt.Printf("  Since the tool is now fully active on your system, an abort is no longer possible.\n")
+				ui.Blank()
+				fmt.Println("  " + ui.C(ui.Dim, "If you'd like to remove this tool, please use the main dashboard:"))
+				fmt.Printf("  " + ui.C(ui.Dim, "Run ") + ui.C(ui.Cyan, "mate "+strings.ToLower(j.Name)) + ui.C(ui.Dim, " and choose option ") + ui.C(ui.White, "2 (Uninstall)") + ui.C(ui.Dim, ".") + "\n")
+				ui.Blank()
+				ui.Footer()
+				fmt.Println("  " + ui.C(ui.Dim, "Press any key to return..."))
+
+				// Re-enter raw mode temporarily to wait for any key
+				rawState, _ := term.MakeRaw(int(os.Stdin.Fd()))
+				var sink [4]byte
+				_, _ = os.Stdin.Read(sink[:])
+				_ = term.Restore(int(os.Stdin.Fd()), rawState)
+			} else {
+				if err := j.Abort(); err != nil {
+					ui.Fail("Could not abort: %v", err)
+				} else {
+					ui.Blank()
+					ui.Done("Aborted: %s", j.Name)
+				}
+			}
 		} else {
-			ui.Blank()
-			ui.Done("Aborted: %s", j.Name)
+			// Item not found in catalog, proceed with normal abort
+			if err := j.Abort(); err != nil {
+				ui.Fail("Could not abort: %v", err)
+			} else {
+				ui.Blank()
+				ui.Done("Aborted: %s", j.Name)
+			}
 		}
 	} else {
 		ui.Blank()
@@ -211,7 +206,7 @@ func doAbort(s *bgState, j *background.Job, oldState *term.State) {
 	ui.Blank()
 	fmt.Println("  " + ui.C(ui.Dim, "Press any key to return..."))
 
-	// Re-enter raw mode.
+	// Re-enter raw mode for the next menu loop
 	newState, err := term.MakeRaw(int(os.Stdin.Fd()))
 	if err != nil {
 		return
@@ -267,9 +262,9 @@ func renderMenu(jobs []*background.Job, selected int) int {
 
 		// Pad raw strings BEFORE applying ANSI — prevents escape-byte inflation
 		// from breaking column alignment when the style changes on selection.
-		nameStr  := fmt.Sprintf("%-20s", truncate(j.Name, 20))
+		nameStr := fmt.Sprintf("%-20s", truncate(j.Name, 20))
 		labelStr := fmt.Sprintf("%-12s", statusLabel(j.Status))
-		tail     := statusTail(j)
+		tail := statusTail(j)
 
 		row := fmt.Sprintf("  %s[%s]  %s  %s  %s",
 			cursor,

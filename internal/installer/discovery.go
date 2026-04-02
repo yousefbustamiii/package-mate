@@ -91,35 +91,28 @@ func ResolveStatus(scan *SystemScan, item components.InstallItem) (components.Da
 	managedFormulas := make(map[string]bool)
 	uniqueUnmanaged := make(map[string]bool)
 
+	// ❯ Helper: Strip tap prefix (e.g. timescale/tap/timescaledb -> timescaledb)
+	baseFormula := item.Formula
+	if strings.Contains(baseFormula, "/") {
+		parts := strings.Split(baseFormula, "/")
+		baseFormula = parts[len(parts)-1]
+	}
+
 	// 1. Check Managed Formulae (Exact + Older/Versioned)
 	if item.Formula != "" {
-		// Exact Match (e.g. "postgresql")
-		if _, exists := scan.Installed.Formulae[item.Formula]; exists {
-			managedFormulas[item.Formula] = true
-			if scan.Installed.Requested[item.Formula] {
-				isRequested = true
-			}
-			if scan.Outdated.Formulae[item.Formula] {
-				status = components.StatusOutdated
-			} else if status == components.StatusNotInstalled {
-				status = components.StatusInstalled
-			}
-		}
-		// Versioned Matches (e.g. "postgresql@18")
 		for name := range scan.Installed.Formulae {
-			if strings.HasPrefix(name, item.Formula+"@") {
+			isMain := name == item.Formula || name == baseFormula
+			isVersioned := strings.HasPrefix(name, item.Formula+"@") || strings.HasPrefix(name, baseFormula+"@")
+
+			if isMain || isVersioned {
 				managedFormulas[name] = true
 				if scan.Installed.Requested[name] {
 					isRequested = true
 				}
-				if !scan.Outdated.Formulae[name] {
-					if status == components.StatusNotInstalled || status == components.StatusOutdated {
-						status = components.StatusInstalled
-					}
-				} else {
-					if status == components.StatusNotInstalled {
-						status = components.StatusOutdated
-					}
+				if scan.Outdated.Formulae[name] {
+					status = components.StatusOutdated
+				} else if status == components.StatusNotInstalled {
+					status = components.StatusInstalled
 				}
 			}
 		}
@@ -146,7 +139,7 @@ func ResolveStatus(scan *SystemScan, item components.InstallItem) (components.Da
 			if isBrew {
 				if status == components.StatusNotInstalled {
 					status = components.StatusInstalled
-					// We don't mark as requested here specifically, but 
+					// We don't mark as requested here specifically, but
 					// we could check common brew prefixes like /opt/homebrew/Cellar/<item.Formula>
 				}
 			}
@@ -181,7 +174,21 @@ func ResolveStatus(scan *SystemScan, item components.InstallItem) (components.Da
 		}
 	}
 
-	totalCount := len(managedFormulas) + len(uniqueUnmanaged)
+	// ── Final Decision ──────────────────────────────────────────────────────────
+
+	// Only count managed versions if they were explicitly requested (manually installed).
+	requestedManagedCount := 0
+	for name := range managedFormulas {
+		if scan.Installed.Requested[name] {
+			requestedManagedCount++
+		}
+	}
+
+	if requestedManagedCount == 0 && len(managedFormulas) > 0 {
+		requestedManagedCount = 1
+	}
+
+	totalCount := requestedManagedCount + len(uniqueUnmanaged)
 	isMultiple := totalCount >= 2
 	return status, isMultiple, isRequested
 }

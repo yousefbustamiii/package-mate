@@ -23,6 +23,30 @@ func IsInstalled(item components.InstallItem) (bool, string) {
 		return npmGCheck("jest")
 	case "npm-g":
 		return npmGCheck(item.Formula)
+	case "aider":
+		return pipxCheck("aider-chat")
+	case "continue-cli":
+		return npmGCheck("@continuedev/cli")
+	case "corepack":
+		return npmGCheck("corepack")
+	case "playwright":
+		return npmGCheck("playwright")
+	case "cypress":
+		return npmGCheck("cypress")
+	case "vitest":
+		return npmGCheck("vitest")
+	case "eslint":
+		return npmGCheck("eslint")
+	case "locust":
+		return pipxCheck("locust")
+	case "firebase":
+		return npmGCheck("firebase-tools")
+	case "prism":
+		return npmGCheck("@stoplight/prism-cli")
+	case "eleventy":
+		return npmGCheck("@11ty/eleventy")
+	case "spectral":
+		return npmGCheck("@stoplight/spectral-cli")
 	case "pytest":
 		return pytestCheck()
 	case "pipx-g":
@@ -49,6 +73,30 @@ func Install(item components.InstallItem) error {
 		return npmGInstall("Jest", "jest")
 	case "npm-g":
 		return npmGInstall(item.Name, item.Formula)
+	case "aider":
+		return pipxInstall("Aider", "aider-chat")
+	case "continue-cli":
+		return npmGInstall("Continue CLI", "@continuedev/cli")
+	case "corepack":
+		return npmGInstall("Corepack", "corepack")
+	case "playwright":
+		return npmGInstall("Playwright", "playwright")
+	case "cypress":
+		return npmGInstall("Cypress", "cypress")
+	case "vitest":
+		return npmGInstall("Vitest", "vitest")
+	case "eslint":
+		return npmGInstall("ESLint", "eslint")
+	case "locust":
+		return pipxInstall("Locust", "locust")
+	case "firebase":
+		return npmGInstall("Firebase CLI", "firebase-tools")
+	case "prism":
+		return npmGInstall("Prism", "@stoplight/prism-cli")
+	case "eleventy":
+		return npmGInstall("Eleventy", "@11ty/eleventy")
+	case "spectral":
+		return npmGInstall("Spectral", "@stoplight/spectral-cli")
 	case "pytest":
 		return pytestInstall()
 	case "pipx-g":

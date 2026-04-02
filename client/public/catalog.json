@@ -1,0 +1,4115 @@
+[
+  {
+    "Name": "Homebrew Setup",
+    "Items": [
+      {
+        "Name": "Homebrew",
+        "Desc": "Standard package manager for macOS and Linux",
+        "Formula": "",
+        "Cask": "",
+        "Special": "brew-install",
+        "Color": "rgb(255, 170, 50)",
+        "Binary": "brew"
+      },
+      {
+        "Name": "Homebrew Update",
+        "Desc": "Synchronize local formula and cask metadata with upstream",
+        "Formula": "",
+        "Cask": "",
+        "Special": "brew-update",
+        "Color": "rgb(255, 230, 100)",
+        "Binary": "brew"
+      }
+    ]
+  },
+  {
+    "Name": "Backend & Runtime",
+    "Items": [
+      {
+        "Name": "Node",
+        "Desc": "JavaScript runtime built on the V8 engine for server-side applications",
+        "Formula": "node",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(130, 220, 120)",
+        "Binary": "node"
+      },
+      {
+        "Name": "Bun",
+        "Desc": "Fast JavaScript runtime and toolkit for efficient modern development",
+        "Formula": "bun",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 230, 160)",
+        "Binary": "bun"
+      },
+      {
+        "Name": "Deno",
+        "Desc": "Secure runtime for JavaScript and TypeScript with built-in toolchain",
+        "Formula": "deno",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "deno"
+      },
+      {
+        "Name": "Python",
+        "Desc": "Versatile programming language for data science, AI, and scripting",
+        "Formula": "python",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 160, 230)",
+        "Binary": "python3"
+      },
+      {
+        "Name": "Java",
+        "Desc": "Object-oriented language for cross-platform enterprise development",
+        "Formula": "openjdk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 170, 50)",
+        "Binary": "java"
+      },
+      {
+        "Name": "Go",
+        "Desc": "Statically typed compiled language designed for scalable services",
+        "Formula": "go",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "go"
+      },
+      {
+        "Name": "PHP",
+        "Desc": "Server-side scripting language primarily used for modern web development",
+        "Formula": "php",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 150, 230)",
+        "Binary": "php"
+      },
+      {
+        "Name": "Ruby",
+        "Desc": "Dynamic language focusing on developer productivity and elegant syntax",
+        "Formula": "ruby",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 50, 50)",
+        "Binary": "ruby"
+      },
+      {
+        "Name": ".NET",
+        "Desc": "Cross-platform developer platform for building web, cloud, and mobile apps",
+        "Formula": "",
+        "Cask": "dotnet-sdk",
+        "Special": "",
+        "Color": "rgb(130, 80, 230)",
+        "Binary": "dotnet"
+      },
+      {
+        "Name": "Elixir",
+        "Desc": "Functional language for scalable and maintainable concurrent systems",
+        "Formula": "elixir",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 80, 200)",
+        "Binary": "elixir"
+      },
+      {
+        "Name": "Erlang",
+        "Desc": "Functional programming language used for fault-tolerant applications",
+        "Formula": "erlang",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 50, 80)",
+        "Binary": "erl"
+      },
+      {
+        "Name": "Delve",
+        "Desc": "The official debugger for the Go programming language",
+        "Formula": "delve",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "dlv"
+      },
+      {
+        "Name": "Air",
+        "Desc": "Live reload for Go apps, fast and efficient during development",
+        "Formula": "air",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "air"
+      },
+      {
+        "Name": "golang-migrate",
+        "Desc": "Powerful database migrations CLI tool for developer workflows",
+        "Formula": "golang-migrate",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "migrate"
+      }
+    ]
+  },
+  {
+    "Name": "Languages & Runtimes",
+    "Items": [
+      {
+        "Name": "Zig",
+        "Desc": "General-purpose language for systems programming with manual memory control",
+        "Formula": "zig",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 165, 50)",
+        "Binary": "zig"
+      },
+      {
+        "Name": "Haskell",
+        "Desc": "Purely functional language with strong static typing and lazy evaluation",
+        "Formula": "ghc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 220)",
+        "Binary": "ghc"
+      },
+      {
+        "Name": "OCaml",
+        "Desc": "Functional language with an expressive type system and native compiler",
+        "Formula": "ocaml",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(235, 140, 50)",
+        "Binary": "ocaml"
+      },
+      {
+        "Name": "C++ (Clang)",
+        "Desc": "LLVM-based C and C++ compiler toolchain with modern language support",
+        "Formula": "llvm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 255)",
+        "Binary": "clang"
+      },
+      {
+        "Name": "Rustup",
+        "Desc": "Official Rust toolchain installer for managing versions and targets",
+        "Formula": "rustup-init",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 90, 40)",
+        "Binary": "rustup-init"
+      },
+      {
+        "Name": "Lua",
+        "Desc": "Lightweight embeddable scripting language for extensible applications",
+        "Formula": "lua",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 130, 200)",
+        "Binary": "lua"
+      },
+      {
+        "Name": "Perl",
+        "Desc": "Versatile scripting language for text processing and system administration",
+        "Formula": "perl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 160, 230)",
+        "Binary": "perl"
+      },
+      {
+        "Name": "Dart",
+        "Desc": "Client-optimized language for fast apps on multiple platforms",
+        "Formula": "dart",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(70, 200, 240)",
+        "Binary": "dart"
+      },
+      {
+        "Name": "Kotlin",
+        "Desc": "Modern JVM language for Android and multiplatform development",
+        "Formula": "kotlin",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 100, 240)",
+        "Binary": "kotlinc"
+      },
+      {
+        "Name": "Scala",
+        "Desc": "JVM language blending object-oriented and functional programming",
+        "Formula": "scala",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(220, 50, 50)",
+        "Binary": "scala"
+      },
+      {
+        "Name": "Fortran (GCC)",
+        "Desc": "High-performance numerical language via the GCC compiler suite",
+        "Formula": "gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 100)",
+        "Binary": "gfortran"
+      },
+      {
+        "Name": "Julia",
+        "Desc": "High-performance language for scientific computing and data analysis",
+        "Formula": "",
+        "Cask": "julia",
+        "Special": "",
+        "Color": "rgb(150, 80, 220)",
+        "Binary": "julia"
+      },
+      {
+        "Name": "Flutter",
+        "Desc": "UI toolkit for building natively compiled apps from a single codebase",
+        "Formula": "",
+        "Cask": "flutter",
+        "Special": "",
+        "Color": "rgb(70, 200, 255)",
+        "Binary": "flutter"
+      },
+      {
+        "Name": "Crystal",
+        "Desc": "A programming language with Ruby-like syntax and C-like performance",
+        "Formula": "crystal",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "crystal"
+      },
+      {
+        "Name": "Nim",
+        "Desc": "A statically typed, imperative language with Python-like readability",
+        "Formula": "nim",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "nim"
+      },
+      {
+        "Name": "Wasmtime",
+        "Desc": "A small and efficient runtime for WebAssembly and WASI",
+        "Formula": "wasmtime",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 255)",
+        "Binary": "wasmtime"
+      },
+      {
+        "Name": "Mage",
+        "Desc": "A make-like build tool using Go for high reproducibility",
+        "Formula": "mage",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(0, 173, 216)",
+        "Binary": "mage"
+      },
+      {
+        "Name": "GraalVM",
+        "Desc": "High-performance JDK for running Java, JavaScript, Python, and more",
+        "Formula": "",
+        "Cask": "graalvm-jdk",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "java"
+      },
+      {
+        "Name": "Mojo",
+        "Desc": "A new programming language that combines Python's ease of use with ML power",
+        "Formula": "",
+        "Cask": "mojo",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "mojo"
+      }
+    ]
+  },
+  {
+    "Name": "Coding CLIs & AI",
+    "Items": [
+      {
+        "Name": "Claude Code",
+        "Desc": "Agentic coding CLI from Anthropic for terminal-based development",
+        "Formula": "",
+        "Cask": "",
+        "Special": "claude",
+        "Color": "rgb(230, 150, 120)",
+        "Binary": "claude"
+      },
+      {
+        "Name": "Ast-grep (Structural Search)",
+        "Desc": "A CLI tool for structural search and replace based on abstract syntax trees",
+        "Formula": "ast-grep",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "sg"
+      },
+      {
+        "Name": "Difftastic (Syntax-aware Diff)",
+        "Desc": "A structural diff tool that understands code syntax and structure",
+        "Formula": "difftastic",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "difft"
+      },
+      {
+        "Name": "In-cli (Bulk Repo Operations)",
+        "Desc": "A CLI tool for performing bulk operations across many git repositories",
+        "Formula": "in-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "in"
+      },
+      {
+        "Name": "Wispr Flow (Voice-to-CLI)",
+        "Desc": "A voice-to-text platform for natural, safe, and productive voice typing",
+        "Formula": "",
+        "Cask": "wispr-flow",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "Flow"
+      },
+      {
+        "Name": "Gemini CLI",
+        "Desc": "Developer interface for interacting with Google's Gemini AI models",
+        "Formula": "",
+        "Cask": "",
+        "Special": "gemini",
+        "Color": "rgb(100, 170, 255)",
+        "Binary": "gemini"
+      },
+      {
+        "Name": "Aider",
+        "Desc": "AI-powered pair programming tool for terminal-oriented coding tasks",
+        "Formula": "",
+        "Cask": "",
+        "Special": "aider",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "aider"
+      },
+      {
+        "Name": "Continue CLI",
+        "Desc": "Command-line companion for the Continue AI code assistant platform",
+        "Formula": "",
+        "Cask": "",
+        "Special": "continue-cli",
+        "Color": "rgb(100, 220, 255)",
+        "Binary": "typegen"
+      },
+      {
+        "Name": "GitHub CLI",
+        "Desc": "Official interface for interacting with GitHub repositories and PRs",
+        "Formula": "gh",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "gh"
+      },
+      {
+        "Name": "Ollama",
+        "Desc": "Get up and running with large language models locally",
+        "Formula": "ollama",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 100, 255)",
+        "Binary": "ollama"
+      },
+      {
+        "Name": "Swag",
+        "Desc": "Automatically generate RESTful API documentation with Swagger 2.0 for Go",
+        "Formula": "swag",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "swag"
+      },
+      {
+        "Name": "Mockery",
+        "Desc": "A mock code generator for Go, generating type-safe mocks",
+        "Formula": "mockery",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "mockery"
+      },
+      {
+        "Name": "Templ",
+        "Desc": "A language for writing HTML components in Go with type safety",
+        "Formula": "templ",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "templ"
+      },
+      {
+        "Name": "Antigravity",
+        "Desc": "Agentic coding CLI designed for rapid terminal-based development",
+        "Formula": "",
+        "Cask": "antigravity",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "antigravity"
+      }
+    ]
+  },
+  {
+    "Name": "Dev Essentials",
+    "Items": [
+      {
+        "Name": "Git",
+        "Desc": "Distributed version control system for tracking source code changes",
+        "Formula": "git",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 80)",
+        "Binary": "git"
+      },
+      {
+        "Name": "Git LFS",
+        "Desc": "Extension for managing large files within Git version control",
+        "Formula": "git-lfs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 100)",
+        "Binary": "git-lfs"
+      },
+      {
+        "Name": "LazyGit",
+        "Desc": "Simple terminal-based user interface for managing Git operations",
+        "Formula": "lazygit",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 180)",
+        "Binary": "lazygit"
+      },
+      {
+        "Name": "fzf",
+        "Desc": "General-purpose command-line fuzzy finder for files and processes",
+        "Formula": "fzf",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 230)",
+        "Binary": "fzf"
+      },
+      {
+        "Name": "ripgrep",
+        "Desc": "Fast line-oriented search tool that respects gitignore rules",
+        "Formula": "ripgrep",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 230, 50)",
+        "Binary": "rg"
+      },
+      {
+        "Name": "bat",
+        "Desc": "Modern cat replacement with syntax highlighting and Git integration",
+        "Formula": "bat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 255)",
+        "Binary": "bat"
+      },
+      {
+        "Name": "eza",
+        "Desc": "Modern replacement for the ls command with enhanced file metadata",
+        "Formula": "eza",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 220, 255)",
+        "Binary": "eza"
+      },
+      {
+        "Name": "zoxide",
+        "Desc": "Smarter navigation tool inspired by the cd command and autojump",
+        "Formula": "zoxide",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 100)",
+        "Binary": "zoxide"
+      },
+      {
+        "Name": "Starship",
+        "Desc": "Minimal and customizable shell prompt for any terminal environment",
+        "Formula": "starship",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "starship"
+      },
+      {
+        "Name": "direnv",
+        "Desc": "Shell extension to load or unload environment variables per directory",
+        "Formula": "direnv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 100)",
+        "Binary": "direnv"
+      },
+      {
+        "Name": "NVM",
+        "Desc": "Node Version Manager for switching between multiple Node.js environments",
+        "Formula": "",
+        "Cask": "",
+        "Special": "nvm",
+        "Color": "rgb(140, 200, 75)",
+        "Binary": "nvm"
+      },
+      {
+        "Name": "Git-delta",
+        "Desc": "A syntax-highlighting pager for git, diff, and grep",
+        "Formula": "git-delta",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 80)",
+        "Binary": "delta"
+      },
+      {
+        "Name": "Git-filter-repo",
+        "Desc": "Quickly rewrite git repository history with ease",
+        "Formula": "git-filter-repo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 100)",
+        "Binary": "git-filter-repo"
+      },
+      {
+        "Name": "Git-sizer",
+        "Desc": "Compute various size metrics for a Git repository",
+        "Formula": "git-sizer",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "git-sizer"
+      },
+      {
+        "Name": "Git-quick-stats",
+        "Desc": "Access various statistics in git repositories quickly",
+        "Formula": "git-quick-stats",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 180)",
+        "Binary": "git-quick-stats"
+      },
+      {
+        "Name": "Onefetch",
+        "Desc": "Git repository summary tool and code statistics",
+        "Formula": "onefetch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "onefetch"
+      }
+    ]
+  },
+  {
+    "Name": "Package Managers",
+    "Items": [
+      {
+        "Name": "npm",
+        "Desc": "Standard package manager for the JavaScript and Node.js ecosystems",
+        "Formula": "",
+        "Cask": "",
+        "Special": "npm-check",
+        "Color": "rgb(255, 100, 90)",
+        "Binary": "npm"
+      },
+      {
+        "Name": "Yarn",
+        "Desc": "Fast and deterministic package manager for JavaScript dependencies",
+        "Formula": "yarn",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 220)",
+        "Binary": "yarn"
+      },
+      {
+        "Name": "pnpm",
+        "Desc": "Efficient alternative to npm using hard links for storage savings",
+        "Formula": "pnpm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 180, 60)",
+        "Binary": "pnpm"
+      },
+      {
+        "Name": "uv",
+        "Desc": "Extremely fast Python package installer and resolver written in Rust",
+        "Formula": "uv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "uv"
+      },
+      {
+        "Name": "Poetry",
+        "Desc": "Dependency management and packaging tool for Python applications",
+        "Formula": "poetry",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 140, 255)",
+        "Binary": "poetry"
+      },
+      {
+        "Name": "pipx",
+        "Desc": "Tool for installing and running Python applications in isolation",
+        "Formula": "pipx",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 120)",
+        "Binary": "pipx"
+      },
+      {
+        "Name": "Composer",
+        "Desc": "Dependency manager for PHP projects and library synchronization",
+        "Formula": "composer",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 100)",
+        "Binary": "composer"
+      },
+      {
+        "Name": "Corepack",
+        "Desc": "Zero-dependency bridge for managing Yarn and pnpm binary versions",
+        "Formula": "",
+        "Cask": "",
+        "Special": "corepack",
+        "Color": "rgb(150, 150, 150)",
+        "Binary": "corepack"
+      }
+    ]
+  },
+  {
+    "Name": "Testing & Utilities",
+    "Items": [
+      {
+        "Name": "Playwright",
+        "Desc": "Fast and reliable end-to-end testing tool for modern web apps",
+        "Formula": "",
+        "Cask": "",
+        "Special": "playwright",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "playwright"
+      },
+      {
+        "Name": "Cypress",
+        "Desc": "Testing framework for anything that runs in a web browser environment",
+        "Formula": "",
+        "Cask": "",
+        "Special": "cypress",
+        "Color": "rgb(150, 180, 200)",
+        "Binary": "cypress"
+      },
+      {
+        "Name": "Vitest",
+        "Desc": "Vite-native unit test framework for high-performance testing",
+        "Formula": "",
+        "Cask": "",
+        "Special": "vitest",
+        "Color": "rgb(230, 210, 50)",
+        "Binary": "vitest"
+      },
+      {
+        "Name": "Pre-commit",
+        "Desc": "Framework for managing and maintaining multi-language Git hooks",
+        "Formula": "pre-commit",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 100)",
+        "Binary": "pre-commit"
+      },
+      {
+        "Name": "tox",
+        "Desc": "Command-line tool for managing and testing Python environments",
+        "Formula": "tox",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "tox"
+      },
+      {
+        "Name": "Ruff",
+        "Desc": "Fast Python linter and formatter designed for high-performance projects",
+        "Formula": "ruff",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 255)",
+        "Binary": "ruff"
+      },
+      {
+        "Name": "Black",
+        "Desc": "Strict Python code formatter for maintaining consistent code style",
+        "Formula": "black",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 100, 100)",
+        "Binary": "black"
+      },
+      {
+        "Name": "ESLint",
+        "Desc": "Static analysis tool for identifying and fixing problems in JavaScript",
+        "Formula": "",
+        "Cask": "",
+        "Special": "eslint",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "eslint"
+      },
+      {
+        "Name": "Hadolint",
+        "Desc": "A smarter Dockerfile linter that helps you build best practice Docker images",
+        "Formula": "hadolint",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(30, 200, 255)",
+        "Binary": "hadolint"
+      },
+      {
+        "Name": "Shellcheck",
+        "Desc": "A static analysis tool for shell scripts that gives warnings and suggestions",
+        "Formula": "shellcheck",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "shellcheck"
+      },
+      {
+        "Name": "Shfmt (Shell Formatter)",
+        "Desc": "A shell parser, formatter, and interpreter with a focus on POSIX shell",
+        "Formula": "shfmt",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "shfmt"
+      },
+      {
+        "Name": "Action-validator",
+        "Desc": "A tool to validate GitHub Action workflow files for syntax and correctness",
+        "Formula": "action-validator",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 255)",
+        "Binary": "action-validator"
+      },
+      {
+        "Name": "Semgrep",
+        "Desc": "Lightweight static analysis for many languages, finding bugs and enforcing patterns",
+        "Formula": "semgrep",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "semgrep"
+      },
+      {
+        "Name": "Checkov",
+        "Desc": "Static code analysis tool for infrastructure-as-code (IaC) security",
+        "Formula": "checkov",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "checkov"
+      },
+      {
+        "Name": "Hurl",
+        "Desc": "Command line tool that runs HTTP requests defined in a simple text format",
+        "Formula": "hurl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "hurl"
+      },
+      {
+        "Name": "Vegeta",
+        "Desc": "Versatile HTTP load testing tool built for performance and accuracy",
+        "Formula": "vegeta",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "vegeta"
+      },
+      {
+        "Name": "Prism",
+        "Desc": "OpenAPI mock and validator CLI for rapid API development",
+        "Formula": "",
+        "Cask": "",
+        "Special": "prism",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "prism"
+      }
+    ]
+  },
+  {
+    "Name": "Editors & IDEs",
+    "Items": [
+      {
+        "Name": "Cursor",
+        "Desc": "AI-first code editor built on VS Code for pair programming with LLMs",
+        "Formula": "",
+        "Cask": "cursor",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "cursor"
+      },
+      {
+        "Name": "Zed",
+        "Desc": "High-performance multiplayer code editor built in Rust",
+        "Formula": "",
+        "Cask": "zed",
+        "Special": "",
+        "Color": "rgb(90, 170, 255)",
+        "Binary": "zed"
+      },
+      {
+        "Name": "Sublime Text",
+        "Desc": "Lightweight text editor with a rich plugin ecosystem and fast performance",
+        "Formula": "",
+        "Cask": "sublime-text",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "subl"
+      },
+      {
+        "Name": "Android Studio",
+        "Desc": "Official IDE for Android app development based on IntelliJ IDEA",
+        "Formula": "",
+        "Cask": "android-studio",
+        "Special": "",
+        "Color": "rgb(80, 220, 140)",
+        "Binary": "studio"
+      },
+      {
+        "Name": "Nova",
+        "Desc": "Native macOS code editor with extensions and built-in dev server",
+        "Formula": "",
+        "Cask": "nova",
+        "Special": "",
+        "Color": "rgb(180, 80, 255)",
+        "Binary": "nova"
+      }
+    ]
+  },
+  {
+    "Name": "Performance & Profiling",
+    "Items": [
+      {
+        "Name": "gperftools",
+        "Desc": "Google performance tools including heap profiler and CPU profiler",
+        "Formula": "gperftools",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 200, 120)",
+        "Binary": "pprof"
+      },
+      {
+        "Name": "Valgrind",
+        "Desc": "Instrumentation framework for memory error detection and profiling",
+        "Formula": "valgrind",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 230)",
+        "Binary": "valgrind"
+      },
+      {
+        "Name": "Hyperfine",
+        "Desc": "Command-line benchmarking tool with statistical analysis and warmup runs",
+        "Formula": "hyperfine",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 50)",
+        "Binary": "hyperfine"
+      },
+      {
+        "Name": "bpftrace",
+        "Desc": "High-level tracing language for dynamic tracing of Linux kernel and apps",
+        "Formula": "bpftrace",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "bpftrace"
+      },
+      {
+        "Name": "k6",
+        "Desc": "Developer-friendly load testing tool for APIs and microservices",
+        "Formula": "k6",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 220, 80)",
+        "Binary": "k6"
+      },
+      {
+        "Name": "wrk",
+        "Desc": "Modern HTTP benchmarking tool capable of generating significant load",
+        "Formula": "wrk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 180, 80)",
+        "Binary": "wrk"
+      },
+      {
+        "Name": "Locust",
+        "Desc": "Scalable Python-based load testing framework with a web UI",
+        "Formula": "",
+        "Cask": "",
+        "Special": "locust",
+        "Color": "rgb(80, 200, 180)",
+        "Binary": "locust"
+      }
+    ]
+  },
+  {
+    "Name": "Dev Utilities",
+    "Items": [
+      {
+        "Name": "Watchman",
+        "Desc": "File watching service for triggering build actions",
+        "Formula": "watchman",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 200, 255)",
+        "Binary": "watchman"
+      },
+      {
+        "Name": "Mise (Runtime Manager)",
+        "Desc": "Polyglot runtime manager for dev envs",
+        "Formula": "mise",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "mise"
+      },
+      {
+        "Name": "Lefthook (Git Hooks)",
+        "Desc": "Ultra-fast and powerful Git hooks manager",
+        "Formula": "lefthook",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "lefthook"
+      },
+      {
+        "Name": "Act (Local GitHub Actions)",
+        "Desc": "Run your GitHub Actions workflows locally",
+        "Formula": "act",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "act"
+      },
+      {
+        "Name": "JSON Export (jtbl)",
+        "Desc": "Utility to print JSON data as a clean terminal table",
+        "Formula": "jtbl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "jtbl"
+      },
+      {
+        "Name": "golangci-lint",
+        "Desc": "Fast Go linters runner with support for 100+ linters",
+        "Formula": "golangci-lint",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "golangci-lint"
+      },
+      {
+        "Name": "GoReleaser",
+        "Desc": "Deliver Go binaries as fast and easily as possible",
+        "Formula": "goreleaser",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "goreleaser"
+      },
+      {
+        "Name": "Biome",
+        "Desc": "Ultra-fast toolchain for web projects: lint, format, and more",
+        "Formula": "biome",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "biome"
+      },
+      {
+        "Name": "pyenv",
+        "Desc": "Simple Python version management for developers",
+        "Formula": "pyenv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "pyenv"
+      },
+      {
+        "Name": "mkcert",
+        "Desc": "A simple tool for making locally-trusted development certificates",
+        "Formula": "mkcert",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "mkcert"
+      },
+      {
+        "Name": "Task",
+        "Desc": "A task runner / build tool that aims to be simpler than Make",
+        "Formula": "go-task",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "task"
+      },
+      {
+        "Name": "Overmind",
+        "Desc": "Run your procfile-based applications with ease",
+        "Formula": "overmind",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "overmind"
+      },
+      {
+        "Name": "Navi (Interactive Cheatsheet)",
+        "Desc": "Interactive cheatsheet tool for the command-line",
+        "Formula": "navi",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "navi"
+      },
+      {
+        "Name": "Infracost",
+        "Desc": "Cloud cost estimates for Terraform in pull requests",
+        "Formula": "infracost",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "infracost"
+      },
+      {
+        "Name": "Steampipe",
+        "Desc": "Use SQL to query your cloud, code, and logs",
+        "Formula": "steampipe",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(10, 150, 255)",
+        "Binary": "steampipe"
+      },
+      {
+        "Name": "Gron",
+        "Desc": "Transform JSON into a format that is easy to grep",
+        "Formula": "gron",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "gron"
+      },
+      {
+        "Name": "Jo (JSON Output)",
+        "Desc": "JSON output directly from the shell",
+        "Formula": "jo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "jo"
+      },
+      {
+        "Name": "Fx",
+        "Desc": "Interactive terminal-based JSON viewer and processor",
+        "Formula": "fx",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "fx"
+      },
+      {
+        "Name": "Jqp",
+        "Desc": "A TUI playground for exploring and testing jq queries",
+        "Formula": "jqp",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "jqp"
+      },
+      {
+        "Name": "Vsh",
+        "Desc": "HashiCorp Vault interactive shell and CLI companion",
+        "Formula": "vsh",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "vsh"
+      },
+      {
+        "Name": "Up (Ultimate Plumber)",
+        "Desc": "Ultimate Plumber: write pipes with instant live data preview",
+        "Formula": "up",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "up"
+      },
+      {
+        "Name": "Reflex",
+        "Desc": "A small tool to run a command when files change",
+        "Formula": "reflex",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "reflex"
+      },
+      {
+        "Name": "Nodemon",
+        "Desc": "Helper to reload node apps on code modifications",
+        "Formula": "nodemon",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "nodemon"
+      }
+    ]
+  },
+  {
+    "Name": "Design & Frontend",
+    "Items": [
+      {
+        "Name": "Font-JetBrains-Mono-NF",
+        "Desc": "JetBrains Mono Nerd Font for developers",
+        "Formula": "",
+        "Cask": "font-jetbrains-mono-nerd-font",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "JetBrainsMonoNLNerdFontComplete-Regular"
+      },
+      {
+        "Name": "Font-Fira-Code-NF",
+        "Desc": "Fira Code Nerd Font with custom ligatures",
+        "Formula": "",
+        "Cask": "font-fira-code-nerd-font",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "FiraCodeNerdFontComplete-Regular"
+      },
+      {
+        "Name": "SVGO",
+        "Desc": "Node.js based tool for optimizing SVG vector files",
+        "Formula": "svgo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "svgo"
+      },
+      {
+        "Name": "Can I Use CLI",
+        "Desc": "Search caniuse.com data directly from the terminal",
+        "Formula": "caniuse-cmd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "caniuse"
+      },
+      {
+        "Name": "Figma",
+        "Desc": "Collaborative interface design tool for teams",
+        "Formula": "",
+        "Cask": "figma",
+        "Special": "",
+        "Color": "rgb(162, 89, 255)",
+        "Binary": "Figma"
+      }
+    ]
+  },
+  {
+    "Name": "JetBrains Mastery",
+    "Items": [
+      {
+        "Name": "JetBrains Toolbox",
+        "Desc": "Manage all your JetBrains IDEs and tools from a single control center",
+        "Formula": "",
+        "Cask": "jetbrains-toolbox",
+        "Special": "",
+        "Color": "rgb(0, 0, 0)",
+        "Binary": "JetBrains Toolbox"
+      },
+      {
+        "Name": "JetBrains Gateway",
+        "Desc": "Your gateway to remote development with any JetBrains IDE",
+        "Formula": "",
+        "Cask": "jetbrains-gateway",
+        "Special": "",
+        "Color": "rgb(0, 150, 255)",
+        "Binary": "JetBrains Gateway"
+      },
+      {
+        "Name": "IntelliJ IDEA Ultimate",
+        "Desc": "The leading IDE for Java and Kotlin, packed with powerful enterprise features",
+        "Formula": "",
+        "Cask": "intellij-idea",
+        "Special": "",
+        "Color": "rgb(255, 50, 100)",
+        "Binary": "IntelliJ IDEA"
+      },
+      {
+        "Name": "IntelliJ IDEA CE",
+        "Desc": "Free and open-source version of IntelliJ IDEA for JVM and Android development",
+        "Formula": "",
+        "Cask": "intellij-idea-ce",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "IntelliJ IDEA CE"
+      },
+      {
+        "Name": "PyCharm Professional",
+        "Desc": "The expert IDE for Python development, with full web and data science support",
+        "Formula": "",
+        "Cask": "pycharm",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "PyCharm"
+      },
+      {
+        "Name": "PyCharm CE",
+        "Desc": "Lightweight and free version of PyCharm for pure Python development",
+        "Formula": "",
+        "Cask": "pycharm-ce",
+        "Special": "",
+        "Color": "rgb(140, 230, 200)",
+        "Binary": "PyCharm CE"
+      },
+      {
+        "Name": "WebStorm",
+        "Desc": "The smartest JavaScript IDE for modern web development with any framework",
+        "Formula": "",
+        "Cask": "webstorm",
+        "Special": "",
+        "Color": "rgb(100, 210, 255)",
+        "Binary": "WebStorm"
+      },
+      {
+        "Name": "GoLand",
+        "Desc": "A cross-platform IDE dedicated to providing an ergonomic environment for Go",
+        "Formula": "",
+        "Cask": "goland",
+        "Special": "",
+        "Color": "rgb(50, 220, 255)",
+        "Binary": "GoLand"
+      },
+      {
+        "Name": "CLion",
+        "Desc": "Smart cross-platform C and C++ IDE with a focus on modern development standards",
+        "Formula": "",
+        "Cask": "clion",
+        "Special": "",
+        "Color": "rgb(100, 230, 150)",
+        "Binary": "CLion"
+      },
+      {
+        "Name": "Rider",
+        "Desc": "Fast and powerful cross-platform .NET IDE built on IntelliJ and ReSharper",
+        "Formula": "",
+        "Cask": "rider",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "Rider"
+      },
+      {
+        "Name": "PhpStorm",
+        "Desc": "The lightning-smart PHP IDE focusing on developer productivity and deep code insight",
+        "Formula": "",
+        "Cask": "phpstorm",
+        "Special": "",
+        "Color": "rgb(120, 150, 255)",
+        "Binary": "PhpStorm"
+      },
+      {
+        "Name": "DataGrip",
+        "Desc": "The multi-engine database IDE that speaks many SQL dialects in one place",
+        "Formula": "",
+        "Cask": "datagrip",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "DataGrip"
+      },
+      {
+        "Name": "RubyMine",
+        "Desc": "The most intelligent Ruby on Rails IDE for the modern web developer",
+        "Formula": "",
+        "Cask": "rubymine",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "RubyMine"
+      },
+      {
+        "Name": "DataSpell",
+        "Desc": "Professional IDE for data science, optimizing exploratory data analysis work",
+        "Formula": "",
+        "Cask": "dataspell",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "DataSpell"
+      },
+      {
+        "Name": "RustRover",
+        "Desc": "Focus on what matters: the leading IDE for professional Rust development",
+        "Formula": "",
+        "Cask": "rustrover",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "RustRover"
+      },
+      {
+        "Name": "Aqua",
+        "Desc": "The IDE specifically designed for modern test automation and QA",
+        "Formula": "",
+        "Cask": "aqua",
+        "Special": "",
+        "Color": "rgb(50, 220, 200)",
+        "Binary": "Aqua"
+      },
+      {
+        "Name": "Writerside",
+        "Desc": "Technical documentation tool for building complex, high-quality docs",
+        "Formula": "",
+        "Cask": "writerside",
+        "Special": "",
+        "Color": "rgb(150, 200, 100)",
+        "Binary": "Writerside"
+      }
+    ]
+  },
+  {
+    "Name": "Databases",
+    "Items": [
+      {
+        "Name": "MySQL",
+        "Desc": "Relational database using SQL for structured data storage",
+        "Formula": "mysql",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 190, 230)",
+        "Binary": "mysql"
+      },
+      {
+        "Name": "PostgreSQL",
+        "Desc": "Object-relational database for complex workloads and data integrity",
+        "Formula": "postgresql",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 160, 220)",
+        "Binary": "psql"
+      },
+      {
+        "Name": "MariaDB",
+        "Desc": "Relational database based on the original MySQL engine",
+        "Formula": "mariadb",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 150, 120)",
+        "Binary": "mariadb"
+      },
+      {
+        "Name": "CockroachDB",
+        "Desc": "Distributed SQL database for resilient cloud-native applications",
+        "Formula": "cockroachdb/tap/cockroach",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(105, 190, 150)",
+        "Binary": "cockroach"
+      },
+      {
+        "Name": "TimescaleDB",
+        "Desc": "Relational database optimized for time-series and analytical use",
+        "Formula": "timescale/tap/timescaledb",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 180, 240)",
+        "Binary": ""
+      },
+      {
+        "Name": "MongoDB",
+        "Desc": "NoSQL document database using flexible JSON-like schemas",
+        "Formula": "mongodb/brew/mongodb-community",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "mongod"
+      },
+      {
+        "Name": "SQLite",
+        "Desc": "Serverless relational database engine for local storage",
+        "Formula": "sqlite",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(140, 230, 255)",
+        "Binary": "sqlite3"
+      },
+      {
+        "Name": "ClickHouse",
+        "Desc": "Columnar database for high-performance analytical queries",
+        "Formula": "clickhouse",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 210, 50)",
+        "Binary": "clickhouse"
+      },
+      {
+        "Name": "ElasticSearch",
+        "Desc": "Distributed search and analytics engine for large-scale text",
+        "Formula": "elasticsearch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(20, 190, 180)",
+        "Binary": "elasticsearch"
+      },
+      {
+        "Name": "Neo4j",
+        "Desc": "Graph database system for connected data and relationships",
+        "Formula": "neo4j",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(0, 150, 230)",
+        "Binary": "neo4j"
+      },
+      {
+        "Name": "Firebase CLI",
+        "Desc": "Management tools for Firebase applications and deployments",
+        "Formula": "",
+        "Cask": "",
+        "Special": "firebase",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "firebase"
+      },
+      {
+        "Name": "Supabase CLI",
+        "Desc": "Local development and management for the Supabase platform",
+        "Formula": "supabase/tap/supabase",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(60, 200, 130)",
+        "Binary": "supabase"
+      },
+      {
+        "Name": "pgcli",
+        "Desc": "PostgreSQL CLI with autocompletion and syntax highlighting",
+        "Formula": "pgcli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "pgcli"
+      },
+      {
+        "Name": "Mycli",
+        "Desc": "A command-line client for MySQL, MariaDB, and Percona with auto-completion",
+        "Formula": "mycli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 190, 230)",
+        "Binary": "mycli"
+      },
+      {
+        "Name": "Litecli",
+        "Desc": "A command-line client for SQLite with auto-completion and syntax highlighting",
+        "Formula": "litecli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(140, 230, 255)",
+        "Binary": "litecli"
+      },
+      {
+        "Name": "sqlc",
+        "Desc": "Generate type-safe code from SQL queries in seconds",
+        "Formula": "sqlc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "sqlc"
+      },
+      {
+        "Name": "Atlas",
+        "Desc": "Database schema-as-code management tool for devs",
+        "Formula": "ariga/tap/atlas",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "atlas"
+      },
+      {
+        "Name": "dbmate",
+        "Desc": "A lightweight, framework-agnostic database migration tool",
+        "Formula": "dbmate",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "dbmate"
+      },
+      {
+        "Name": "Litestream",
+        "Desc": "Streaming replication for SQLite with simple cloud targets",
+        "Formula": "litestream",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "litestream"
+      },
+      {
+        "Name": "pgBadger",
+        "Desc": "Fast PostgreSQL log analyzer for performance auditing and reports",
+        "Formula": "pgbadger",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "pgbadger"
+      },
+      {
+        "Name": "Lazysql",
+        "Desc": "A cross-platform TUI database management tool written in Go",
+        "Formula": "lazysql",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "lazysql"
+      }
+    ]
+  },
+  {
+    "Name": "Caching & Messaging",
+    "Items": [
+      {
+        "Name": "Redis",
+        "Desc": "In-memory key-value store and cache for performant applications",
+        "Formula": "redis",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 80, 70)",
+        "Binary": "redis-cli"
+      },
+      {
+        "Name": "Memcached",
+        "Desc": "Distributed memory object caching for high-scale web workloads",
+        "Formula": "memcached",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 200, 100)",
+        "Binary": "memcached"
+      },
+      {
+        "Name": "NATS",
+        "Desc": "Cloud-native messaging system for microservices and edge computing",
+        "Formula": "nats-server",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 220, 255)",
+        "Binary": "nats"
+      },
+      {
+        "Name": "Kafka",
+        "Desc": "Distributed event streaming for high-throughput data pipelines",
+        "Formula": "kafka",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 200, 200)",
+        "Binary": "kafka-topics"
+      },
+      {
+        "Name": "RabbitMQ",
+        "Desc": "Robust message broker supporting multiple messaging protocols",
+        "Formula": "rabbitmq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "rabbitmqctl"
+      },
+      {
+        "Name": "ActiveMQ",
+        "Desc": "Multi-protocol broker for enterprise-grade message queuing",
+        "Formula": "activemq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "activemq"
+      },
+      {
+        "Name": "ZeroMQ",
+        "Desc": "Asynchronous messaging library for distributed system development",
+        "Formula": "zeromq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 150)",
+        "Binary": "zmq"
+      },
+      {
+        "Name": "kcat",
+        "Desc": "Generic tool for producer and consumer operations on Kafka",
+        "Formula": "kcat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(60, 180, 255)",
+        "Binary": "kcat"
+      }
+    ]
+  },
+  {
+    "Name": "Containers & DevOps",
+    "Items": [
+      {
+        "Name": "Docker",
+        "Desc": "Platform for building and running containerized applications",
+        "Formula": "",
+        "Cask": "docker",
+        "Special": "",
+        "Color": "rgb(80, 180, 255)",
+        "Binary": "docker"
+      },
+      {
+        "Name": "Docker Compose",
+        "Desc": "Tool for defining and running multi-container Docker systems",
+        "Formula": "docker-compose",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(70, 140, 255)",
+        "Binary": "docker-compose"
+      },
+      {
+        "Name": "Colima",
+        "Desc": "Container runtime for macOS with minimal resource overhead",
+        "Formula": "colima",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 190, 230)",
+        "Binary": "colima"
+      },
+      {
+        "Name": "Kubernetes (kubectl)",
+        "Desc": "Command-line tool for controlling Kubernetes system clusters",
+        "Formula": "kubernetes-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 160, 255)",
+        "Binary": "kubectl"
+      },
+      {
+        "Name": "k9s",
+        "Desc": "Terminal-based UI for managing Kubernetes cluster operations",
+        "Formula": "k9s",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 210, 50)",
+        "Binary": "k9s"
+      },
+      {
+        "Name": "Helm",
+        "Desc": "Package manager for managing Kubernetes application charts",
+        "Formula": "helm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 130, 200)",
+        "Binary": "helm"
+      },
+      {
+        "Name": "Terraform",
+        "Desc": "Infrastructure as Code tool for managing cloud resources",
+        "Formula": "terraform",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 80, 230)",
+        "Binary": "terraform"
+      },
+      {
+        "Name": "Ansible",
+        "Desc": "Automation platform for IT configuration and management",
+        "Formula": "ansible",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "ansible-playbook"
+      },
+      {
+        "Name": "awscli",
+        "Desc": "Universal interface for Amazon Web Services cloud infrastructure",
+        "Formula": "awscli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 170, 50)",
+        "Binary": "aws"
+      },
+      {
+        "Name": "gcloud CLI",
+        "Desc": "Command-line interface for Google Cloud Platform services",
+        "Formula": "",
+        "Cask": "google-cloud-sdk",
+        "Special": "",
+        "Color": "rgb(100, 170, 255)",
+        "Binary": "gcloud"
+      },
+      {
+        "Name": "Azure CLI",
+        "Desc": "Command-line experience for Microsoft Azure cloud management",
+        "Formula": "azure-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 160, 230)",
+        "Binary": "az"
+      },
+      {
+        "Name": "Lazydocker",
+        "Desc": "Simple terminal UI for docker containers, managed with ease",
+        "Formula": "lazydocker",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "lazydocker"
+      }
+    ]
+  },
+  {
+    "Name": "DB GUI & Dev Tools",
+    "Items": [
+      {
+        "Name": "TablePlus",
+        "Desc": "Native database management client for macOS with a clean interface",
+        "Formula": "",
+        "Cask": "tableplus",
+        "Special": "",
+        "Color": "rgb(120, 220, 255)",
+        "Binary": "TablePlus"
+      },
+      {
+        "Name": "DBeaver",
+        "Desc": "Universal database tool for developers supporting multiple SQL dialects",
+        "Formula": "",
+        "Cask": "dbeaver-community",
+        "Special": "",
+        "Color": "rgb(160, 190, 210)",
+        "Binary": "dbeaver"
+      },
+      {
+        "Name": "RedisInsight",
+        "Desc": "Visual tool for managing and interacting with Redis data structures",
+        "Formula": "",
+        "Cask": "redisinsight",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "RedisInsight-v2"
+      },
+      {
+        "Name": "Postman",
+        "Desc": "API platform for designing, building, and testing RESTful services",
+        "Formula": "",
+        "Cask": "postman",
+        "Special": "",
+        "Color": "rgb(255, 150, 100)",
+        "Binary": "Postman"
+      },
+      {
+        "Name": "Insomnia",
+        "Desc": "Open-source application for API design and collaborative testing",
+        "Formula": "",
+        "Cask": "insomnia",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "Insomnia"
+      },
+      {
+        "Name": "Lens",
+        "Desc": "Integrated development environment for Kubernetes cluster management",
+        "Formula": "",
+        "Cask": "lens",
+        "Special": "",
+        "Color": "rgb(60, 180, 255)",
+        "Binary": "Lens"
+      },
+      {
+        "Name": "Sequel Ace",
+        "Desc": "Lightweight MySQL and MariaDB database management tool for macOS",
+        "Formula": "",
+        "Cask": "sequel-ace",
+        "Special": "",
+        "Color": "rgb(100, 160, 255)",
+        "Binary": "Sequel Ace"
+      },
+      {
+        "Name": "pgweb",
+        "Desc": "A web-based database browser for PostgreSQL for simple data access",
+        "Formula": "pgweb",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 100)",
+        "Binary": "pgweb"
+      },
+      {
+        "Name": "usql",
+        "Desc": "Universal command-line interface for SQL and NoSQL databases",
+        "Formula": "usql",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "usql"
+      }
+    ]
+  },
+  {
+    "Name": "Infrastructure & Cloud",
+    "Items": [
+      {
+        "Name": "Vercel CLI",
+        "Desc": "Command-line tool for deploying and managing Vercel projects",
+        "Formula": "vercel-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "vercel"
+      },
+      {
+        "Name": "Netlify CLI",
+        "Desc": "Deploy and manage Netlify sites and functions from the terminal",
+        "Formula": "netlify-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 190)",
+        "Binary": "netlify"
+      },
+      {
+        "Name": "Heroku CLI",
+        "Desc": "Official interface for managing Heroku apps and deployments",
+        "Formula": "heroku",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "heroku"
+      },
+      {
+        "Name": "Pulumi",
+        "Desc": "Infrastructure as Code platform using general-purpose programming languages",
+        "Formula": "pulumi",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(240, 90, 130)",
+        "Binary": "pulumi"
+      },
+      {
+        "Name": "OpenTofu",
+        "Desc": "Open-source Terraform fork for community-driven infrastructure management",
+        "Formula": "opentofu",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 50)",
+        "Binary": "tofu"
+      },
+      {
+        "Name": "AWS CDK",
+        "Desc": "Define cloud infrastructure using familiar programming languages on AWS",
+        "Formula": "aws-cdk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "cdk"
+      },
+      {
+        "Name": "DigitalOcean CLI",
+        "Desc": "Official CLI for managing DigitalOcean resources and services",
+        "Formula": "doctl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(30, 140, 255)",
+        "Binary": "doctl"
+      },
+      {
+        "Name": "Prometheus",
+        "Desc": "Open-source monitoring and alerting toolkit for cloud-native systems",
+        "Formula": "prometheus",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 80, 40)",
+        "Binary": "prometheus"
+      },
+      {
+        "Name": "Grafana",
+        "Desc": "Observability platform for dashboards and metrics visualization",
+        "Formula": "grafana",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "grafana"
+      },
+      {
+        "Name": "Vault",
+        "Desc": "Secrets management tool for securely storing and accessing credentials",
+        "Formula": "vault",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 100)",
+        "Binary": "vault"
+      },
+      {
+        "Name": "Boundary",
+        "Desc": "Identity-based access management for dynamic infrastructure",
+        "Formula": "boundary",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 200)",
+        "Binary": "boundary"
+      },
+      {
+        "Name": "Tflint",
+        "Desc": "A Terraform linter for identifying errors and security issues",
+        "Formula": "tflint",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "tflint"
+      },
+      {
+        "Name": "Terraform-docs",
+        "Desc": "Generate documentation from Terraform modules in various formats",
+        "Formula": "terraform-docs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "terraform-docs"
+      },
+      {
+        "Name": "Syft (SBOM Generator)",
+        "Desc": "CLI tool and library for generating a Software Bill of Materials (SBOM)",
+        "Formula": "syft",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "syft"
+      },
+      {
+        "Name": "Grype (Vuln Scanner)",
+        "Desc": "A vulnerability scanner for container images and filesystems",
+        "Formula": "grype",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 50, 100)",
+        "Binary": "grype"
+      },
+      {
+        "Name": "Flyctl",
+        "Desc": "The official CLI for Fly.io, managing and deploying apps with ease",
+        "Formula": "flyctl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 255)",
+        "Binary": "fly"
+      },
+      {
+        "Name": "Trunk",
+        "Desc": "An all-in-one check, lint, and security platform for developers",
+        "Formula": "",
+        "Cask": "trunk-io",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "trunk"
+      }
+    ]
+  },
+  {
+    "Name": "Virtualization",
+    "Items": [
+      {
+        "Name": "UTM",
+        "Desc": "Virtual machine host for macOS using Apple Hypervisor, ideal for Apple Silicon",
+        "Formula": "",
+        "Cask": "utm",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "utmctl"
+      },
+      {
+        "Name": "VMware Fusion",
+        "Desc": "Professional VM platform for running Windows and Linux on macOS",
+        "Formula": "",
+        "Cask": "vmware-fusion",
+        "Special": "",
+        "Color": "rgb(100, 160, 230)",
+        "Binary": "vmrun"
+      },
+      {
+        "Name": "VirtualBox",
+        "Desc": "Free and open-source hypervisor for x86 virtualization on macOS",
+        "Formula": "",
+        "Cask": "virtualbox",
+        "Special": "",
+        "Color": "rgb(80, 130, 220)",
+        "Binary": "vboxmanage"
+      },
+      {
+        "Name": "Vagrant",
+        "Desc": "Tool for building and managing portable development virtual machine environments",
+        "Formula": "",
+        "Cask": "vagrant",
+        "Special": "",
+        "Color": "rgb(30, 180, 140)",
+        "Binary": "vagrant"
+      },
+      {
+        "Name": "vagrant-completion",
+        "Desc": "Shell tab completion for Vagrant commands and subcommands",
+        "Formula": "vagrant-completion",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(30, 160, 120)",
+        "Binary": "vagrant"
+      }
+    ]
+  },
+  {
+    "Name": "Cloud & Kubernetes",
+    "Items": [
+      {
+        "Name": "Krew (K8s Plugins)",
+        "Desc": "The official plugin manager for kubectl CLI",
+        "Formula": "krew",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "kubectl-krew"
+      },
+      {
+        "Name": "Kustomize",
+        "Desc": "Native Kubernetes configuration management tool",
+        "Formula": "kustomize",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "kustomize"
+      },
+      {
+        "Name": "Minikube",
+        "Desc": "Local Kubernetes cluster for testing and development",
+        "Formula": "minikube",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "minikube"
+      },
+      {
+        "Name": "LocalStack CLI",
+        "Desc": "Emulate AWS cloud services on your local machine",
+        "Formula": "localstack-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "localstack"
+      },
+      {
+        "Name": "Tfenv",
+        "Desc": "Simple Terraform version manager for switching versions",
+        "Formula": "tfenv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "tfenv"
+      },
+      {
+        "Name": "Terragrunt",
+        "Desc": "Thin wrapper for Terraform to keep configurations DRY",
+        "Formula": "terragrunt",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(240, 90, 130)",
+        "Binary": "terragrunt"
+      },
+      {
+        "Name": "Kwid",
+        "Desc": "Kubernetes Workload ID explorer and debugger",
+        "Formula": "kwid",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 220, 50)",
+        "Binary": "kwid"
+      },
+      {
+        "Name": "K3d",
+        "Desc": "Helper to run CNCF's k3s in Docker using k3d commands",
+        "Formula": "k3d",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 150, 250)",
+        "Binary": "k3d"
+      },
+      {
+        "Name": "K3s",
+        "Desc": "Lightweight Kubernetes for edge and IoT environments",
+        "Formula": "k3s",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "k3s"
+      },
+      {
+        "Name": "K3sup",
+        "Desc": "Bootstrap Kubernetes with k3s over SSH in a flash",
+        "Formula": "k3sup",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "k3sup"
+      },
+      {
+        "Name": "Ktunnel",
+        "Desc": "Expose local resources into kubernetes with ease",
+        "Formula": "ktunnel",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "ktunnel"
+      },
+      {
+        "Name": "Kubectx",
+        "Desc": "The absolute fastest way to switch between k8s clusters",
+        "Formula": "kubectx",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "kubectx"
+      },
+      {
+        "Name": "Kubens",
+        "Desc": "The absolute fastest way to switch between k8s namespaces",
+        "Formula": "kubens",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "kubens"
+      },
+      {
+        "Name": "Stern",
+        "Desc": "Multi pod and container log tailing for the modern cluster",
+        "Formula": "stern",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "stern"
+      },
+      {
+        "Name": "Kubecolor",
+        "Desc": "Colorize your kubectl output for better visual scanning",
+        "Formula": "kubecolor",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "kubecolor"
+      },
+      {
+        "Name": "Kdash",
+        "Desc": "A simple terminal dashboard for Kubernetes clusters",
+        "Formula": "kdash",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "kdash"
+      },
+      {
+        "Name": "Popeye",
+        "Desc": "A Kubernetes cluster sanitizer observing live resources",
+        "Formula": "popeye",
+        "Cask": "popeye",
+        "Special": "",
+        "Color": "rgb(200, 100, 100)",
+        "Binary": "popeye"
+      },
+      {
+        "Name": "Kube-score",
+        "Desc": "Kubernetes static code analysis for your resources",
+        "Formula": "kube-score",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "kube-score"
+      }
+    ]
+  },
+  {
+    "Name": "Media & Graphics",
+    "Items": [
+      {
+        "Name": "FFmpeg",
+        "Desc": "Complete multimedia framework for recording, converting, and streaming",
+        "Formula": "ffmpeg",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "ffmpeg"
+      },
+      {
+        "Name": "ImageMagick",
+        "Desc": "Powerful image manipulation suite for conversion, editing, and compositing",
+        "Formula": "imagemagick",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "convert"
+      },
+      {
+        "Name": "ExifTool",
+        "Desc": "Read and write metadata in image, audio, and video files",
+        "Formula": "exiftool",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 180, 100)",
+        "Binary": "exiftool"
+      },
+      {
+        "Name": "OptiPNG",
+        "Desc": "PNG optimizer that recompresses images for smaller file sizes",
+        "Formula": "optipng",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 220, 255)",
+        "Binary": "optipng"
+      },
+      {
+        "Name": "Inkscape",
+        "Desc": "Professional open-source vector graphics editor for SVG files",
+        "Formula": "",
+        "Cask": "inkscape",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "inkscape"
+      },
+      {
+        "Name": "GIMP",
+        "Desc": "Free and open-source raster image editor for photo and design work",
+        "Formula": "",
+        "Cask": "gimp",
+        "Special": "",
+        "Color": "rgb(100, 180, 80)",
+        "Binary": "gimp"
+      },
+      {
+        "Name": "Blender",
+        "Desc": "Open-source 3D creation suite for modeling, animation, and rendering",
+        "Formula": "",
+        "Cask": "blender",
+        "Special": "",
+        "Color": "rgb(255, 130, 50)",
+        "Binary": "blender"
+      },
+      {
+        "Name": "Spotify",
+        "Desc": "Digital music service with millions of songs and podcasts",
+        "Formula": "",
+        "Cask": "spotify",
+        "Special": "",
+        "Color": "rgb(30, 215, 96)",
+        "Binary": "Spotify"
+      }
+    ]
+  },
+  {
+    "Name": "Low-Level & Embedded",
+    "Items": [
+      {
+        "Name": "avr-gcc",
+        "Desc": "GCC-based compiler toolchain for Atmel AVR microcontroller development",
+        "Formula": "avr-gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 220, 100)",
+        "Binary": "avr-gcc"
+      },
+      {
+        "Name": "arm-none-eabi-gcc",
+        "Desc": "Bare-metal ARM cross-compiler for embedded firmware development",
+        "Formula": "arm-none-eabi-gcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 180, 255)",
+        "Binary": "arm-none-eabi-gcc"
+      },
+      {
+        "Name": "SDCC",
+        "Desc": "Small Device C Compiler for 8-bit microcontrollers like PIC and STM8",
+        "Formula": "sdcc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 80)",
+        "Binary": "sdcc"
+      },
+      {
+        "Name": "avrdude",
+        "Desc": "Software for programming Atmel AVR microcontrollers via various programmers",
+        "Formula": "avrdude",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 220, 150)",
+        "Binary": "avrdude"
+      },
+      {
+        "Name": "OpenOCD",
+        "Desc": "On-chip debugger for flashing and debugging embedded targets over JTAG/SWD",
+        "Formula": "open-ocd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 230)",
+        "Binary": "openocd"
+      },
+      {
+        "Name": "dfu-util",
+        "Desc": "Host-side utility for flashing firmware via USB DFU protocol",
+        "Formula": "dfu-util",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 160, 80)",
+        "Binary": "dfu-util"
+      },
+      {
+        "Name": "minicom",
+        "Desc": "Terminal emulator for serial port communication and modem control",
+        "Formula": "minicom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "minicom"
+      },
+      {
+        "Name": "screen",
+        "Desc": "Multiplexer with serial terminal support for connecting to embedded devices",
+        "Formula": "screen",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(140, 140, 140)",
+        "Binary": "screen"
+      },
+      {
+        "Name": "picocom",
+        "Desc": "Minimal serial terminal emulator for UART debugging on embedded hardware",
+        "Formula": "picocom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 200, 255)",
+        "Binary": "picocom"
+      },
+      {
+        "Name": "KiCad",
+        "Desc": "Open-source EDA suite for schematic capture and PCB layout design",
+        "Formula": "",
+        "Cask": "kicad",
+        "Special": "",
+        "Color": "rgb(50, 180, 130)",
+        "Binary": "kicad"
+      },
+      {
+        "Name": "Fritzing",
+        "Desc": "Electronics prototyping tool for documenting Arduino and breadboard circuits",
+        "Formula": "",
+        "Cask": "fritzing",
+        "Special": "",
+        "Color": "rgb(230, 80, 80)",
+        "Binary": "Fritzing"
+      }
+    ]
+  },
+  {
+    "Name": "Docs & Static Sites",
+    "Items": [
+      {
+        "Name": "Hugo",
+        "Desc": "Fast static site generator written in Go for building modern websites",
+        "Formula": "hugo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 80, 100)",
+        "Binary": "hugo"
+      },
+      {
+        "Name": "Jekyll",
+        "Desc": "Ruby-based static site generator powering GitHub Pages and blogs",
+        "Formula": "jekyll",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 80, 80)",
+        "Binary": "jekyll"
+      },
+      {
+        "Name": "Eleventy",
+        "Desc": "Flexible JavaScript static site generator with zero-config defaults",
+        "Formula": "",
+        "Cask": "",
+        "Special": "eleventy",
+        "Color": "rgb(100, 100, 100)",
+        "Binary": "eleventy"
+      },
+      {
+        "Name": "MkDocs",
+        "Desc": "Python-based static site generator focused on project documentation",
+        "Formula": "mkdocs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(80, 180, 255)",
+        "Binary": "mkdocs"
+      },
+      {
+        "Name": "Pandoc",
+        "Desc": "Universal document converter supporting Markdown, PDF, DOCX, and more",
+        "Formula": "pandoc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 80)",
+        "Binary": "pandoc"
+      },
+      {
+        "Name": "Doxygen",
+        "Desc": "Documentation generator for C++, Java, and Python source code",
+        "Formula": "doxygen",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 170, 230)",
+        "Binary": "doxygen"
+      },
+      {
+        "Name": "Graphviz",
+        "Desc": "Graph visualization tools for rendering diagrams from DOT language files",
+        "Formula": "graphviz",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 230, 100)",
+        "Binary": "dot"
+      },
+      {
+        "Name": "Spectral",
+        "Desc": "OpenAPI and AsyncAPI linter for enforcing API design style rules",
+        "Formula": "",
+        "Cask": "",
+        "Special": "spectral",
+        "Color": "rgb(255, 130, 80)",
+        "Binary": "spectral"
+      },
+      {
+        "Name": "OpenAPI Generator",
+        "Desc": "Generate client SDKs, server stubs, and docs from OpenAPI specs",
+        "Formula": "openapi-generator",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 180)",
+        "Binary": "openapi-generator"
+      }
+    ]
+  },
+  {
+    "Name": "Data & Analytics",
+    "Items": [
+      {
+        "Name": "DuckDB",
+        "Desc": "In-process SQL OLAP database for fast data analysis",
+        "Formula": "duckdb",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 160, 50)",
+        "Binary": "duckdb"
+      },
+      {
+        "Name": "VisiData",
+        "Desc": "Powerful terminal tool for exploring and editing data",
+        "Formula": "visidata",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "vd"
+      },
+      {
+        "Name": "DVC (Data Versioning)",
+        "Desc": "Git-based data version control for ML projects",
+        "Formula": "dvc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(160, 110, 210)",
+        "Binary": "dvc"
+      },
+      {
+        "Name": "PostGIS",
+        "Desc": "Spatial database extender for PostgreSQL databases",
+        "Formula": "postgis",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "postgis"
+      },
+      {
+        "Name": "Bacalhau (Distributed Compute)",
+        "Desc": "Project Bacalhau for public, verifiable, and distributed data computation",
+        "Formula": "bacalhau",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "bacalhau"
+      },
+      {
+        "Name": "Benthos (Stream Processing)",
+        "Desc": "A high-performance stream processor for data integration and transport",
+        "Formula": "benthos",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(120, 255, 50)",
+        "Binary": "benthos"
+      }
+    ]
+  },
+  {
+    "Name": "Web Browsers",
+    "Items": [
+      {
+        "Name": "Google Chrome",
+        "Desc": "The world's most popular browser, with Google smarts and speed",
+        "Formula": "",
+        "Cask": "google-chrome",
+        "Special": "",
+        "Color": "rgb(66, 133, 244)",
+        "Binary": "Google Chrome"
+      },
+      {
+        "Name": "Firefox Developer Edition",
+        "Desc": "Custom-tailored for developers, with unique tools and features",
+        "Formula": "",
+        "Cask": "firefox-developer-edition",
+        "Special": "",
+        "Color": "rgb(255, 148, 0)",
+        "Binary": "Firefox Developer Edition"
+      },
+      {
+        "Name": "Arc",
+        "Desc": "A beautiful, more powerful internet browser for modern work",
+        "Formula": "",
+        "Cask": "arc",
+        "Special": "",
+        "Color": "rgb(120, 150, 255)",
+        "Binary": "Arc"
+      },
+      {
+        "Name": "Brave",
+        "Desc": "Secure, fast and private web browser with built-in ad blocker",
+        "Formula": "",
+        "Cask": "brave-browser",
+        "Special": "",
+        "Color": "rgb(251, 84, 43)",
+        "Binary": "Brave Browser"
+      }
+    ]
+  },
+  {
+    "Name": "Knowledge & Productivity",
+    "Items": [
+      {
+        "Name": "Notion",
+        "Desc": "Connected workspace for notes, docs, and project management",
+        "Formula": "",
+        "Cask": "notion",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "Notion"
+      },
+      {
+        "Name": "Obsidian",
+        "Desc": "Powerful knowledge base for building a second brain with Markdown",
+        "Formula": "",
+        "Cask": "obsidian",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "Obsidian"
+      },
+      {
+        "Name": "Linear",
+        "Desc": "Issue tracker and project tool for high-performance dev teams",
+        "Formula": "",
+        "Cask": "linear-linear",
+        "Special": "",
+        "Color": "rgb(100, 100, 255)",
+        "Binary": "Linear"
+      },
+      {
+        "Name": "Todoist",
+        "Desc": "Simple and powerful task management tool for individuals and teams",
+        "Formula": "",
+        "Cask": "todoist",
+        "Special": "",
+        "Color": "rgb(219, 76, 63)",
+        "Binary": "Todoist"
+      }
+    ]
+  },
+  {
+    "Name": "Security & Secrets",
+    "Items": [
+      {
+        "Name": "Age (Encryption)",
+        "Desc": "Simple, modern and secure file encryption tool",
+        "Formula": "age",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "age"
+      },
+      {
+        "Name": "Sops",
+        "Desc": "Editor of encrypted files that supports YAML, JSON, ENV, INI and BINARY",
+        "Formula": "sops",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "sops"
+      },
+      {
+        "Name": "Cosign",
+        "Desc": "Container Signing, Verification and Storage in an OCI registry",
+        "Formula": "cosign",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "cosign"
+      },
+      {
+        "Name": "Bitwarden CLI",
+        "Desc": "Secure and free password manager for all of your devices",
+        "Formula": "bitwarden-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "bw"
+      },
+      {
+        "Name": "1Password CLI",
+        "Desc": "Secure password manager with a powerful command-line interface",
+        "Formula": "",
+        "Cask": "1password-cli",
+        "Special": "",
+        "Color": "rgb(50, 200, 255)",
+        "Binary": "op"
+      },
+      {
+        "Name": "KeepassXC",
+        "Desc": "Cross-platform community-driven port of the Windows application KeePass",
+        "Formula": "",
+        "Cask": "keepassxc",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "KeePassXC"
+      },
+      {
+        "Name": "Wireshark",
+        "Desc": "Network protocol analyzer for capturing and inspecting live traffic",
+        "Formula": "",
+        "Cask": "wireshark",
+        "Special": "",
+        "Color": "rgb(50, 180, 230)",
+        "Binary": "wireshark"
+      },
+      {
+        "Name": "Nmap",
+        "Desc": "Powerful network scanner for discovery, auditing, and security analysis",
+        "Formula": "nmap",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 100)",
+        "Binary": "nmap"
+      },
+      {
+        "Name": "Burp Suite",
+        "Desc": "Web security testing platform for intercepting and analyzing HTTP traffic",
+        "Formula": "",
+        "Cask": "burp-suite",
+        "Special": "",
+        "Color": "rgb(255, 110, 50)",
+        "Binary": "burpsuite"
+      },
+      {
+        "Name": "Snyk CLI",
+        "Desc": "Developer-first security tool for finding and fixing vulnerabilities",
+        "Formula": "snyk-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 210, 150)",
+        "Binary": "snyk"
+      },
+      {
+        "Name": "Trivy",
+        "Desc": "Comprehensive vulnerability scanner for containers, filesystems, and repos",
+        "Formula": "trivy",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 220)",
+        "Binary": "trivy"
+      },
+      {
+        "Name": "Gitleaks",
+        "Desc": "SAST tool for detecting hardcoded secrets and sensitive data in git repos",
+        "Formula": "gitleaks",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 80, 100)",
+        "Binary": "gitleaks"
+      },
+      {
+        "Name": "Ngrok",
+        "Desc": "Secure tunneling to expose local servers to the public internet",
+        "Formula": "",
+        "Cask": "ngrok",
+        "Special": "",
+        "Color": "rgb(30, 190, 255)",
+        "Binary": "ngrok"
+      },
+      {
+        "Name": "Tailscale",
+        "Desc": "Zero-config VPN mesh for secure private networking across devices",
+        "Formula": "",
+        "Cask": "tailscale",
+        "Special": "",
+        "Color": "rgb(90, 150, 255)",
+        "Binary": "tailscale"
+      }
+    ]
+  },
+  {
+    "Name": "Reverse Engineering",
+    "Items": [
+      {
+        "Name": "Ghidra",
+        "Desc": "NSA-developed reverse engineering framework for binary analysis",
+        "Formula": "",
+        "Cask": "ghidra",
+        "Special": "",
+        "Color": "rgb(255, 80, 80)",
+        "Binary": "ghidra"
+      },
+      {
+        "Name": "Radare2",
+        "Desc": "Open-source framework for disassembling and analyzing binary executables",
+        "Formula": "radare2",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 100, 50)",
+        "Binary": "r2"
+      },
+      {
+        "Name": "Hopper Disassembler",
+        "Desc": "macOS disassembler and decompiler for inspecting 32/64-bit binaries",
+        "Formula": "",
+        "Cask": "hopper-disassembler",
+        "Special": "",
+        "Color": "rgb(200, 120, 255)",
+        "Binary": "hopper"
+      },
+      {
+        "Name": "Charles",
+        "Desc": "HTTP proxy and monitor for inspecting web and mobile app traffic",
+        "Formula": "",
+        "Cask": "charles",
+        "Special": "",
+        "Color": "rgb(50, 170, 230)",
+        "Binary": "Charles"
+      },
+      {
+        "Name": "mitmproxy",
+        "Desc": "Interactive TLS-capable intercepting proxy for HTTP traffic analysis",
+        "Formula": "mitmproxy",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(30, 220, 180)",
+        "Binary": "mitmproxy"
+      },
+      {
+        "Name": "Proxyman",
+        "Desc": "Native macOS HTTP debugger for intercepting and editing network requests",
+        "Formula": "",
+        "Cask": "proxyman",
+        "Special": "",
+        "Color": "rgb(80, 160, 255)",
+        "Binary": "Proxyman"
+      },
+      {
+        "Name": "sqlmap",
+        "Desc": "Automated SQL injection detection and exploitation tool for penetration testing",
+        "Formula": "sqlmap",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "sqlmap"
+      },
+      {
+        "Name": "Zaproxy",
+        "Desc": "Open-source web application security scanner for developers",
+        "Formula": "",
+        "Cask": "zaproxy",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "zap"
+      },
+      {
+        "Name": "ImHex",
+        "Desc": "A hex editor for reverse engineers with a focus on data analysis",
+        "Formula": "",
+        "Cask": "imhex",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "imhex"
+      },
+      {
+        "Name": "010 Editor",
+        "Desc": "Professional hex editor and binary analyzer for complex files",
+        "Formula": "",
+        "Cask": "010-editor",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "010editor"
+      },
+      {
+        "Name": "John the Ripper",
+        "Desc": "Fast password cracker for auditing and recovering hashed credentials",
+        "Formula": "john",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 50, 50)",
+        "Binary": "john"
+      },
+      {
+        "Name": "Hashcat",
+        "Desc": "GPU-accelerated password recovery tool supporting hundreds of hash types",
+        "Formula": "hashcat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 50, 100)",
+        "Binary": "hashcat"
+      },
+      {
+        "Name": "Sleuth Kit",
+        "Desc": "Digital forensics tools for analyzing disk images and file systems",
+        "Formula": "sleuthkit",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 130, 200)",
+        "Binary": "fls"
+      },
+      {
+        "Name": "Binwalk",
+        "Desc": "Firmware analysis tool for extracting and reverse engineering binary images",
+        "Formula": "binwalk",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 160)",
+        "Binary": "binwalk"
+      }
+    ]
+  },
+  {
+    "Name": "Networking & API",
+    "Items": [
+      {
+        "Name": "Doggo (DNS)",
+        "Desc": "Modern DNS client for humans with JSON output",
+        "Formula": "doggo",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "doggo"
+      },
+      {
+        "Name": "MTR (Network Diag)",
+        "Desc": "Combining the functionality of traceroute and ping",
+        "Formula": "mtr",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "mtr"
+      },
+      {
+        "Name": "Step CLI (Crypto/Cert)",
+        "Desc": "Certificate management and zero-trust cryptography toolkit",
+        "Formula": "step",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "step"
+      },
+      {
+        "Name": "HTTPie",
+        "Desc": "User-friendly command-line interface for making HTTP requests",
+        "Formula": "httpie",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(30, 200, 255)",
+        "Binary": "http"
+      },
+      {
+        "Name": "Cloudflared",
+        "Desc": "Cloudflare Tunnel client for secure, zero-trust network access",
+        "Formula": "cloudflared",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "cloudflared"
+      },
+      {
+        "Name": "Termius",
+        "Desc": "Modern SSH client with cloud sync and SFTP support",
+        "Formula": "",
+        "Cask": "termius",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "Termius"
+      },
+      {
+        "Name": "Stripe CLI",
+        "Desc": "Powerful and convenient CLI for managing Stripe projects",
+        "Formula": "stripe/stripe-cli/stripe",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 100, 255)",
+        "Binary": "stripe"
+      },
+      {
+        "Name": "Websocat",
+        "Desc": "Command-line client for WebSockets, like netcat or curl",
+        "Formula": "websocat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "websocat"
+      },
+      {
+        "Name": "Bruno",
+        "Desc": "Open-source IDE for API exploration and testing",
+        "Formula": "",
+        "Cask": "bruno",
+        "Special": "",
+        "Color": "rgb(255, 180, 50)",
+        "Binary": "Bruno"
+      },
+      {
+        "Name": "xh",
+        "Desc": "Friendly and fast tool for sending HTTP requests, CLI alternative",
+        "Formula": "xh",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "xh"
+      },
+      {
+        "Name": "Termshark",
+        "Desc": "A terminal UI for tshark, inspired by Wireshark",
+        "Formula": "termshark",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 230)",
+        "Binary": "termshark"
+      },
+      {
+        "Name": "Curlie",
+        "Desc": "The power of curl with the ease of use of httpie",
+        "Formula": "curlie",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "curlie"
+      },
+      {
+        "Name": "gRPCurl",
+        "Desc": "Command-line tool that lets you interact with gRPC servers",
+        "Formula": "grpcurl",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "grpcurl"
+      },
+      {
+        "Name": "Mole",
+        "Desc": "CLI tool to create ssh tunnels easily with simple redirection",
+        "Formula": "mole",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "mole"
+      },
+      {
+        "Name": "Trippy",
+        "Desc": "A network diagnostic tool, combining traceroute and ping",
+        "Formula": "trippy",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "trip"
+      }
+    ]
+  },
+  {
+    "Name": "Communications",
+    "Items": [
+      {
+        "Name": "Discord",
+        "Desc": "Communicate via voice, video, and text in organized communities",
+        "Formula": "",
+        "Cask": "discord",
+        "Special": "",
+        "Color": "rgb(114, 137, 218)",
+        "Binary": "Discord"
+      },
+      {
+        "Name": "Slack",
+        "Desc": "The digital headquarters for all your professional teamwork",
+        "Formula": "",
+        "Cask": "slack",
+        "Special": "",
+        "Color": "rgb(74, 21, 75)",
+        "Binary": "Slack"
+      },
+      {
+        "Name": "Telegram",
+        "Desc": "Fast, secure, and private messaging across all your devices",
+        "Formula": "",
+        "Cask": "telegram",
+        "Special": "",
+        "Color": "rgb(0, 136, 204)",
+        "Binary": "Telegram"
+      },
+      {
+        "Name": "Zoom",
+        "Desc": "Simplified video conferencing and messaging for all platforms",
+        "Formula": "",
+        "Cask": "zoom",
+        "Special": "",
+        "Color": "rgb(45, 140, 255)",
+        "Binary": "zoom.us"
+      }
+    ]
+  },
+  {
+    "Name": "System Tools",
+    "Items": [
+      {
+        "Name": "htop",
+        "Desc": "Interactive process viewer and system monitor for Unix-based systems",
+        "Formula": "htop",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "htop"
+      },
+      {
+        "Name": "btop",
+        "Desc": "Resource monitor showing detailed usage and system statistics",
+        "Formula": "btop",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 255)",
+        "Binary": "btop"
+      },
+      {
+        "Name": "NeoVim",
+        "Desc": "Highly extensible terminal-based text editor built on Vim core",
+        "Formula": "neovim",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 230, 50)",
+        "Binary": "nvim"
+      },
+      {
+        "Name": "Vim",
+        "Desc": "Classic terminal editor for efficient text and code manipulation",
+        "Formula": "vim",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 50)",
+        "Binary": "vim"
+      },
+      {
+        "Name": "jq",
+        "Desc": "Command-line processor for parsing and transforming JSON data",
+        "Formula": "jq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(127, 219, 255)",
+        "Binary": "jq"
+      },
+      {
+        "Name": "yq",
+        "Desc": "Lightweight command-line processor for YAML and XML document formats",
+        "Formula": "yq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "yq"
+      },
+      {
+        "Name": "fd",
+        "Desc": "Simple and fast alternative to the find command for file discovery",
+        "Formula": "fd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 150)",
+        "Binary": "fd"
+      },
+      {
+        "Name": "ncdu",
+        "Desc": "Disk usage analyzer with an interactive ncurses-based interface",
+        "Formula": "ncdu",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "ncdu"
+      },
+      {
+        "Name": "Tree",
+        "Desc": "Recursive directory listing program that produces a depth-indented view",
+        "Formula": "tree",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 150, 255)",
+        "Binary": "tree"
+      },
+      {
+        "Name": "entr",
+        "Desc": "Utility for running arbitrary commands when specific files change",
+        "Formula": "entr",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 210, 50)",
+        "Binary": "entr"
+      },
+      {
+        "Name": "Lnav",
+        "Desc": "The Log File Navigator, an advanced log file viewer for the terminal",
+        "Formula": "lnav",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "lnav"
+      },
+      {
+        "Name": "Ouch",
+        "Desc": "Obvious, Unified, Confident and Helpful CLI for compression",
+        "Formula": "ouch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "ouch"
+      }
+    ]
+  },
+  {
+    "Name": "Terminal Glow-Up & Shell",
+    "Items": [
+      {
+        "Name": "Tmux",
+        "Desc": "Terminal multiplexer for managing multiple shell sessions",
+        "Formula": "tmux",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 50)",
+        "Binary": "tmux"
+      },
+      {
+        "Name": "Fastfetch",
+        "Desc": "Fast and highly customizable system information tool",
+        "Formula": "fastfetch",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "fastfetch"
+      },
+      {
+        "Name": "Glow (Markdown UI)",
+        "Desc": "Terminal-based Markdown reader with a slick UI",
+        "Formula": "glow",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "glow"
+      },
+      {
+        "Name": "Gum (Shell Scripts)",
+        "Desc": "Tool for creating highly interactive shell scripts",
+        "Formula": "gum",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "gum"
+      },
+      {
+        "Name": "Oh My Zsh",
+        "Desc": "Framework for managing Zsh configuration and plugins",
+        "Formula": "zsh-completions",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "zsh"
+      },
+      {
+        "Name": "Zsh Autosuggestions",
+        "Desc": "Suggests commands based on your shell history",
+        "Formula": "zsh-autosuggestions",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "zsh-autosuggestions"
+      },
+      {
+        "Name": "Zsh Syntax Highlighting",
+        "Desc": "Real-time syntax highlighting for the shell",
+        "Formula": "zsh-syntax-highlighting",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 255, 100)",
+        "Binary": "zsh-syntax-highlighting"
+      },
+      {
+        "Name": "Aria2 (Downloader)",
+        "Desc": "Lightweight multi-protocol download utility",
+        "Formula": "aria2",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "aria2c"
+      },
+      {
+        "Name": "VHS",
+        "Desc": "Terminal GIF recorder that lets you write CLI demos as code",
+        "Formula": "vhs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 255)",
+        "Binary": "vhs"
+      },
+      {
+        "Name": "Mods",
+        "Desc": "AI-powered CLI tool that adds smart features to pipelines",
+        "Formula": "mods",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "mods"
+      },
+      {
+        "Name": "Atuin",
+        "Desc": "Magical shell history replaced with a SQLite database",
+        "Formula": "atuin",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "atuin"
+      }
+    ]
+  },
+  {
+    "Name": "macOS Essentials",
+    "Items": [
+      {
+        "Name": "Raycast",
+        "Desc": "Faster and more powerful replacement for Spotlight",
+        "Formula": "",
+        "Cask": "raycast",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "raycast"
+      },
+      {
+        "Name": "Rectangle",
+        "Desc": "Window management tool to snap windows into positions",
+        "Formula": "",
+        "Cask": "rectangle",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "Rectangle"
+      },
+      {
+        "Name": "AltTab",
+        "Desc": "Brings back Windows-style Alt-Tab window switching",
+        "Formula": "",
+        "Cask": "alt-tab",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "AltTab"
+      },
+      {
+        "Name": "Latest",
+        "Desc": "Small utility to check for software updates of your apps",
+        "Formula": "",
+        "Cask": "latest",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "Latest"
+      },
+      {
+        "Name": "HiddenBar",
+        "Desc": "Menubar icon organizer to hide unused status items",
+        "Formula": "",
+        "Cask": "hiddenbar",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "HiddenBar"
+      },
+      {
+        "Name": "Shottr (Screenshots)",
+        "Desc": "High-performance pixel-perfect screenshot tool",
+        "Formula": "",
+        "Cask": "shottr",
+        "Special": "",
+        "Color": "rgb(255, 100, 255)",
+        "Binary": "Shottr"
+      },
+      {
+        "Name": "AppCleaner",
+        "Desc": "Properly uninstalls apps and removes leftover files",
+        "Formula": "",
+        "Cask": "appcleaner",
+        "Special": "",
+        "Color": "rgb(200, 200, 200)",
+        "Binary": "AppCleaner"
+      },
+      {
+        "Name": "IINA (Media Player)",
+        "Desc": "Modern and feature-rich media player for macOS",
+        "Formula": "",
+        "Cask": "iina",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "IINA"
+      },
+      {
+        "Name": "Xcodes CLI",
+        "Desc": "Command-line tool to install and switch between versions of Xcode",
+        "Formula": "xcodes",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "xcodes"
+      },
+      {
+        "Name": "Syncthing",
+        "Desc": "Continuous file synchronization program that syncs files in real time",
+        "Formula": "",
+        "Cask": "syncthing",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "Syncthing"
+      },
+      {
+        "Name": "Maccy",
+        "Desc": "Lightweight clipboard manager for macOS with a simple interface",
+        "Formula": "",
+        "Cask": "maccy",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "Maccy"
+      },
+      {
+        "Name": "CleanShot X",
+        "Desc": "Professional screen capture & recording tool for macOS",
+        "Formula": "",
+        "Cask": "cleanshot",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "CleanShot X"
+      }
+    ]
+  },
+  {
+    "Name": "Modern CLI Replacements",
+    "Items": [
+      {
+        "Name": "Dust (du replacement)",
+        "Desc": "More intuitive and visual replacement for du",
+        "Formula": "du-dust",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "dust"
+      },
+      {
+        "Name": "Bottom (btm)",
+        "Desc": "Graphical process and system monitor for terminal",
+        "Formula": "bottom",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "btm"
+      },
+      {
+        "Name": "Tldr (Simple Man)",
+        "Desc": "Simplified and community-driven man pages",
+        "Formula": "tldr",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "tldr"
+      },
+      {
+        "Name": "TheFuck",
+        "Desc": "Tool that corrects your previous console commands",
+        "Formula": "thefuck",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "thefuck"
+      },
+      {
+        "Name": "Rclone",
+        "Desc": "Rsync for cloud storage that supports 40+ providers",
+        "Formula": "rclone",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(52, 110, 235)",
+        "Binary": "rclone"
+      },
+      {
+        "Name": "Dog (dig replacement)",
+        "Desc": "Modern and user-friendly DNS lookup tool",
+        "Formula": "dog",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "dog"
+      },
+      {
+        "Name": "Choose (cut/awk alt)",
+        "Desc": "Faster and simpler alternative to cut/awk",
+        "Formula": "choose-rust",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "choose"
+      },
+      {
+        "Name": "Gdu (Disk Usage)",
+        "Desc": "Extremely fast disk usage analyzer in Go",
+        "Formula": "gdu",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "gdu"
+      },
+      {
+        "Name": "Zellij",
+        "Desc": "Terminal workspace and multiplexer with a focus on ease of use",
+        "Formula": "zellij",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "zellij"
+      },
+      {
+        "Name": "Just",
+        "Desc": "Handy command runner for common tasks with a Make-like syntax",
+        "Formula": "just",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(230, 80, 40)",
+        "Binary": "just"
+      },
+      {
+        "Name": "Erdtree (Tree + du + icons)",
+        "Desc": "A modern, iterative, and highly-adaptive file-tree visualizer and disk-usage analyzer",
+        "Formula": "erdtree",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 200, 255)",
+        "Binary": "et"
+      },
+      {
+        "Name": "Rip (RM Improved)",
+        "Desc": "A safe and fast alternative to the rm command",
+        "Formula": "rm-improved",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "rip"
+      },
+      {
+        "Name": "Jid",
+        "Desc": "Interactive JSON digger that lets you explore JSON using filtered queries",
+        "Formula": "jid",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "jid"
+      },
+      {
+        "Name": "Grv",
+        "Desc": "Terminal-based interface for viewing git repositories",
+        "Formula": "grv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "grv"
+      },
+      {
+        "Name": "Tig",
+        "Desc": "An ncurses-based text-mode interface for git",
+        "Formula": "tig",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 100)",
+        "Binary": "tig"
+      },
+      {
+        "Name": "Qsv (Ultra-fast CSV)",
+        "Desc": "Ultra-fast CSV data-wrangling toolkit for high-performance pipelines",
+        "Formula": "qsv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "qsv"
+      },
+      {
+        "Name": "Displayplacer (Monitor Config)",
+        "Desc": "macOS command-line utility for managing display configurations",
+        "Formula": "displayplacer",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(180, 180, 180)",
+        "Binary": "displayplacer"
+      },
+      {
+        "Name": "Ag (Silver Searcher)",
+        "Desc": "Code searching tool similar to ack, but faster",
+        "Formula": "the_silver_searcher",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 150, 255)",
+        "Binary": "ag"
+      },
+      {
+        "Name": "Pv (Pipe Viewer)",
+        "Desc": "Monitor the progress of data through a pipeline",
+        "Formula": "pv",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "pv"
+      },
+      {
+        "Name": "Socat (Multipurpose Relay)",
+        "Desc": "Multipurpose relay tool for bidirectional data transfer",
+        "Formula": "socat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "socat"
+      },
+      {
+        "Name": "Bf (Brainfuck)",
+        "Desc": "An interpreter for the Brainfuck esoteric programming language",
+        "Formula": "bf",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 150)",
+        "Binary": "bf"
+      },
+      {
+        "Name": "Clib",
+        "Desc": "Package manager for the C programming language",
+        "Formula": "clib",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 100)",
+        "Binary": "clib"
+      },
+      {
+        "Name": "Viddy (Time-traveling Watch)",
+        "Desc": "Modern alternative to the watch command with shell support",
+        "Formula": "viddy",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 220, 255)",
+        "Binary": "viddy"
+      },
+      {
+        "Name": "Sg (Sourcegraph CLI)",
+        "Desc": "Sourcegraph CLI for code search and batch changes",
+        "Formula": "src-cli",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 100)",
+        "Binary": "src"
+      },
+      {
+        "Name": "Comby (Structural Rewrite)",
+        "Desc": "A tool for structural search and replace across many languages",
+        "Formula": "comby",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 180, 255)",
+        "Binary": "comby"
+      },
+      {
+        "Name": "Htmx-lsp",
+        "Desc": "The official HTMX Language Server for your favorite editor",
+        "Formula": "htmx-lsp",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 220, 100)",
+        "Binary": "htmx-lsp"
+      },
+      {
+        "Name": "OrbStack",
+        "Desc": "Fast, light, and easy way to run Docker and Linux on macOS",
+        "Formula": "",
+        "Cask": "orbstack",
+        "Special": "",
+        "Color": "rgb(30, 140, 255)",
+        "Binary": "OrbStack"
+      },
+      {
+        "Name": "Fast Node Manager (fnm)",
+        "Desc": "Fast and simple Node.js version manager built in Rust",
+        "Formula": "fnm",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(250, 100, 50)",
+        "Binary": "fnm"
+      },
+      {
+        "Name": "Scc (Sloc Cloc and Code)",
+        "Desc": "Very fast code counter with complexity and COCOMO estimates",
+        "Formula": "scc",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 150)",
+        "Binary": "scc"
+      },
+      {
+        "Name": "Watchexec",
+        "Desc": "Execute commands in response to file modifications",
+        "Formula": "watchexec",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "watchexec"
+      },
+      {
+        "Name": "Dasel",
+        "Desc": "Query and update data structures from the terminal, any format",
+        "Formula": "dasel",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "dasel"
+      },
+      {
+        "Name": "Topgrade",
+        "Desc": "Upgrade everything on your system with a single command",
+        "Formula": "topgrade",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "topgrade"
+      },
+      {
+        "Name": "Glances",
+        "Desc": "An eye on your system, curses-based monitoring tool",
+        "Formula": "glances",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "glances"
+      },
+      {
+        "Name": "Dive",
+        "Desc": "A tool for exploring each layer in a docker image",
+        "Formula": "dive",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 180, 255)",
+        "Binary": "dive"
+      },
+      {
+        "Name": "Ctop",
+        "Desc": "Top-like interface for container metrics",
+        "Formula": "ctop",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 200, 150)",
+        "Binary": "ctop"
+      },
+      {
+        "Name": "Gping (Visual Ping)",
+        "Desc": "Ping, but with a graph",
+        "Formula": "gping",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 50)",
+        "Binary": "gping"
+      },
+      {
+        "Name": "Procs (Modern ps)",
+        "Desc": "A modern replacement for ps written in Rust",
+        "Formula": "procs",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 255)",
+        "Binary": "procs"
+      },
+      {
+        "Name": "Sd",
+        "Desc": "Intuitive find & replace CLI (sed replacement)",
+        "Formula": "sd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "sd"
+      },
+      {
+        "Name": "Bandwhich (Bandwidth Sniffer)",
+        "Desc": "Terminal bandwidth utilization tool",
+        "Formula": "bandwhich",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "bandwhich"
+      },
+      {
+        "Name": "Grex (Regex Generator)",
+        "Desc": "Generate regular expressions from test cases",
+        "Formula": "grex",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "grex"
+      },
+      {
+        "Name": "Tokei",
+        "Desc": "Displays statistics about your code",
+        "Formula": "tokei",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "tokei"
+      },
+      {
+        "Name": "Chafa (Terminal Graphics)",
+        "Desc": "Terminal graphics for the 21st century",
+        "Formula": "chafa",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "chafa"
+      },
+      {
+        "Name": "Pueue",
+        "Desc": "A CLI tool for managing long-running shell commands",
+        "Formula": "pueue",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 150)",
+        "Binary": "pueue"
+      },
+      {
+        "Name": "Mcfly",
+        "Desc": "Fly through your shell history with a neural network",
+        "Formula": "mcfly",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "mcfly"
+      },
+      {
+        "Name": "Autojump",
+        "Desc": "A faster way to navigate your filesystem",
+        "Formula": "autojump",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "j"
+      },
+      {
+        "Name": "Fasd",
+        "Desc": "Command-line productivity booster, quick access to files",
+        "Formula": "fasd",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 140, 50)",
+        "Binary": "fasd"
+      },
+      {
+        "Name": "Cheat",
+        "Desc": "Interactive cheatsheets on the command-line",
+        "Formula": "cheat",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "cheat"
+      },
+      {
+        "Name": "Tealdeer",
+        "Desc": "A very fast implementation of tldr in Rust",
+        "Formula": "tealdeer",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "tldr"
+      }
+    ]
+  },
+  {
+    "Name": "Developer Apps & Tooling",
+    "Items": [
+      {
+        "Name": "Sniffnet",
+        "Desc": "A multi-platform application to monitor your network traffic with ease",
+        "Formula": "",
+        "Cask": "sniffnet",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "Sniffnet"
+      },
+      {
+        "Name": "Excalidraw",
+        "Desc": "Virtual whiteboard for sketching hand-drawn like diagrams",
+        "Formula": "",
+        "Cask": "excalidraw",
+        "Special": "",
+        "Color": "rgb(150, 100, 255)",
+        "Binary": "Excalidraw"
+      },
+      {
+        "Name": "Responsively",
+        "Desc": "A must-have tool for web developers to build responsive websites",
+        "Formula": "",
+        "Cask": "responsively",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "ResponsivelyApp"
+      },
+      {
+        "Name": "Hammerspoon (Lua macOS Automation)",
+        "Desc": "A powerful automation tool for macOS using Lua scripts",
+        "Formula": "",
+        "Cask": "hammerspoon",
+        "Special": "",
+        "Color": "rgb(255, 100, 50)",
+        "Binary": "Hammerspoon"
+      },
+      {
+        "Name": "Xnapper (Beautiful Snaps)",
+        "Desc": "Take beautiful screenshots instantly on your Mac",
+        "Formula": "",
+        "Cask": "xnapper",
+        "Special": "",
+        "Color": "rgb(255, 100, 200)",
+        "Binary": "Xnapper"
+      },
+      {
+        "Name": "Lulu (Dev Firewall)",
+        "Desc": "Open-source firewall that blocks unknown outgoing connections",
+        "Formula": "",
+        "Cask": "lulu",
+        "Special": "",
+        "Color": "rgb(100, 255, 100)",
+        "Binary": "LuLu"
+      },
+      {
+        "Name": "BetterDisplay (Monitor Control)",
+        "Desc": "Unlock your displays' full potential with better resolution control",
+        "Formula": "",
+        "Cask": "betterdisplay",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "BetterDisplay"
+      },
+      {
+        "Name": "Whisky (Wine for Mac)",
+        "Desc": "A modern Wine wrapper for macOS built with SwiftUI",
+        "Formula": "",
+        "Cask": "whisky",
+        "Special": "",
+        "Color": "rgb(255, 120, 50)",
+        "Binary": "Whisky"
+      },
+      {
+        "Name": "Multipass",
+        "Desc": "Ubuntu VMs in seconds for developers on macOS",
+        "Formula": "",
+        "Cask": "multipass",
+        "Special": "",
+        "Color": "rgb(230, 80, 40)",
+        "Binary": "multipass"
+      },
+      {
+        "Name": "Firecamp",
+        "Desc": "The API development platform for building Open APIs",
+        "Formula": "",
+        "Cask": "firecamp",
+        "Special": "",
+        "Color": "rgb(255, 180, 50)",
+        "Binary": "Firecamp"
+      }
+    ]
+  },
+  {
+    "Name": "Terminal Emulators",
+    "Items": [
+      {
+        "Name": "Warp",
+        "Desc": "The modern, fast, and secure terminal with built-in AI",
+        "Formula": "",
+        "Cask": "warp",
+        "Special": "",
+        "Color": "rgb(30, 215, 96)",
+        "Binary": "Warp"
+      },
+      {
+        "Name": "WezTerm",
+        "Desc": "GPU-accelerated terminal emulator and multiplexer in Rust",
+        "Formula": "",
+        "Cask": "wezterm",
+        "Special": "",
+        "Color": "rgb(255, 100, 100)",
+        "Binary": "wezterm"
+      },
+      {
+        "Name": "Alacritty",
+        "Desc": "OpenGL terminal emulator that is simple and high-performance",
+        "Formula": "",
+        "Cask": "alacritty",
+        "Special": "",
+        "Color": "rgb(255, 200, 100)",
+        "Binary": "Alacritty"
+      },
+      {
+        "Name": "Kitty",
+        "Desc": "GPU-based terminal emulator that is fast and feature-rich",
+        "Formula": "",
+        "Cask": "kitty",
+        "Special": "",
+        "Color": "rgb(100, 255, 200)",
+        "Binary": "kitty"
+      },
+      {
+        "Name": "Ghostty",
+        "Desc": "Highly performant and slick terminal emulator for developers",
+        "Formula": "",
+        "Cask": "ghostty",
+        "Special": "",
+        "Color": "rgb(200, 100, 255)",
+        "Binary": "ghostty"
+      }
+    ]
+  },
+  {
+    "Name": "Common Apps & Utilities",
+    "Items": [
+      {
+        "Name": "VS Code",
+        "Desc": "Popular open-source code editor by Microsoft",
+        "Formula": "",
+        "Cask": "visual-studio-code",
+        "Special": "",
+        "Color": "rgb(0, 120, 215)",
+        "Binary": "code"
+      },
+      {
+        "Name": "GNU Coreutils",
+        "Desc": "Basic file, shell, and text manipulation utilities of the GNU operating system",
+        "Formula": "coreutils",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(200, 200, 200)",
+        "Binary": "gls"
+      },
+      {
+        "Name": "GnuPG",
+        "Desc": "Complete and free implementation of the OpenPGP standard for secure communication",
+        "Formula": "gnupg",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(0, 147, 221)",
+        "Binary": "gpg"
+      },
+      {
+        "Name": "Yazi",
+        "Desc": "Blazing fast terminal file manager written in Rust, based on async I/O",
+        "Formula": "yazi",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 150, 50)",
+        "Binary": "yazi"
+      },
+      {
+        "Name": "Podman",
+        "Desc": "Daemonless container engine for developing, managing, and running OCI Containers",
+        "Formula": "podman",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(137, 43, 225)",
+        "Binary": "podman"
+      },
+      {
+        "Name": "Podman Desktop",
+        "Desc": "Graphical tool for developing on containers and Kubernetes",
+        "Formula": "",
+        "Cask": "podman-desktop",
+        "Special": "",
+        "Color": "rgb(137, 43, 225)",
+        "Binary": "podman-desktop"
+      },
+      {
+        "Name": "Wget",
+        "Desc": "Internet file retriever supporting HTTP, HTTPS, and FTP",
+        "Formula": "wget",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(150, 150, 150)",
+        "Binary": "wget"
+      },
+      {
+        "Name": "OpenSSH",
+        "Desc": "OpenBSD's freely-licensed SSH connectivity tools (keeps you updated past macOS defaults)",
+        "Formula": "openssh",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "ssh"
+      },
+      {
+        "Name": "gojq",
+        "Desc": "Pure Go implementation of jq, often much faster for complex queries",
+        "Formula": "gojq",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(0, 173, 216)",
+        "Binary": "gojq"
+      },
+      {
+        "Name": "Stats",
+        "Desc": "macOS system monitor in your menu bar: CPU, GPU, RAM, Disk, and Network",
+        "Formula": "",
+        "Cask": "stats",
+        "Special": "",
+        "Color": "rgb(100, 200, 255)",
+        "Binary": "Stats"
+      },
+      {
+        "Name": "KeepingYouAwake",
+        "Desc": "Small menu bar utility to prevent your Mac from going to sleep (Caffeine clone)",
+        "Formula": "",
+        "Cask": "keepingyouawake",
+        "Special": "",
+        "Color": "rgb(255, 255, 255)",
+        "Binary": "KeepingYouAwake"
+      },
+      {
+        "Name": "Kube-capacity",
+        "Desc": "A simple CLI that provides an overview of the resource requests/limits in a Kubernetes cluster",
+        "Formula": "robscott/tap/kube-capacity",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(50, 150, 250)",
+        "Binary": "kube-capacity"
+      },
+      {
+        "Name": "Pluto",
+        "Desc": "Find deprecated Kubernetes apiVersions in your code repositories and helm charts",
+        "Formula": "fairwindsops/tap/pluto",
+        "Cask": "",
+        "Special": "",
+        "Color": "rgb(100, 200, 100)",
+        "Binary": "pluto"
+      }
+    ]
+  }
+]

@@ -253,11 +253,20 @@ func GetAllVersions(item components.InstallItem) ([]VersionEntry, error) {
 						if (part == "Cellar" || part == "opt") && i+1 < len(parts) {
 							formulaName = parts[i+1]
 
+							// ❯ Helper: Strip tap prefix (e.g. timescale/tap/timescaledb -> timescaledb)
+							baseFormula := item.Formula
+							if strings.Contains(baseFormula, "/") {
+								parts := strings.Split(baseFormula, "/")
+								baseFormula = parts[len(parts)-1]
+							}
+
 							// Only mark as Managed if we successfully extracted a formula name
-							t = VersionManagedOlder
-							if formulaName == item.Formula {
+							isMain := formulaName == item.Formula || formulaName == baseFormula
+							isVersioned := strings.HasPrefix(formulaName, item.Formula+"@") || strings.HasPrefix(formulaName, baseFormula+"@")
+
+							if isMain {
 								t = VersionManaged
-							} else if strings.HasPrefix(formulaName, item.Formula+"@") {
+							} else if isVersioned {
 								t = VersionManagedOlder
 							}
 

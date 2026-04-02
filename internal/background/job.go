@@ -53,23 +53,53 @@ func (j *Job) FilePath() string {
 	return filepath.Join(Dir(), j.ID+".json")
 }
 
-// Save writes the job state to disk.
+// Save writes the job state to disk using file locking for atomicity.
 func (j *Job) Save() error {
 	data, err := json.MarshalIndent(j, "", "  ")
 	if err != nil {
 		return err
 	}
-	return os.WriteFile(j.FilePath(), data, 0644)
+
+	path := j.FilePath()
+	f, err := os.OpenFile(path, os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+
+	// Acquire exclusive lock
+	if err := syscall.Flock(int(f.Fd()), syscall.LOCK_EX); err != nil {
+		return err
+	}
+	defer syscall.Flock(int(f.Fd()), syscall.LOCK_UN)
+
+	// Truncate and write
+	if err := f.Truncate(0); err != nil {
+		return err
+	}
+	if _, err := f.Seek(0, 0); err != nil {
+		return err
+	}
+	_, err = f.Write(data)
+	return err
 }
 
-// LoadJob reads a single job state file.
+// LoadJob reads a single job state file using a shared lock for safety.
 func LoadJob(path string) (*Job, error) {
-	data, err := os.ReadFile(path)
+	f, err := os.Open(path)
 	if err != nil {
 		return nil, err
 	}
+	defer f.Close()
+
+	// Acquire shared lock
+	if err := syscall.Flock(int(f.Fd()), syscall.LOCK_SH); err != nil {
+		return nil, err
+	}
+	defer syscall.Flock(int(f.Fd()), syscall.LOCK_UN)
+
 	var j Job
-	if err := json.Unmarshal(data, &j); err != nil {
+	if err := json.NewDecoder(f).Decode(&j); err != nil {
 		return nil, err
 	}
 	return &j, nil
@@ -141,10 +171,39 @@ func (j *Job) Abort() error {
 	return j.Save()
 }
 
+// GetRunningJob returns a running job for the given itemName, if any.
+func GetRunningJob(itemName string) *Job {
+	jobs := LoadAll()
+	for _, j := range jobs {
+		if j.Name == itemName && j.Status == StatusRunning {
+			return j
+		}
+	}
+	return nil
+}
+
 // Enqueue creates a job file and launches the background installer process.
 func Enqueue(itemName, action, oldBinaryPath, oldFormula string, isOldCask bool) (*Job, error) {
 	if err := ensureDir(); err != nil {
 		return nil, fmt.Errorf("cannot create jobs directory: %w", err)
+	}
+
+	// ── Atomic Queue Lock ───────────────────────────────────────────────────
+	lockPath := filepath.Join(Dir(), ".enqueue.lock")
+	lockFile, err := os.OpenFile(lockPath, os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		return nil, fmt.Errorf("cannot open queue lock: %w", err)
+	}
+	defer lockFile.Close()
+
+	if err := syscall.Flock(int(lockFile.Fd()), syscall.LOCK_EX); err != nil {
+		return nil, fmt.Errorf("cannot acquire queue lock: %w", err)
+	}
+	defer syscall.Flock(int(lockFile.Fd()), syscall.LOCK_UN)
+
+	// Double-check for existing running jobs for this item to prevent race conditions.
+	if existing := GetRunningJob(itemName); existing != nil {
+		return nil, fmt.Errorf("a background task for '%s' is already in progress (PID: %d)", itemName, existing.PID)
 	}
 
 	j := &Job{
@@ -162,6 +221,7 @@ func Enqueue(itemName, action, oldBinaryPath, oldFormula string, isOldCask bool)
 	if err := j.Save(); err != nil {
 		return nil, fmt.Errorf("cannot save job: %w", err)
 	}
+	// ── End Atomic Block ────────────────────────────────────────────────────
 
 	// Find our own executable.
 	exe, err := os.Executable()

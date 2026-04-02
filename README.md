@@ -87,7 +87,7 @@ mate cleanup bg
 
 ## Catalog Overview
 
-Package Mate includes a curated catalog of **over 300 developer tools** organized into sections:
+Package Mate includes a curated catalog of **over 400 developer tools** organized into sections:
 
 - **Homebrew Setup**: Homebrew itself and update command.
 - **Backend & Runtime**: Node, Bun, Deno, Rust, Python, Java, Go, PHP, Ruby, .NET SDK, Elixir, Erlang, Delve, Air, golang-migrate.

@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/yousefbustamiii/package-mate/cmd/bg"
+	"github.com/yousefbustamiii/package-mate/cmd/cache"
 	"github.com/yousefbustamiii/package-mate/cmd/cleanup"
 	"github.com/yousefbustamiii/package-mate/cmd/consume"
 	"github.com/yousefbustamiii/package-mate/cmd/export"
@@ -60,6 +61,7 @@ func main() {
 			fmt.Println(ui.C(ui.Cyan, "    mate cleanup bg       ") + ui.C(ui.Dim, "— remove all finished background jobs"))
 			fmt.Println(ui.C(ui.Cyan, "    mate export           ") + ui.C(ui.Dim, "— export installed packages as base64 string"))
 			fmt.Println(ui.C(ui.Cyan, "    mate consume          ") + ui.C(ui.Dim, "— sync packages from an export string"))
+			fmt.Println(ui.C(ui.Cyan, "    mate cache            ") + ui.C(ui.Dim, "— manage local tool catalog cache"))
 			fmt.Println()
 			fmt.Println(ui.C(ui.Dim, "  Examples:"))
 			fmt.Println()
@@ -68,6 +70,7 @@ func main() {
 			fmt.Println(ui.C(ui.Dim, "    mate cleanup bg       ") + ui.C(ui.Dim, "— clear finished jobs"))
 			fmt.Println(ui.C(ui.Dim, "    mate export           ") + ui.C(ui.Dim, "— generate portable package list"))
 			fmt.Println(ui.C(ui.Dim, "    mate consume          ") + ui.C(ui.Dim, "— install packages from another machine"))
+			fmt.Println(ui.C(ui.Dim, "    mate cache            ") + ui.C(ui.Dim, "— clear or force-update catalog"))
 			fmt.Println()
 			return nil
 		},
@@ -136,11 +139,34 @@ func main() {
 		},
 	}
 
+	// mate cache — manage local tool catalog cache.
+	cacheCmd := &cobra.Command{
+		Use:   "cache",
+		Short: "Manage local tool catalog cache",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return cache.Run()
+		},
+	}
+
 	root.AddCommand(bgCmd)
 	root.AddCommand(cleanupCmd)
 	root.AddCommand(exportCmd)
 	root.AddCommand(consumeCmd)
+	root.AddCommand(cacheCmd)
 	root.AddCommand(bgExecCmd)
+
+	// Kick off background catalog sync (non-blocking)
+	shouldSync := true
+	if len(os.Args) > 1 {
+		cmd := os.Args[1]
+		if cmd == "cache" || cmd == "_bg-exec" {
+			shouldSync = false
+		}
+	}
+
+	if shouldSync {
+		go components.CheckForUpdates()
+	}
 
 	if err := root.Execute(); err != nil {
 		_, _ = fmt.Fprintln(os.Stderr, err)
