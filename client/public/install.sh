@@ -32,7 +32,7 @@ print_banner() {
 
 print_banner
 
-VERSION="v1.0.1"
+VERSION="v1.0.0"
 
 OS="$(uname -s)"
 ARCH="$(uname -m)"
