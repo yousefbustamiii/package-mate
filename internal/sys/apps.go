@@ -31,16 +31,71 @@ func IsRunning(appName string) bool {
 // AppExists checks for the existence of an .app bundle in /Applications or ~/Applications.
 // It returns the full path and a boolean indicating if it was found.
 func AppExists(appName string) (string, bool) {
-	paths := []string{
-		filepath.Join("/Applications", appName+".app"),
-		filepath.Join(os.Getenv("HOME"), "Applications", appName+".app"),
-	}
+	// ❯ Search in standard locations
+	roots := []string{"/Applications", filepath.Join(os.Getenv("HOME"), "Applications")}
 
-	for _, p := range paths {
+	for _, root := range roots {
+		p := filepath.Join(root, appName+".app")
 		if _, err := os.Stat(p); err == nil {
 			return p, true
 		}
 	}
+	return "", false
+}
+
+// FindBundle is the "Smart Discovery" engine. It tries multiple strategies to find
+// a GUI app on the system based on its Catalog metadata.
+func FindBundle(name, cask, binary string) (string, bool) {
+	// 1. Known stubborn Mappings (Catalog Name/Cask -> Real App Name)
+	hardMappings := map[string]string{
+		"iterm2": "iTerm",
+		"zoom":   "zoom.us",
+		"visual-studio-code": "Visual Studio Code",
+		"postman": "Postman",
+		"postman-agent": "Postman Agent",
+		"docker": "Docker",
+		"tableplus": "TablePlus",
+		"postgresql": "Postgres",
+	}
+
+	// 2. Check Hard Mappings (Cask based)
+	if cask != "" {
+		if mapped, ok := hardMappings[strings.ToLower(cask)]; ok {
+			if p, ok := AppExists(mapped); ok {
+				return p, true
+			}
+		}
+	}
+
+	// 3. Try Name (Display Name)
+	if p, ok := AppExists(name); ok {
+		return p, true
+	}
+
+	// 4. Try Cask name itself (normalized)
+	if cask != "" {
+		// e.g. "visual-studio-code" -> "Visual Studio Code"
+		normalizedCask := strings.Title(strings.ReplaceAll(cask, "-", " "))
+		if p, ok := AppExists(normalizedCask); ok {
+			return p, true
+		}
+		// e.g. "iterm2"
+		if p, ok := AppExists(cask); ok {
+			return p, true
+		}
+	}
+
+	// 5. Try Binary Hint
+	if binary != "" {
+		if p, ok := AppExists(binary); ok {
+			return p, true
+		}
+		// Capitalized binary
+		if p, ok := AppExists(strings.Title(binary)); ok {
+			return p, true
+		}
+	}
+
 	return "", false
 }
 

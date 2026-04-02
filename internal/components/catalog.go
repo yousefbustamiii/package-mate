@@ -78,7 +78,7 @@ func ForceUpdate() error {
 	if err != nil {
 		return err
 	}
-	
+
 	if newCatalog != nil {
 		_ = os.WriteFile(catalogPath(), newCatalog, 0644)
 		_ = saveMetadata(newMeta)
@@ -203,7 +203,7 @@ func sortSections(secs []Section) []Section {
 		"macOS Essentials", "Cloud & Kubernetes", "Data & Analytics",
 		"Modern CLI Replacements", "Networking & API", "Dev Utilities",
 		"Design & Frontend", "Web Browsers", "Communications",
-		"Knowledge & Productivity", "Terminal Emulators", "Developer Apps & Tooling", "JetBrains Mastery",
+		"Knowledge & Productivity", "Terminal Emulators", "Developer Apps & Tooling", "JetBrains Mastery", "Common Apps & Utilities",
 	}
 
 	secsByName := make(map[string]Section)

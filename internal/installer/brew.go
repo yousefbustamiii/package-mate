@@ -29,8 +29,8 @@ func IsInstalled(item components.InstallItem) Detection {
 			return Detection{Status: DetectionExact, Detail: ver}
 		}
 
-		// ❯ Check for Unmanaged App (Applications)
-		if path, ok := sys.AppExists(item.Name); ok {
+		// ❯ Check for Unmanaged App (Applications) - Smart Discovery
+		if path, ok := sys.FindBundle(item.Name, item.Cask, item.Binary); ok {
 			return Detection{Status: DetectionManualApp, Detail: "Installed at " + path, BinaryPath: path}
 		}
 

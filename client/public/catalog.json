@@ -3994,7 +3994,7 @@
     "Name": "Common Apps & Utilities",
     "Items": [
       {
-        "Name": "VS Code",
+        "Name": "Visual Studio Code",
         "Desc": "Popular open-source code editor by Microsoft",
         "Formula": "",
         "Cask": "visual-studio-code",
